@@ -12,6 +12,7 @@ namespace Hovedopgave1.Controllers
         {
             return View();
         }
+        //Hej Jeppe
 
         public ActionResult About()
         {
