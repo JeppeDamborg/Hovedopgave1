@@ -8,7 +8,7 @@ namespace Hovedopgave1.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Forside()
         {
             return View();
         }
