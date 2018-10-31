@@ -235,6 +235,8 @@
     <Content Include="Views\Home\VirksomhedListe.cshtml" />
     <Content Include="Views\Home\OpretTilføjer.cshtml" />
     <Content Include="Views\Home\TilføjerListe.cshtml" />
+    <Content Include="Views\Home\OpretBruger.cshtml" />
+    <Content Include="Views\Home\BrugerListe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

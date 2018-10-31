@@ -12,24 +12,26 @@
     <link rel="stylesheet" href="~/Content/bootstrap.css" />
 </head>
 <body>
-    <table class="table">
-        <tr>
-            <th>Brugernavn</th>
-            <th>Password</th>
-            <th>Brugertype</th>
-        </tr>
+   <table class="table">
+       <tr>
+           <th>Brugernavn</th>
+           <th>Password</th>
+           <th>Bruger type</th>
 
-        <tr>
-            <td>Karina Winkler</td>
-            <td>kw394713</td>
-            <td>Admin</td>
+       </tr>
 
-            <td>@Html.ActionLink("Rediger", "RedigerBruger", "Home", null, new { @class="btn btn-primary" })</td>
+       <tr>
+           <td>Karina Winkler</td>
+           <td>kw395827</td>
+           <td>Admin</td>
 
-            <td>
-                <input type="submit" id="SletBruger" value="Slet" class="btn btn-primary" />
-            </td>
-        </tr>
-    </table>
+           <td>@Html.ActionLink("Rediger", "RedigerBruger", "Home", null, new { @class="btn btn-primary" })</td>
+           <td>
+               <input type="submit" id="Sletbruger" class="btn btn-primary" value="Slet" />
+           </td>
+       </tr>
+
+   </table>
+
 </body>
 </html>
