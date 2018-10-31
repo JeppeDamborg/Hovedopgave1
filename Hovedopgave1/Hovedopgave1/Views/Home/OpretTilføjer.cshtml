@@ -1,0 +1,62 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <title>OpretTilføjer</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="Navn" name="Navn" placeholder="Navn" />
+        <input type="text" id="Telefonnummer" name="Telefonnummer" placeholder="Telefonnummer" />
+        <input type="text" id="E-mail" name="E-mail" placeholder="E-mail" />
+    </div>
+    <br />
+    <div>
+        <input type="text" id="Uddannelse" name="Uddannelse" placeholder="Uddannelse" />
+        <input type="text" id="SøgerJob" name="SøgerJob" placeholder="Søger job som..." />
+    </div>
+    <br />
+    <div>
+        Erhverseffaring
+    </div>
+    <div>
+
+        @Html.TextArea("Erhverseffaring")
+        
+    </div>
+
+    <br />
+    <div>
+        Faglige- og Personligekernekompetencer
+    </div>
+    <div>
+        
+        @Html.TextArea("kompetencer")
+    </div>
+    <br />
+    <div>
+        Anden information
+    </div>
+    <div>
+        
+        @Html.TextArea("extrainfo")
+    </div>
+    <div>
+        Ønsker at flytte til området
+        <input type="checkbox" name="ja" value="Ja"> ja
+        <input type="checkbox" name="nej" value="Nej"> nej<br>
+    </div>
+    <div>
+        <input type="button" id="Opret" value="Opret" />
+    </div>
+</body>
+</html>
