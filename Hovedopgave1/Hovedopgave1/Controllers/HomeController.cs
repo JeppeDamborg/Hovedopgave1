@@ -35,5 +35,30 @@ namespace Hovedopgave1.Controllers
             return View();
         }
 
+        public ActionResult OpretTilføjer()
+        {
+            return View();
+        }
+
+        public ActionResult TilføjerListe()
+        {
+            return View();
+        }
+
+        public ActionResult OpretBruger()
+        {
+            return View();
+        }
+
+        public ActionResult BrugerListe()
+        {
+            return View();
+        }
+
+        public ActionResult UdløbetStudentListe()
+        {
+            return View();
+        }
+
     }
 }
