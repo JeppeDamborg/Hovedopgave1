@@ -231,6 +231,8 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\OpretStudent.cshtml" />
     <Content Include="Views\Home\StudentListe.cshtml" />
+    <Content Include="Views\Home\OpretVirksomhed.cshtml" />
+    <Content Include="Views\Home\VirksomhedListe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

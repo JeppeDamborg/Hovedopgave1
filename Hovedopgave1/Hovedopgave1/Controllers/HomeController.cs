@@ -26,5 +26,14 @@ namespace Hovedopgave1.Controllers
             return View();
         }
 
+        public ActionResult OpretVirksomhed()
+        {
+            return View();
+        }
+        public ActionResult VirksomhedListe()
+        {
+            return View();
+        }
+
     }
 }
