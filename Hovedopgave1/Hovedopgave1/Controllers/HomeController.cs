@@ -12,12 +12,17 @@ namespace Hovedopgave1.Controllers
         {
             return View();
         }
-        //Hej Jeppe
+      
 
         public ActionResult OpretStudent()
         {
             
 
+            return View();
+        }
+
+        public ActionResult StudentListe()
+        {
             return View();
         }
 
