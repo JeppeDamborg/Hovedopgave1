@@ -234,6 +234,7 @@
     <Content Include="Views\Home\OpretVirksomhed.cshtml" />
     <Content Include="Views\Home\VirksomhedListe.cshtml" />
     <Content Include="Views\Home\OpretTilføjer.cshtml" />
+    <Content Include="Views\Home\TilføjerListe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
