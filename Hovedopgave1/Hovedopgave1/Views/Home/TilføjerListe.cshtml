@@ -9,9 +9,48 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>TilføjerListe</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <style>
+        .divider {
+            width: 5px;
+            height: auto;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
-    <div> 
+    <div>
+        <input type="text" placeholder="Søg" />
+        <input type="submit" value="Søg" />
     </div>
+    <table class="table">
+        <tr>
+            <th>Navn</th>
+            <th>Telefon</th>
+            <th>E-mail</th>
+            <th>Uddanelse</th>
+            <th>Søgte job</th>
+            <th>Erhverseffaring</th>
+            <th>KerneKompetencer</th>
+            <th>Anden info</th>
+            <th>Ønsker at flytte</th>
+        </tr>
+        <tr>
+            <td>Hans Morgensen</td>
+            <td>25-XX-XX-XX</td>
+            <td>Sejfyr28@hotmail.com</td>
+            <td>Datalog</td>
+            <td>It vejleder</td>
+            <td>10 års effaring med blue eagle</td>
+            <td>blabla</td>
+            <td>ingen</td>
+            <td>Ja</td>
+
+            <td>@Html.ActionLink("Rediger", "RedigerTilføjer", "Home", null, new { @class = "btn btn-primary" })</td>
+            <td><input type="submit" class="btn btn-primary" value="Slet" /></td>
+        </tr>
+
+
+    </table>
 </body>
 </html>
