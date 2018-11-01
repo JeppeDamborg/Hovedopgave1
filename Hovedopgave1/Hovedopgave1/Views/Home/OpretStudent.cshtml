@@ -14,19 +14,35 @@
     <div>
 
         <input type="text" id="Navn" name="Navn" placeholder="Navn" />
+        <input type="text" id="Adresse" name="Adresse" placeholder="Adresse" />
+        <input type="text" id="Bopæl" name="Bopæl" placeholder="By" />
     </div>
+    <br />
+    <div>
+        <input type="text" id="Nationalitet" name="Nationalitet" placeholder="Nationalitet" />
+        <input type="text" id="Sprogkundskaber" name="Sprogkundskaber" placeholder="Sprogkundskaber" />
+    </div>
+    <br />
+    <div>
+        <input type="text" id="Telefonnummer" name="Telefonnummer" placeholder="Telefonnummer" />
+        <input type="text" id="E-mail" name="E-mail" placeholder="E-mail" />
+    </div>
+    <br />
     <div>
         <input type="text" id="Uddanelse" name="Uddanelse" placeholder="Uddanelse" />
+        <input type="text" id="Periode" name="Periode" placeholder="Periode" />
+        <input type="text" id="Semester" name="Semester" placeholder="Nuværende Semester" />
+    </div>
+    <br />
+    <div>
+        Specialisering
     </div>
     <div>
-
-        <input type="text" id="Semester" name="Semester" placeholder="Semester" />
+        @Html.TextArea("Specialisering")
     </div>
+
     <div>
         <input type="button" id="Opret" value="Opret" />
-    </div>
-    <div>
-        @Html.TextArea("prøve")
     </div>
 </body>
 </html>
