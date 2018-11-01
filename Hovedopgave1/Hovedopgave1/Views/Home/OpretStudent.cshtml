@@ -39,8 +39,44 @@
     </div>
     <div>
         @Html.TextArea("Specialisering")
+
+    </div>
+    <br />
+    <div>
+        <input type="text" id="Overbygning" name="Overbygning" placeholder="Overbygning" />
+    </div>
+    <br />
+    <div>
+        <pre>Semesterprojekt              Praktik                     Hovedopgave</pre>
+    </div>
+    <div>
+        @Html.TextArea("SemesterProjekt")
+        @Html.TextArea("Praktik")
+        @Html.TextArea("HovedOpgave")
     </div>
 
+    <br />
+    <div>
+        <input type="text" id="OpgaveType" name="OpgaveType" placeholder="Opgavetype" />
+    </div>
+    <br />
+    <div>
+        <input type="text" id="StudieJob" name="StudieJob" placeholder="Studiejob" />
+    </div>
+    <br />
+    <div>
+        Har du egen transport(bil)
+        <input type="checkbox" name="Transport" value="Ja"> ja
+        <input type="checkbox" name="Transport" value="Nej"> nej<br>
+    </div>
+    <br />
+    <div>
+        Dato for oprettelse
+    </div>
+    <div>
+        <input type="date" id="DatoForOprettelse" name="DatoForOprettelse" placeholder="DatoForOprettelse" />
+    </div>
+    <br />
     <div>
         <input type="button" id="Opret" value="Opret" />
     </div>
