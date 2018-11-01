@@ -89,6 +89,15 @@ namespace Hovedopgave1.Controllers
             return View();
         }
 
+        public ActionResult VirksomhedOprettet()
+        {
+            return View();
+        }
+
+        public ActionResult VirksomhedRedigeret()
+        {
+            return View();
+        }
 
 
 
