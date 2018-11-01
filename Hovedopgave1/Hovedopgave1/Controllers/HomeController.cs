@@ -80,7 +80,12 @@ namespace Hovedopgave1.Controllers
             return View();
         }
 
-      
+        public ActionResult StudentOprettet()
+        {
+            return View();
+        }
+
+
 
     }
 }

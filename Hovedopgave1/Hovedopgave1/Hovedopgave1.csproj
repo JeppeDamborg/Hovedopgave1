@@ -242,6 +242,7 @@
     <Content Include="Views\Home\RedigerVirksomhed.cshtml" />
     <Content Include="Views\Home\RedigerTilføjer.cshtml" />
     <Content Include="Views\Home\RedigerBruger.cshtml" />
+    <Content Include="Views\Home\StudentOprettet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
