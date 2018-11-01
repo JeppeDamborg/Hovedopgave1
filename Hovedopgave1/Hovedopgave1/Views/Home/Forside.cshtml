@@ -9,8 +9,24 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Forside</title>
+    <style>
+        input[type=button]{
+            cursor:pointer;
+            font-size:medium;
+            background-color:#000000;
+            color:white;
+            text-align:center;
+            width:200px;
+            height:50px;
+           
+        }
+
+    </style>
 </head>
 <body>
+        
+        <h2>Velkommen til InnoVest</h2>
+
     <div> 
         <input type="button" class="button" value="Opret Student" onclick="location.href='@Url.Action("OpretStudent", "Home")'" />
         <input type="button" class="button" value="Student Liste" onclick="location.href='@Url.Action("StudentListe", "Home")'" />
@@ -32,7 +48,7 @@
     </div>
 
     <div>
-        <input type="button" class="button" value="Udløbet Studenter" />
+        <input type="button" class="button" value="Udløbet Studenter" onclick="location.href='@Url.Action("UdløbetStudentListe", "Home")'" />
     </div>
 </body>
 </html>
