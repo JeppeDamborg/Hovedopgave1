@@ -16,22 +16,38 @@
         <input type="text" id="Navn" name="Navn" placeholder="Navn" />
         <input type="text" id="KontaktPerson" name="KontaktPerson" placeholder="KontaktPerson" />
     </div>
+    <br />
+
     <div>
         <input type="text" id="Tlf.nr" name="Tlf.nr" placeholder="Tlf.nr" />
         <input type="text" id="e-mail" name="e-mail" placeholder="e-mail" />
     </div>
+    <br />
+
     <div>
-        <input type="text" id="VirksomhedInfo" name="VirksomhedInfo" placeholder="VirksomhedInfo" />
-        <input type="text" id="MuligeOpgaver" name="MuligeOpgaver" placeholder="Mulige Opgaver" />
+        <pre>Virksomhedsinfo       Mulige Opgaver</pre>
     </div>
     <div>
-        <input type="text" id="Profiler" name="Profiler" placeholder="Profiler" />
+        @Html.TextArea("Virksomhedsinfo")
+        @Html.TextArea("MuligeOpgaver")
+    </div>
+    <br />
+    <div>
+        Profiler
+    </div>
+    <div>
+        @Html.TextArea("Profiler")
+    </div>
+    <br />
+    <div>
         <input type="text" id="OpgaveLøsning" name="OpgaveLøsning" placeholder="Opgave Løsning" />
     </div>
+    <br />
     <div>
         <input type="text" id="StyrkePosistion" name="StyrkePosistion" placeholder="Styrke Posistion" />
 
     </div>
+    <br />
     <div>
         <input type="button" id="RedigerVirksomhed" value="Rediger Virksomhed" />
     </div>

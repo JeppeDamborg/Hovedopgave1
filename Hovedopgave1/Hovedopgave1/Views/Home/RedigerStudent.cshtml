@@ -15,19 +15,71 @@
     <div>
 
         <input type="text" id="Navn" name="Navn" placeholder="Navn" />
+        <input type="text" id="Adresse" name="Adresse" placeholder="Adresse" />
+        <input type="text" id="Bopæl" name="Bopæl" placeholder="By" />
     </div>
+    <br />
+    <div>
+        <input type="text" id="Nationalitet" name="Nationalitet" placeholder="Nationalitet" />
+        <input type="text" id="Sprogkundskaber" name="Sprogkundskaber" placeholder="Sprogkundskaber" />
+    </div>
+    <br />
+    <div>
+        <input type="text" id="Telefonnummer" name="Telefonnummer" placeholder="Telefonnummer" />
+        <input type="text" id="E-mail" name="E-mail" placeholder="E-mail" />
+    </div>
+    <br />
     <div>
         <input type="text" id="Uddanelse" name="Uddanelse" placeholder="Uddanelse" />
+        <input type="text" id="Periode" name="Periode" placeholder="Periode" />
+        <input type="text" id="Semester" name="Semester" placeholder="Nuværende Semester" />
+    </div>
+    <br />
+    <div>
+        Specialisering
     </div>
     <div>
+        @Html.TextArea("Specialisering")
 
-        <input type="text" id="Semester" name="Semester" placeholder="Semester" />
     </div>
+    <br />
+    <div>
+        <input type="text" id="Overbygning" name="Overbygning" placeholder="Overbygning" />
+    </div>
+    <br />
+    <div>
+        <pre>Semesterprojekt              Praktik                     Hovedopgave</pre>
+    </div>
+    <div>
+        @Html.TextArea("SemesterProjekt")
+        @Html.TextArea("Praktik")
+        @Html.TextArea("HovedOpgave")
+    </div>
+
+    <br />
+    <div>
+        <input type="text" id="OpgaveType" name="OpgaveType" placeholder="Opgavetype" />
+    </div>
+    <br />
+    <div>
+        <input type="text" id="StudieJob" name="StudieJob" placeholder="Studiejob" />
+    </div>
+    <br />
+    <div>
+        Har du egen transport(bil)
+        <input type="checkbox" name="Transport" value="Ja"> ja
+        <input type="checkbox" name="Transport" value="Nej"> nej<br>
+    </div>
+    <br />
+    <div>
+        Dato for oprettelse
+    </div>
+    <div>
+        <input type="date" id="DatoForOprettelse" name="DatoForOprettelse" placeholder="DatoForOprettelse" />
+    </div>
+    <br />
     <div>
         <input type="button" id="Rediger" value="Rediger" />
-    </div>
-    <div>
-        @Html.TextArea("prøve2")
     </div>
 </body>
 </html>
