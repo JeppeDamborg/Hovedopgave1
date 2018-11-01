@@ -60,5 +60,27 @@ namespace Hovedopgave1.Controllers
             return View();
         }
 
+        public ActionResult RedigerStudent()
+        {
+            return View();
+        }
+
+        public ActionResult RedigerVirksomhed()
+        {
+            return View();
+        }
+
+        public ActionResult RedigerTilføjer()
+        {
+            return View();
+        }
+
+        public ActionResult RedigerBruger()
+        {
+            return View();
+        }
+
+      
+
     }
 }

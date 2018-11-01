@@ -237,6 +237,11 @@
     <Content Include="Views\Home\TilføjerListe.cshtml" />
     <Content Include="Views\Home\OpretBruger.cshtml" />
     <Content Include="Views\Home\BrugerListe.cshtml" />
+    <Content Include="Views\Home\UdløbetStudentListe.cshtml" />
+    <Content Include="Views\Home\RedigerStudent.cshtml" />
+    <Content Include="Views\Home\RedigerVirksomhed.cshtml" />
+    <Content Include="Views\Home\RedigerTilføjer.cshtml" />
+    <Content Include="Views\Home\RedigerBruger.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
