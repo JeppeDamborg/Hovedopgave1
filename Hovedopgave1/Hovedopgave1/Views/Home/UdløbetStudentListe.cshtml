@@ -9,9 +9,68 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>UdløbetStudentListe</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <style>
+        .divider {
+            width: 5px;
+            height: auto;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
-    <div> 
+    <div>
+        <input type="text" placeholder="Søg" />
+        <input type="submit" value="Søg" />
     </div>
+    <table class="table">
+        <tr>
+            <th>Navn</th>
+            <th>Addresse</th>
+            <th>Bopæl</th>
+            <th>Nationalitet</th>
+            <th>Sprog Kundskab</th>
+            <th>Tele</th>
+            <th>Mail</th>
+            <th>Uddannelse</th>
+            <th>Periode</th>
+            <th>Semester</th>
+            <th>Specialisering</th>
+            <th>Overbygning</th>
+            <th>Semester Projekt</th>
+            <th>Praktik</th>
+            <th>Hovedopgave</th>
+            <th>Opgave Type</th>
+            <th>Studie Job</th>
+            <th>Transport</th>
+        </tr>
+
+        <tr>
+            <td>Tom Hansen</td>
+            <td>Kongevej 23</td>
+            <td>Rindkøbing</td>
+            <td>Dansk</td>
+            <td>Dansk og Engelsk</td>
+            <td>30592749</td>
+            <td>Tom5839@gmail.com</td>
+            <td>Elektrikker</td>
+            <td>13.august 2017 - 25.januar 2020</td>
+            <td>4.semester jan-jun</td>
+            <td>Energi</td>
+            <td>Ingen</td>
+            <td>Ingen</td>
+            <td>Ingen</td>
+            <td>Ingen</td>
+            <td>Energi</td>
+            <td>Nej</td>
+            <td>Ja</td>
+
+            <td>@Html.ActionLink("Rediger", "RedigerStudent", "Home", null, new { @class = "btn btn-primary" })</td>
+            <td>
+                <input type="submit" class="btn btn-primary" value="Slet" />
+            </td>
+        </tr>
+
+    </table>
 </body>
 </html>
