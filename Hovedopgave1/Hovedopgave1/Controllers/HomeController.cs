@@ -84,6 +84,11 @@ namespace Hovedopgave1.Controllers
         {
             return View();
         }
+        public ActionResult StudentRedigeret()
+        {
+            return View();
+        }
+
 
 
 
