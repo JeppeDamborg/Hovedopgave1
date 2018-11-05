@@ -162,14 +162,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IStudentRepository.cs" />
-    <Compile Include="Abstract\IVirksomhedRepository.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\Ninject.Web.Common.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Concrete\EFStudentRepository.cs" />
-    <Compile Include="Concrete\EFVirksomhedRepository.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -193,7 +191,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Student.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Virksomhed.cs" />
+    <Compile Include="Models\Students.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

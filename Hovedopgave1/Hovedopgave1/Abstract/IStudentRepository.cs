@@ -9,6 +9,6 @@ namespace Hovedopgave1.Abstract
 {
     public interface IStudentRepository
     {
-        IEnumerable<Student> Student { get; }
+        IEnumerable<Students> Students { get; }
     }
 }

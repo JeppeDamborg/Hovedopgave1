@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Hovedopgave1.Models.Student>
+﻿@model IEnumerable<Hovedopgave1.Models.Students>
 @{
     Layout = null;
 }
@@ -73,6 +73,7 @@
 
             <td>@Html.ActionLink("Rediger", "RedigerStudent", "Home", null, new { @class = "btn btn-primary" })</td>
             <td>
+                @Html.Hidden("Id", item.Id)
                 <input type="submit" class="btn btn-primary" value="Slet" />
             </td>
         </tr>
