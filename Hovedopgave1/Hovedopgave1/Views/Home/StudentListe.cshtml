@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Hovedopgave1.Models.Student>
 @{
     Layout = null;
 }
@@ -26,54 +26,57 @@
     </div>
     <table class="table">
         <tr>
-            <th>Navn</th>
-            <th>Addresse</th>
-            <th>Bopæl</th>
-            <th>Nationalitet</th>
-            <th>Sprog Kundskab</th>
-            <th>Tele</th>
-            <th>Mail</th>
-            <th>Uddannelse</th>
-            <th>Periode</th>
-            <th>Semester</th>
-            <th>Specialisering</th>
-            <th>Overbygning</th>
-            <th>Semester Projekt</th>
-            <th>Praktik</th>
-            <th>Hovedopgave</th>
-            <th>Opgave Type</th>
-            <th>Studie Job</th>
-            <th>Transport</th>
-            <th>Dato for Oprettelse</th>
+            <th>@Html.DisplayNameFor(model => model.Navn)</th>
+            <th>@Html.DisplayNameFor(model => model.Adresse)</th>
+            <th>@Html.DisplayNameFor(model => model.Bopæl)</th>
+            <th>@Html.DisplayNameFor(model => model.Nationalitet)</th>
+            <th>@Html.DisplayNameFor(model => model.SprogKundskab)</th>
+            <th>@Html.DisplayNameFor(model => model.Telefon)</th>
+            <th>@Html.DisplayNameFor(model => model.Mail)</th>
+            <th>@Html.DisplayNameFor(model => model.Uddannelse)</th>
+            <th>@Html.DisplayNameFor(model => model.Periode)</th>
+            <th>@Html.DisplayNameFor(model => model.Semester)</th>
+            <th>@Html.DisplayNameFor(model => model.Specialisering)</th>
+            <th>@Html.DisplayNameFor(model => model.Overbygning)</th>
+            <th>@Html.DisplayNameFor(model => model.SemesterProjekt)</th>
+            <th>@Html.DisplayNameFor(model => model.Praktik)</th>
+            <th>@Html.DisplayNameFor(model => model.Hovedopgave)</th>
+            <th>@Html.DisplayNameFor(model => model.OpgaveType)</th>
+            <th>@Html.DisplayNameFor(model => model.StudieJob)</th>
+            <th>@Html.DisplayNameFor(model => model.Transport)</th>
+            <th>@Html.DisplayNameFor(model => model.DatoForOprettelse)</th>
         </tr>
 
-        <tr>
-            <td>Tom Hansen</td>
-            <td>Kongevej 23</td>
-            <td>Rindkøbing</td>
-            <td>Dansk</td>
-            <td>Dansk og Engelsk</td>
-            <td>30592749</td>
-            <td>Tom5839@gmail.com</td>
-            <td>Elektrikker</td>
-            <td>13.august 2017 - 25.januar 2020</td>
-            <td>4.semester jan-jun</td>
-            <td>Energi</td>
-            <td>Ingen</td>
-            <td>Ingen</td>
-            <td>Ingen</td>
-            <td>Ingen</td>
-            <td>Energi</td>
-            <td>Nej</td>
-            <td>Ja</td>
-            <td>15-09-2018</td>
 
-            <td>@Html.ActionLink("Rediger", "RedigerStudent", "Home", null, new { @class = "btn btn-primary"})</td>
+        @foreach (var item in Model) 
+        {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Navn)</td>
+            <td>@Html.DisplayFor(modelItem => item.Adresse)</td>
+            <td>@Html.DisplayFor(modelItem => item.Bopæl)</td>
+            <td>@Html.DisplayFor(modelItem => item.Nationalitet)</td>
+            <td>@Html.DisplayFor(modelItem => item.SprogKundskab)</td>
+            <td>@Html.DisplayFor(modelItem => item.Telefon)</td>
+            <td>@Html.DisplayFor(modelItem => item.Mail)</td>
+            <td>@Html.DisplayFor(modelItem => item.Uddannelse)</td>
+            <td>@Html.DisplayFor(modelItem => item.Periode)</td>
+            <td>@Html.DisplayFor(modelItem => item.Semester)</td>
+            <td>@Html.DisplayFor(modelItem => item.Specialisering)</td>
+            <td>@Html.DisplayFor(modelItem => item.Overbygning)</td>
+            <td>@Html.DisplayFor(modelItem => item.SemesterProjekt)</td>
+            <td>@Html.DisplayFor(modelItem => item.Praktik)</td>
+            <td>@Html.DisplayFor(modelItem => item.Hovedopgave)</td>
+            <td>@Html.DisplayFor(modelItem => item.OpgaveType)</td>
+            <td>@Html.DisplayFor(modelItem => item.StudieJob)</td>
+            <td>@Html.DisplayFor(modelItem => item.Transport)</td>
+            <td>@Html.DisplayFor(modelItem => item.DatoForOprettelse)</td>
+
+            <td>@Html.ActionLink("Rediger", "RedigerStudent", "Home", null, new { @class = "btn btn-primary" })</td>
             <td>
                 <input type="submit" class="btn btn-primary" value="Slet" />
             </td>
         </tr>
-
+        }
     </table>
 </body>
 </html>

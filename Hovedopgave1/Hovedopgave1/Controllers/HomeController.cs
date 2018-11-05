@@ -3,11 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Hovedopgave1.Abstract;
+using Hovedopgave1.Concrete;
+using Hovedopgave1.Models;
 
 namespace Hovedopgave1.Controllers
 {
     public class HomeController : Controller
     {
+        private IStudentRepository srepository;
+        private EFDbContext context = new EFDbContext();
+
+        public HomeController(IStudentRepository studentRepository)
+        {
+            this.srepository = studentRepository;
+        }
+
         public ActionResult Forside()
         {
             return View();
@@ -23,7 +34,7 @@ namespace Hovedopgave1.Controllers
 
         public ActionResult StudentListe()
         {
-            return View();
+            return View(srepository.Student);
         }
 
         public ActionResult OpretVirksomhed()
