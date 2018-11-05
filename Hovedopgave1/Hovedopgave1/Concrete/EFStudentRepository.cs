@@ -10,9 +10,9 @@ namespace Hovedopgave1.Concrete
     public class EFStudentRepository : IStudentRepository
     {
         private EFDbContext context = new EFDbContext();
-        public IEnumerable<Student> Student  {
+        public IEnumerable<Students> Students  {
 
-            get { return context.Student; }
+            get { return context.Students; }
         }
     }
 }

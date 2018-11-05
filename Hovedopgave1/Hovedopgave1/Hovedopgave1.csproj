@@ -191,6 +191,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Student.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Students.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
