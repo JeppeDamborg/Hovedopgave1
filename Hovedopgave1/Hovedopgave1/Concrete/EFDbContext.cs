@@ -7,8 +7,8 @@ using System.Data.Entity;
 
 namespace Hovedopgave1.Concrete
 {
-    public class EFDbContext
+    public class EFDbContext: DbContext
     {
-
+        public DbSet<Student> Student { get; set; }
     }
 }
