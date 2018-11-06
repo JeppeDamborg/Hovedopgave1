@@ -7,7 +7,7 @@ using Hovedopgave1.Models;
 
 namespace Hovedopgave1.Concrete
 {
-    public class EFVirksomhedRepository : IStudentRepository
+    public class EFVirksomhedRepository : IVirksomhedRepository
     {
         private EFDbContext context = new EFDbContext();
         public IEnumerable<Virksomhed> Virksomhed

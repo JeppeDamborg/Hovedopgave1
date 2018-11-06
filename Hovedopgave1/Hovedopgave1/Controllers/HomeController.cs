@@ -12,11 +12,13 @@ namespace Hovedopgave1.Controllers
     public class HomeController : Controller
     {
         private IStudentRepository srepository;
+        private IVirksomhedRepository vrespository;
         private EFDbContext context = new EFDbContext();
 
-        public HomeController(IStudentRepository studentRepository)
+        public HomeController(IStudentRepository studentRepository, IVirksomhedRepository virksomhedRepository)
         {
             this.srepository = studentRepository;
+            this.vrespository = virksomhedRepository;
         }
 
 
@@ -50,7 +52,7 @@ namespace Hovedopgave1.Controllers
         }
         public ActionResult VirksomhedListe()
         {
-            return View();
+            return View(vrespository.Virksomhed);
         }
 
         public ActionResult OpretTilføjer()

@@ -32,6 +32,7 @@ namespace Hovedopgave1.Infrastructure
         private void AddBindings()
         {
             kernel.Bind<IStudentRepository>().To<EFStudentRepository>();
+            kernel.Bind<IVirksomhedRepository>().To<EFVirksomhedRepository>();
         }
     }
 }

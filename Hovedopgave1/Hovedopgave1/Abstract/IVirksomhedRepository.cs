@@ -6,7 +6,7 @@ using Hovedopgave1.Models;
 
 namespace Hovedopgave1.Abstract
 {
-    public class IVirksomhedRepository
+    public interface IVirksomhedRepository
     {
         IEnumerable<Virksomhed> Virksomhed { get; }
     }

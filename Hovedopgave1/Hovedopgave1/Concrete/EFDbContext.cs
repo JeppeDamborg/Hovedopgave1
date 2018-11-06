@@ -10,5 +10,6 @@ namespace Hovedopgave1.Concrete
     public class EFDbContext: DbContext
     {
         public DbSet<Students> Students { get; set; }
+        public DbSet<Virksomhed> Virksomhed { get; set; }
     }
 }
