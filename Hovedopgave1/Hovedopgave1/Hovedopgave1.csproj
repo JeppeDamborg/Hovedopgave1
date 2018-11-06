@@ -161,12 +161,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IBrugerRepository.cs" />
     <Compile Include="Abstract\IStudentRepository.cs" />
     <Compile Include="Abstract\IVirksomhedRepository.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\Ninject.Web.Common.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Concrete\EFBrugerRepository.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Concrete\EFStudentRepository.cs" />
     <Compile Include="Concrete\EFVirksomhedRepository.cs" />
@@ -175,6 +177,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
+    <Compile Include="Models\Bruger.cs" />
     <Compile Include="Models\Student.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -33,6 +33,7 @@ namespace Hovedopgave1.Infrastructure
         {
             kernel.Bind<IStudentRepository>().To<EFStudentRepository>();
             kernel.Bind<IVirksomhedRepository>().To<EFVirksomhedRepository>();
+            kernel.Bind<IBrugerRepository>().To<EFBrugerRepository>();
         }
     }
 }
