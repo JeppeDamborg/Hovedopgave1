@@ -14,6 +14,7 @@ namespace Hovedopgave1.Controllers
         private IStudentRepository srepository;
         private IVirksomhedRepository vrespository;
         private IBrugerRepository brepository;
+        
         private EFDbContext context = new EFDbContext();
 
         public HomeController(IStudentRepository studentRepository, IVirksomhedRepository virksomhedRepository, IBrugerRepository brugerRepository)
@@ -21,6 +22,7 @@ namespace Hovedopgave1.Controllers
             this.srepository = studentRepository;
             this.vrespository = virksomhedRepository;
             this.brepository = brugerRepository;
+            
         }
 
 
@@ -36,6 +38,21 @@ namespace Hovedopgave1.Controllers
             
 
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult OpretStudent(Students students)
+        {
+            if (ModelState.IsValid)
+            {
+                srepository.OpretStudent(students);
+                TempData["message"] = string.Format("{0} has been created", students.Id);
+                return RedirectToAction("StudentOprettet");
+            }
+            else
+            {
+                return View(students);
+            }
         }
 
         public ActionResult StudentListe()

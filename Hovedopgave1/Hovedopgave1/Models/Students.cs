@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Hovedopgave1.Models
 {
@@ -25,7 +27,12 @@ namespace Hovedopgave1.Models
         public string Hovedopgave { get; set; }
         public string OpgaveType { get; set; }
         public string StudieJob { get; set; }
+
+
         public bool Transport { get; set; }
+
+        [DataType(DataType.Date)]
+        [Column(TypeName ="datetime2")]
         public DateTime DatoForOprettelse { get; set; }
     }
 }

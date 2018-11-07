@@ -10,5 +10,7 @@ namespace Hovedopgave1.Abstract
     public interface IStudentRepository
     {
         IEnumerable<Students> Students { get; }
+
+        void OpretStudent(Students students);
     }
 }

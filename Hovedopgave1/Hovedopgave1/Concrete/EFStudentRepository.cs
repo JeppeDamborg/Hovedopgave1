@@ -14,5 +14,14 @@ namespace Hovedopgave1.Concrete
 
             get { return context.Students; }
         }
+
+        public void OpretStudent(Students students)
+        {
+            if(students.Id == 0)
+            {
+                context.Students.Add(students);
+            }
+            context.SaveChanges();
+        }
     }
 }

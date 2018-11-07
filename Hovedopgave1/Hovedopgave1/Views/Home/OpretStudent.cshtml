@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Hovedopgave1.Models.Students
+@{
     Layout = null;
 }
 
@@ -12,33 +13,38 @@
 </head>
 <body>
     <div>
+        * Skal udfyldes
+    </div>
+    @using (Html.BeginForm("OpretStudent", "Home", FormMethod.Post))
+    {
+    <div>
 
-        <input type="text" id="Navn" name="Navn" placeholder="Navn" />
-        <input type="text" id="Adresse" name="Adresse" placeholder="Adresse" />
-        <input type="text" id="Bopæl" name="Bopæl" placeholder="By" />
+        <input type="text" id="Navn" name="Navn" placeholder="Navn" />*
+        <input type="text" id="Adresse" name="Adresse" placeholder="Adresse" />*
+        <input type="text" id="Bopæl" name="Bopæl" placeholder="By" />*
     </div>
     <br />
     <div>
-        <input type="text" id="Nationalitet" name="Nationalitet" placeholder="Nationalitet" />
-        <input type="text" id="Sprogkundskaber" name="Sprogkundskaber" placeholder="Sprogkundskaber" />
+        <input type="text" id="Nationalitet" name="Nationalitet" placeholder="Nationalitet" />*
+        <input type="text" id="SprogKundskab" name="SprogKundskab" placeholder="Sprogkundskaber" />*
     </div>
     <br />
     <div>
-        <input type="text" id="Telefonnummer" name="Telefonnummer" placeholder="Telefonnummer" />
-        <input type="text" id="E-mail" name="E-mail" placeholder="E-mail" />
+        <input type="text" id="Telefon" name="Telefon" placeholder="Telefonnummer" />*
+        <input type="text" id="Mail" name="Mail" placeholder="E-mail" />*
     </div>
     <br />
     <div>
-        <input type="text" id="Uddanelse" name="Uddanelse" placeholder="Uddanelse" />
-        <input type="text" id="Periode" name="Periode" placeholder="Periode" />
-        <input type="text" id="Semester" name="Semester" placeholder="Nuværende Semester" />
+        <input type="text" id="Uddannelse" name="Uddannelse" placeholder="Uddannelse" />*
+        <input type="text" id="Periode" name="Periode" placeholder="Periode" />*
+        <input type="text" id="Semester" name="Semester" placeholder="Nuværende Semester" />*
     </div>
     <br />
     <div>
         Specialisering
     </div>
     <div>
-        @Html.TextArea("Specialisering")
+        @Html.TextAreaFor(m => m.Specialisering, new { @id = "Specialisering", @placeholder = "Skriv din Specialisering Her, ellers skriv 'Ingen'" })*
 
     </div>
     <br />
@@ -47,12 +53,12 @@
     </div>
     <br />
     <div>
-        <pre>Semesterprojekt              Praktik                     Hovedopgave</pre>
+        <pre>Semesterprojekt           Praktik              Hovedopgave</pre>
     </div>
     <div>
-        @Html.TextArea("SemesterProjekt")
-        @Html.TextArea("Praktik")
-        @Html.TextArea("HovedOpgave")
+        @Html.TextAreaFor(m => m.SemesterProjekt, new { @id = "SemesterProjekt", @placeholder = "Skriv dit Semester Projekt, hvis du har et" })
+        @Html.TextAreaFor(m => m.Praktik, new { @id = "Praktik", @placeholder = "Skriv din Praktik Projekt/Opgave, hvis du har et " })
+        @Html.TextAreaFor(m => m.Hovedopgave, new { @id = "Hovedopgave", @placeholder = "Skriv din Hovedopgave, hvis du har et " })
     </div>
 
     <br />
@@ -65,20 +71,21 @@
     </div>
     <br />
     <div>
-        Har du egen transport(bil)
-        <input type="checkbox" name="Transport" value="Ja"> ja
-        <input type="checkbox" name="Transport" value="Nej"> nej<br>
+        Har du egen transport(bil)*
+        <input type="checkbox" name="Transport" value="1"> ja
+        <input type="checkbox" name="Transport" value="0"> nej<br>
     </div>
     <br />
     <div>
         Dato for oprettelse
     </div>
     <div>
-        <input type="date" id="DatoForOprettelse" name="DatoForOprettelse" placeholder="DatoForOprettelse" />
+        <input type="date" id="DatoForOprettelse" name="DatoForOprettelse" placeholder="DatoForOprettelse" />*
     </div>
     <br />
     <div>
-        <input type="button" id="Opret" value="Opret" />
+        <input type="submit" id="OpretStudent" value="Opret" />
     </div>
+    }
 </body>
 </html>
