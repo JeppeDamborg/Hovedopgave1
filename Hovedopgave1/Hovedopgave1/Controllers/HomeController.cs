@@ -110,10 +110,26 @@ namespace Hovedopgave1.Controllers
         {
             return View();
         }
-
-        public ActionResult RedigerStudent()
+        [HttpGet]
+        public ActionResult RedigerStudent(int id)
         {
-            return View();
+            var st1 = srepository.Students.Where(s => s.Id == id).FirstOrDefault();
+            return View(st1);
+        }
+
+        [HttpPost]
+        public ActionResult RedigerStudent(Students students)
+        {
+            if (ModelState.IsValid)
+            {
+                srepository.RedigerStudent(students);
+                TempData["message"] = string.Format("{0} has been updated", students.Id);
+                return RedirectToAction("StudentRedigeret");
+            }
+            else
+            {
+                return View(students);
+            }
         }
 
         public ActionResult RedigerVirksomhed()

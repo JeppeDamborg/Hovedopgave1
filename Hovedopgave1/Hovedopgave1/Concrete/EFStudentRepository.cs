@@ -24,6 +24,32 @@ namespace Hovedopgave1.Concrete
             context.SaveChanges();
         }
 
+        public void RedigerStudent(Students students)
+        {
+            Students dbstudent = context.Students.Find(students.Id);
+            if(dbstudent != null)
+            {
+                dbstudent.Navn = students.Navn;
+                dbstudent.Adresse = students.Adresse;
+                dbstudent.Bopæl = students.Bopæl;
+                dbstudent.Nationalitet = students.Nationalitet;
+                dbstudent.SprogKundskab = students.SprogKundskab;
+                dbstudent.Telefon = students.Telefon;
+                dbstudent.Mail = students.Mail;
+                dbstudent.Uddannelse = students.Uddannelse;
+                dbstudent.Periode = students.Periode;
+                dbstudent.Semester = students.Semester;
+                dbstudent.Overbygning = students.Overbygning;
+                dbstudent.SemesterProjekt = students.SemesterProjekt;
+                dbstudent.Praktik = students.Praktik;
+                dbstudent.Hovedopgave = students.Hovedopgave;
+                dbstudent.OpgaveType = students.OpgaveType;
+                dbstudent.StudieJob = students.StudieJob;
+                dbstudent.Transport = students.Transport;
+            }
+            context.SaveChanges();
+        }
+
         public Students SletStudent(int id)
         {
             Students dbEntry = context.Students.Find(id);

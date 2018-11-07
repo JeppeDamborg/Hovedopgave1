@@ -1,4 +1,4 @@
-﻿
+﻿@model Hovedopgave1.Models.Students
 @{
     Layout = null;
 }
@@ -10,76 +10,156 @@
     <meta name="viewport" content="width=device-width" />
     <title>RedigerStudent</title>
     <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <style>
+
+
+    </style>
 </head>
 <body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
     <div>
 
-        <input type="text" id="Navn" name="Navn" placeholder="Navn" />
-        <input type="text" id="Adresse" name="Adresse" placeholder="Adresse" />
-        <input type="text" id="Bopæl" name="Bopæl" placeholder="By" />
-    </div>
-    <br />
-    <div>
-        <input type="text" id="Nationalitet" name="Nationalitet" placeholder="Nationalitet" />
-        <input type="text" id="Sprogkundskaber" name="Sprogkundskaber" placeholder="Sprogkundskaber" />
-    </div>
-    <br />
-    <div>
-        <input type="text" id="Telefonnummer" name="Telefonnummer" placeholder="Telefonnummer" />
-        <input type="text" id="E-mail" name="E-mail" placeholder="E-mail" />
-    </div>
-    <br />
-    <div>
-        <input type="text" id="Uddanelse" name="Uddanelse" placeholder="Uddanelse" />
-        <input type="text" id="Periode" name="Periode" placeholder="Periode" />
-        <input type="text" id="Semester" name="Semester" placeholder="Nuværende Semester" />
-    </div>
-    <br />
-    <div>
-        Specialisering
-    </div>
-    <div>
-        @Html.TextArea("Specialisering")
 
-    </div>
-    <br />
-    <div>
-        <input type="text" id="Overbygning" name="Overbygning" placeholder="Overbygning" />
-    </div>
-    <br />
-    <div>
-        <pre>Semesterprojekt              Praktik                     Hovedopgave</pre>
-    </div>
-    <div>
-        @Html.TextArea("SemesterProjekt")
-        @Html.TextArea("Praktik")
-        @Html.TextArea("HovedOpgave")
-    </div>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
 
-    <br />
-    <div>
-        <input type="text" id="OpgaveType" name="OpgaveType" placeholder="Opgavetype" />
+        <div class="form-group">
+            @Html.LabelFor(model => model.Navn, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Navn, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Navn, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Adresse, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Adresse, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Adresse, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Bopæl, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Bopæl, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Bopæl, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nationalitet, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nationalitet, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nationalitet, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.SprogKundskab, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SprogKundskab, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SprogKundskab, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Telefon, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Telefon, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Telefon, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Mail, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Mail, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Mail, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Uddannelse, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Uddannelse, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Uddannelse, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Periode, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Periode, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Periode, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Semester, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Semester, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Semester, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Specialisering, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Specialisering, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Specialisering, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Overbygning, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Overbygning, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Overbygning, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.SemesterProjekt, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SemesterProjekt, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SemesterProjekt, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Praktik, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Praktik, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Praktik, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Hovedopgave, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Hovedopgave, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Hovedopgave, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.OpgaveType, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OpgaveType, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.OpgaveType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.StudieJob, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.StudieJob, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.StudieJob, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Transport, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-10">
+                @Html.EditorFor(model => model.Transport, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Transport, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <div class="col-md-10">
+            <input type="submit" id="Rediger" value="Rediger" class="btn btn-primary" />
+                </div>
+        </div>
     </div>
-    <br />
-    <div>
-        <input type="text" id="StudieJob" name="StudieJob" placeholder="Studiejob" />
-    </div>
-    <br />
-    <div>
-        Har du egen transport(bil)
-        <input type="checkbox" name="Transport" value="Ja"> ja
-        <input type="checkbox" name="Transport" value="Nej"> nej<br>
-    </div>
-    <br />
-    <div>
-        Dato for oprettelse
-    </div>
-    <div>
-        <input type="date" id="DatoForOprettelse" name="DatoForOprettelse" placeholder="DatoForOprettelse" />
-    </div>
-    <br />
-    <div>
-        <input type="button" id="Rediger" value="Rediger" />
-    </div>
-</body>
+    }
+    </body>
 </html>

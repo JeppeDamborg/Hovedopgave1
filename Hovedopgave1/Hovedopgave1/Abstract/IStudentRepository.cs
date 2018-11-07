@@ -14,5 +14,7 @@ namespace Hovedopgave1.Abstract
         void OpretStudent(Students students);
 
         Students SletStudent(int studentid);
+
+        void RedigerStudent(Students students);
     }
 }

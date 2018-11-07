@@ -71,7 +71,7 @@
             <td>@Html.DisplayFor(modelItem => item.Transport)</td>
             <td>@Html.DisplayFor(modelItem => item.DatoForOprettelse)</td>
 
-            <td>@Html.ActionLink("Rediger", "RedigerStudent", "Home", null, new { @class = "btn btn-primary" })</td>
+            <td>@Html.ActionLink("Rediger", "RedigerStudent", "Home", new {id = item.Id }, new { @class = "btn btn-primary" })</td>
             <td>
                 @using (Html.BeginForm("StudentListe", "Home"))
                 {
