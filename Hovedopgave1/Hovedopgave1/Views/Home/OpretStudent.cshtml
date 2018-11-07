@@ -19,25 +19,42 @@
     {
     <div>
 
-        <input type="text" id="Navn" name="Navn" placeholder="Navn" />*
-        <input type="text" id="Adresse" name="Adresse" placeholder="Adresse" />*
-        <input type="text" id="Bopæl" name="Bopæl" placeholder="By" />*
+        @Html.TextBoxFor(m => m.Navn, new { @id="Navn", @placeholder = "Navn" })*        
+        @Html.ValidationMessageFor(model => model.Navn, "", new { @class = "text-danger" })
+
+        @Html.TextBoxFor(m => m.Adresse, new { @id="Adresse", @placeholder ="Adresse"})*
+        @Html.ValidationMessageFor(model => model.Adresse, "", new { @class = "text-danger" })
+
+        @Html.TextBoxFor(m => m.Bopæl, new { @id="Bopæl", @placeholder ="Bopæl"})*
+        @Html.ValidationMessageFor(model => model.Bopæl, "", new { @class = "text-danger" })
     </div>
     <br />
     <div>
-        <input type="text" id="Nationalitet" name="Nationalitet" placeholder="Nationalitet" />*
-        <input type="text" id="SprogKundskab" name="SprogKundskab" placeholder="Sprogkundskaber" />*
+        @Html.TextBoxFor(m => m.Nationalitet, new { @id = "Nationalitet", @placeholder = "Nationalitet" })*
+        @Html.ValidationMessageFor(model => model.Nationalitet, "", new { @class = "text-danger" })
+
+        @Html.TextBoxFor(m => m.SprogKundskab, new { @id = "SprogKundskab", @placeholder = "SprogKundskab" })*
+        @Html.ValidationMessageFor(model => model.SprogKundskab, "", new { @class = "text-danger" })
     </div>
     <br />
     <div>
-        <input type="text" id="Telefon" name="Telefon" placeholder="Telefonnummer" />*
-        <input type="text" id="Mail" name="Mail" placeholder="E-mail" />*
+
+        @Html.TextBoxFor(m => m.Telefon, new { @id = "Telefon", @placeholder = "Telefon" })*
+        @Html.ValidationMessageFor(model => model.Telefon, "", new { @class = "text-danger" })
+
+        @Html.TextBoxFor(m => m.Mail, new { @id = "Mail", @placeholder = "Mail" })*
+        @Html.ValidationMessageFor(model => model.Mail, "", new { @class = "text-danger" })
     </div>
     <br />
     <div>
-        <input type="text" id="Uddannelse" name="Uddannelse" placeholder="Uddannelse" />*
-        <input type="text" id="Periode" name="Periode" placeholder="Periode" />*
-        <input type="text" id="Semester" name="Semester" placeholder="Nuværende Semester" />*
+        @Html.TextBoxFor(m => m.Uddannelse, new { @id = "Uddannelse", @placeholder = "Uddannelse" })*
+        @Html.ValidationMessageFor(model => model.Uddannelse, "", new { @class = "text-danger" })
+
+        @Html.TextBoxFor(m => m.Periode, new { @id = "Periode", @placeholder = "Periode" })*
+        @Html.ValidationMessageFor(model => model.Periode, "", new { @class = "text-danger" })
+
+        @Html.TextBoxFor(m => m.Semester, new { @id = "Semester", @placeholder = "Nuværende Semester" })*
+        @Html.ValidationMessageFor(model => model.Semester, "", new { @class = "text-danger" })
     </div>
     <br />
     <div>
@@ -45,11 +62,12 @@
     </div>
     <div>
         @Html.TextAreaFor(m => m.Specialisering, new { @id = "Specialisering", @placeholder = "Skriv din Specialisering Her, ellers skriv 'Ingen'" })*
+        @Html.ValidationMessageFor(model => model.Specialisering, "", new { @class = "text-danger" })
 
     </div>
     <br />
     <div>
-        <input type="text" id="Overbygning" name="Overbygning" placeholder="Overbygning" />
+        @Html.TextBoxFor(m => m.Overbygning, new { @id = "Overbygning", @placeholder = "Overbygning" })
     </div>
     <br />
     <div>
@@ -63,11 +81,12 @@
 
     <br />
     <div>
-        <input type="text" id="OpgaveType" name="OpgaveType" placeholder="Opgavetype" />
+        @Html.TextBoxFor(m => m.OpgaveType, new { @id = "OpgaveType", @placeholder = "OpgaveType" })
+        
     </div>
     <br />
     <div>
-        <input type="text" id="StudieJob" name="StudieJob" placeholder="Studiejob" />
+        @Html.TextBoxFor(m => m.StudieJob, new { @id = "StudieJob", @placeholder = "StudieJob" })
     </div>
     <br />
     <div>
