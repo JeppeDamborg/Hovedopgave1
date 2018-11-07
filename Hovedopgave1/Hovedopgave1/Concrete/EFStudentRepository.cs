@@ -23,5 +23,16 @@ namespace Hovedopgave1.Concrete
             }
             context.SaveChanges();
         }
+
+        public Students SletStudent(int id)
+        {
+            Students dbEntry = context.Students.Find(id);
+            if (dbEntry != null)
+            {
+                context.Students.Remove(dbEntry);
+                context.SaveChanges();
+            }
+            return dbEntry;
+        }
     }
 }

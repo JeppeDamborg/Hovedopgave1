@@ -54,7 +54,7 @@ namespace Hovedopgave1.Controllers
                 return View(students);
             }
         }
-
+        
         public ActionResult StudentListe()
         {
             var studentliste = new List<Students>
@@ -63,6 +63,18 @@ namespace Hovedopgave1.Controllers
             };
 
             return View(srepository.Students);
+        }
+        [HttpPost]
+
+        public ActionResult StudentListe(int id)
+        {
+            Students students = srepository.SletStudent(id);
+            if(students != null)
+            {
+                TempData["message"] = string.Format("{0} was deleted", students.Id);
+                
+            }
+            return RedirectToAction("Forside");
         }
 
         public ActionResult OpretVirksomhed()
