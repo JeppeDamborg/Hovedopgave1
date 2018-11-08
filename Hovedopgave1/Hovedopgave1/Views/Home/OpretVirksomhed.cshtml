@@ -14,18 +14,22 @@
 <body>
     @using (Html.BeginForm("OpretVirksomhed", "Home", FormMethod.Post))
     {
-        <div>
-            @Html.TextBoxFor(m => m.Navn, new { @id = "Navn", @placeholder = "Navn" })*
+    <div>
+        @Html.TextBoxFor(m => m.Navn, new { @id = "Navn", @placeholder = "Navn" })*
+        @Html.ValidationMessageFor(model => model.Navn, "", new { @class = "text-danger" })
 
-            @Html.TextBoxFor(m => m.KontaktPerson, new { @id = "KontaktPerson", @placeholder = "KontaktPerson" })*
+        @Html.TextBoxFor(m => m.KontaktPerson, new { @id = "KontaktPerson", @placeholder = "KontaktPerson" })*
+        @Html.ValidationMessageFor(model => model.KontaktPerson, "", new { @class = "text-danger" })
 
-        </div>
+    </div>
         <br />
 
         <div>
             @Html.TextBoxFor(m => m.Telefon, new { @id = "Telefon", @placeholder = "Telefon" })*
+            @Html.ValidationMessageFor(model => model.Telefon, "", new { @class = "text-danger" })
 
             @Html.TextBoxFor(m => m.Mail, new { @id = "Mail", @placeholder = "Mail" })*
+            @Html.ValidationMessageFor(model => model.Mail, "", new { @class = "text-danger" })
 
         </div>
         <br />
@@ -34,9 +38,11 @@
             <pre>Virksomhedsinfo       Mulige Opgaver</pre>
         </div>
         <div>
-            @Html.TextAreaFor(m => m.VirksomhedsInfo, new { @id = "VirksomhedsInfo", @placeholder = "Skriv VirksomhedsInfo" })*
+            @Html.TextAreaFor(m => m.VirksomhedsInfo, new { @id = "VirksomhedsInfo", @placeholder = "Skriv VirksomhedsInfo" })
+           
 
             @Html.TextAreaFor(m => m.MuligeOpgaver, new { @id = "MuligeOpgaver", @placeholder = "Skriv MuligeOpgaver" })*
+            @Html.ValidationMessageFor(model => model.MuligeOpgaver, "", new { @class = "text-danger" })
         </div>
         <br />
         <div>
@@ -44,14 +50,17 @@
         </div>
         <div>
             @Html.TextAreaFor(m => m.Profiler, new { @id = "Profiler", @placeholder = "Skriv Profiler" })*
+            @Html.ValidationMessageFor(model => model.Profiler, "", new { @class = "text-danger" })
         </div>
         <br />
         <div>
-            @Html.TextBoxFor(m => m.OpgaveLøsning, new { @id = "OpgaveLøsning", @placeholder = "OpgaveLøsning" })*
+            @Html.TextBoxFor(m => m.OpgaveLøsning, new { @id = "OpgaveLøsning", @placeholder = "OpgaveLøsning" })
+            
         </div>
         <br />
         <div>
             @Html.TextBoxFor(m => m.Styrkeposition, new { @id = "Styrkeposition", @placeholder = "Styrkeposition" })*
+            @Html.ValidationMessageFor(model => model.Styrkeposition, "", new { @class = "text-danger" })
 
 
         </div>
