@@ -12,6 +12,7 @@ namespace Hovedopgave1.Abstract
 
         void OpretVirksomhed(Virksomhed virksomhed);
 
+        void RedigerVirksomhed(Virksomhed virksomhed);
         Virksomhed SletVirksomhed(int id);
     }
 }

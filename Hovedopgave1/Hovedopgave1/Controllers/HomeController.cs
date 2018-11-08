@@ -158,10 +158,25 @@ namespace Hovedopgave1.Controllers
                 return View(students);
             }
         }
-
-        public ActionResult RedigerVirksomhed()
+        [HttpGet]
+        public ActionResult RedigerVirksomhed(int id)
         {
-            return View();
+            var st2 = vrespository.Virksomhed.Where(s => s.Id == id).FirstOrDefault();
+            return View(st2);
+        }
+        [HttpPost]
+        public ActionResult RedigerVirksomhed(Virksomhed virksomhed)
+        {
+            if (ModelState.IsValid)
+            {
+                vrespository.RedigerVirksomhed(virksomhed);
+                TempData["message"] = string.Format("{0} has been updated", virksomhed.Id);
+                return RedirectToAction("VirksomhedRedigeret");
+            }
+            else
+            {
+                return View(virksomhed);
+            }
         }
 
         public ActionResult RedigerTilføjer()
