@@ -317,6 +317,7 @@
     <Content Include="Views\Home\StudentRedigeret.cshtml" />
     <Content Include="Views\Home\VirksomhedOprettet.cshtml" />
     <Content Include="Views\Home\VirksomhedRedigeret.cshtml" />
+    <Content Include="Views\Home\BrugerOprettet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
