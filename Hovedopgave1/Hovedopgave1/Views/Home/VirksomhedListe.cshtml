@@ -50,8 +50,15 @@
                 <td>@Html.DisplayFor(models => s.OpgaveLøsning)</td>
                 <td>@Html.DisplayFor(models => s.Styrkeposition)</td>
 
-                <td>@Html.ActionLink("Rediger", "RedigerStudent", "Home", null, new { @class = "btn btn-primary" })</td>
-                <td><input type="submit" class="btn btn-primary" value="Slet" /></td>
+                <td>@Html.ActionLink("Rediger", "RedigerVirksomhed", "Home", new {id = s.Id }, new { @class = "btn btn-primary" })</td>
+
+                <td>
+                @using (Html.BeginForm("VirksomhedListe", "Home"))
+                {
+                    @Html.Hidden("Id", s.Id)
+                <input type="submit" class="btn btn-primary" value="Slet" />
+                }
+                </td>
 
             </tr>
         }
