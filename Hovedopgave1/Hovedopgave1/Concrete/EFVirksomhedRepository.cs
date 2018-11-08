@@ -24,5 +24,16 @@ namespace Hovedopgave1.Concrete
             }
             context.SaveChanges();
         }
+
+        public Virksomhed SletVirksomhed(int id)
+        {
+            Virksomhed dbvirksomhed = context.Virksomhed.Find(id);
+            if(dbvirksomhed != null)
+            {
+                context.Virksomhed.Remove(dbvirksomhed);
+                context.SaveChanges();
+            }
+            return dbvirksomhed;
+        }
     }
 }

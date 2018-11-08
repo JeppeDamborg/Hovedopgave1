@@ -102,6 +102,17 @@ namespace Hovedopgave1.Controllers
             return View(vrespository.Virksomhed);
         }
 
+        [HttpPost]
+        public ActionResult VirksomhedListe(int id)
+        {
+            Virksomhed virksomhed = vrespository.SletVirksomhed(id);
+            if(virksomhed != null)
+            {
+                TempData["message"] = string.Format("{0} has been deleted", virksomhed.Id);
+            }
+            return RedirectToAction("Forside");
+        }
+
         public ActionResult OpretTilføjer()
         {
             return View();

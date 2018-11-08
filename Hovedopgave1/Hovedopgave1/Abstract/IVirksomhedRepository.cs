@@ -11,5 +11,7 @@ namespace Hovedopgave1.Abstract
         IEnumerable<Virksomhed> Virksomhed { get; }
 
         void OpretVirksomhed(Virksomhed virksomhed);
+
+        Virksomhed SletVirksomhed(int id);
     }
 }
