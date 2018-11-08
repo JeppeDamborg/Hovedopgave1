@@ -17,6 +17,7 @@ namespace Hovedopgave1.Models
         [Required(ErrorMessage = "Du skal skrive telefonnummeret ned")]
         public string Telefon { get; set; }
         [Required(ErrorMessage = "Du skal have email med")]
+        [EmailAddress(ErrorMessage = "Ugyldigt Email Addresse")]
         public string Mail { get; set; }
 
         public string VirksomhedsInfo { get; set; }

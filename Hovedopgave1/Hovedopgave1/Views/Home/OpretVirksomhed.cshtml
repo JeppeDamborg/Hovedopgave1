@@ -35,13 +35,13 @@
         <br />
 
         <div>
-            <pre>Virksomhedsinfo       Mulige Opgaver</pre>
+            <pre>Virksomhedsinfo              Mulige Opgaver*</pre>
         </div>
         <div>
             @Html.TextAreaFor(m => m.VirksomhedsInfo, new { @id = "VirksomhedsInfo", @placeholder = "Skriv VirksomhedsInfo" })
            
 
-            @Html.TextAreaFor(m => m.MuligeOpgaver, new { @id = "MuligeOpgaver", @placeholder = "Skriv MuligeOpgaver" })*
+            @Html.TextAreaFor(m => m.MuligeOpgaver, new { @id = "MuligeOpgaver", @placeholder = "Skriv MuligeOpgaver" })
             @Html.ValidationMessageFor(model => model.MuligeOpgaver, "", new { @class = "text-danger" })
         </div>
         <br />

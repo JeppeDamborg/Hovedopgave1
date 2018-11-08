@@ -23,6 +23,7 @@ namespace Hovedopgave1.Models
         [Required(ErrorMessage = "Du skal skrive dit telefonnummer")]
         public string Telefon { get; set; }
         [Required(ErrorMessage = "Du skal skrive din mail")]
+        [EmailAddress(ErrorMessage = "Ugyldigt Email Addresse")]
         public string Mail { get; set; }
         [Required(ErrorMessage = "Du skal skrive din uddannelse")]
         public string Uddannelse { get; set; }
