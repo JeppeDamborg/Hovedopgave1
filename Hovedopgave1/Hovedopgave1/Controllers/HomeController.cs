@@ -134,7 +134,7 @@ namespace Hovedopgave1.Controllers
             {
                 brepository.OpretBruger(bruger);
                 TempData["message"] = string.Format("{0} has been created", bruger.Id);
-                return RedirectToAction("Forside");
+                return RedirectToAction("BrugerOprettet");
             }
             else
             {
