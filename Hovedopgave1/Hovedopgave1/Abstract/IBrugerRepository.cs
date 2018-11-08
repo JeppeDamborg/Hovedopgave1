@@ -11,5 +11,7 @@ namespace Hovedopgave1.Abstract
     {
         IEnumerable<Bruger> Bruger { get; }
 
+        void OpretBruger(Bruger bruger);
+
     }
 }

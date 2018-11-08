@@ -15,5 +15,14 @@ namespace Hovedopgave1.Concrete
         {
             get { return context.Bruger; }
         }
+
+        public void OpretBruger(Bruger bruger)
+        {
+            if (bruger.Id == 0)
+            {
+                context.Bruger.Add(bruger);
+            }
+            context.SaveChanges();
+        }
     }
 }

@@ -127,6 +127,20 @@ namespace Hovedopgave1.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult OpretBruger(Bruger bruger)
+        {
+            if (ModelState.IsValid)
+            {
+                brepository.OpretBruger(bruger);
+                TempData["message"] = string.Format("{0} has been created", bruger.Id);
+                return RedirectToAction("Forside");
+            }
+            else
+            {
+                return View (bruger);
+            }
+        }
 
         public ActionResult BrugerListe()
         {
