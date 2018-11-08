@@ -81,6 +81,22 @@ namespace Hovedopgave1.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult OpretVirksomhed(Virksomhed virksomhed)
+        {
+            if (ModelState.IsValid)
+            {
+                vrespository.OpretVirksomhed(virksomhed);
+                TempData["message"] = string.Format("{0} has been created", virksomhed.Id);
+                return RedirectToAction("VirksomhedOprettet");
+            }
+            else
+            {
+                return View(virksomhed);
+            }
+            
+        }
+
         public ActionResult VirksomhedListe()
         {
             return View(vrespository.Virksomhed);

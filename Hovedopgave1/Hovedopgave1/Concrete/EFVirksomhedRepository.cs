@@ -15,5 +15,14 @@ namespace Hovedopgave1.Concrete
 
             get { return context.Virksomhed; }
         }
+
+        public void OpretVirksomhed(Virksomhed virksomhed)
+        {
+           if (virksomhed.Id == 0)
+            {
+                context.Virksomhed.Add(virksomhed);
+            }
+            context.SaveChanges();
+        }
     }
 }

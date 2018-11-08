@@ -9,5 +9,7 @@ namespace Hovedopgave1.Abstract
     public interface IVirksomhedRepository
     {
         IEnumerable<Virksomhed> Virksomhed { get; }
+
+        void OpretVirksomhed(Virksomhed virksomhed);
     }
 }
