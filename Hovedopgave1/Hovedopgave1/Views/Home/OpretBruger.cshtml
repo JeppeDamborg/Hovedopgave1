@@ -1,4 +1,4 @@
-﻿
+﻿@model Hovedopgave1.Models.Bruger
 @{
     Layout = null;
 }
@@ -12,20 +12,26 @@
     <link rel="stylesheet" href="~/Content/bootstrap.css" />
 </head>
 <body>
-    <div> 
-        <input type="text" id="Brugernavn" name="Brugernavn" placeholder="Brugernavn" />
+    @using (Html.BeginForm("OpretBruger", "Home", FormMethod.Post))
+    {
+    <div>
+        @Html.TextBoxFor(m => m.Brugernavn, new { @id = "Brugernavn", @placeholder = "Brugernavn" })*
+        @Html.ValidationMessageFor(model => model.Brugernavn, "", new { @class = "text-danger" })
     </div>
 
     <div>
-        <input type="text" id="Password" name="Password" placeholder="Password" />
+        @Html.TextBoxFor(m => m.Password, new { @id = "Password", @placeholder = "Password" })*
+        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
     </div>
 
     <div>
-        <input type="text" id="Brugertype" name="Brugertype" placeholder="Bruger type" />
+        @Html.TextBoxFor(m => m.Rettighed, new { @id = "Rettighed", @placeholder = "Rettighed" })*
+        @Html.ValidationMessageFor(model => model.Rettighed, "", new { @class = "text-danger" })
     </div>
 
     <div>
         <input type="submit" id="Opretbruger" value="Opret Bruger" />
     </div>
+    }
 </body>
 </html>
