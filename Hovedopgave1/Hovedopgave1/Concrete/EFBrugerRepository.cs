@@ -24,5 +24,16 @@ namespace Hovedopgave1.Concrete
             }
             context.SaveChanges();
         }
+
+        public Bruger SletBruger(int brugerid)
+        {
+            Bruger dbEntry = context.Bruger.Find(brugerid);
+            if (dbEntry != null)
+            {
+                context.Bruger.Remove(dbEntry);
+                context.SaveChanges();
+            }
+            return dbEntry;
+        }
     }
 }

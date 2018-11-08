@@ -13,5 +13,7 @@ namespace Hovedopgave1.Abstract
 
         void OpretBruger(Bruger bruger);
 
+        Bruger SletBruger(int brugerid);
+
     }
 }

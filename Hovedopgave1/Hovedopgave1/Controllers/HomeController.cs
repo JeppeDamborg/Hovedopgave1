@@ -146,6 +146,16 @@ namespace Hovedopgave1.Controllers
         {
             return View(brepository.Bruger);
         }
+        [HttpPost]
+        public ActionResult BrugerListe(int id)
+        {
+            Bruger bruger = brepository.SletBruger(id);
+            if (bruger != null)
+            {
+                TempData["message"] = string.Format("{0} has been deleted", bruger.Id);
+            }
+            return RedirectToAction("Forside");
+        }
 
         public ActionResult UdløbetStudentListe()
         {
@@ -225,6 +235,9 @@ namespace Hovedopgave1.Controllers
         {
             return View();
         }
+
+
+
 
 
 
