@@ -25,6 +25,18 @@ namespace Hovedopgave1.Concrete
             context.SaveChanges();
         }
 
+        public void RedigerBruger(Bruger bruger)
+        {
+            Bruger dbbruger = context.Bruger.Find(bruger.Id);
+            if(dbbruger != null)
+            {
+                dbbruger.Brugernavn = bruger.Brugernavn;
+                dbbruger.Password = bruger.Password;
+                dbbruger.Rettighed = bruger.Rettighed;
+            }
+            context.SaveChanges();
+        }
+
         public Bruger SletBruger(int brugerid)
         {
             Bruger dbEntry = context.Bruger.Find(brugerid);

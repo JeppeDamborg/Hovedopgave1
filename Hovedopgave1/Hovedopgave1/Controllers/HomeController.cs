@@ -207,10 +207,26 @@ namespace Hovedopgave1.Controllers
         {
             return View();
         }
-
-        public ActionResult RedigerBruger()
+        [HttpGet]
+        public ActionResult RedigerBruger(int id)
         {
-            return View();
+            var b1 = brepository.Bruger.Where(s => s.Id == id).FirstOrDefault();
+            return View(b1);
+        }
+
+        [HttpPost]
+        public ActionResult RedigerBruger(Bruger bruger)
+        {
+            if (ModelState.IsValid)
+            {
+                brepository.RedigerBruger(bruger);
+                TempData["message"] = string.Format("{0} has been updated", bruger.Id);
+                return RedirectToAction("BrugerRedigeret");
+            }
+            else
+            {
+                return View(bruger);
+            }
         }
 
         public ActionResult StudentOprettet()
@@ -235,7 +251,10 @@ namespace Hovedopgave1.Controllers
         {
             return View();
         }
-
+        public ActionResult BrugerRedigeret()
+        {
+            return View();
+        }
 
 
 
