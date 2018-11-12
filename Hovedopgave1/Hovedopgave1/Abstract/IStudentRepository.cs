@@ -17,6 +17,6 @@ namespace Hovedopgave1.Abstract
 
         void RedigerStudent(Students students);
 
-        void SøgStudentPåNavn(string navn);
+        List<Students> SøgStudentPåNavn(string navn);
     }
 }
