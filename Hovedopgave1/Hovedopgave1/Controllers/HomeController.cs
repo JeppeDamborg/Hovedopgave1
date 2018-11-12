@@ -57,10 +57,7 @@ namespace Hovedopgave1.Controllers
         
         public ActionResult StudentListe()
         {
-            var studentliste = new List<Students>
-            {
-                new Students(){Navn="Tom Hansen", Adresse="Kongevej 3", Bopæl="Skjern", Nationalitet="Dansk", SprogKundskab="Dansk og Engelsk", Telefon="30582749", Mail="Tom25@gmail.com", Uddannelse="Finans", Periode="14.august 2017 - 22.januar 2020", Semester="3.semester aug-dec", Specialisering="Bolig Økonomi", Overbygning="Ingen", SemesterProjekt="Ingen", Praktik="Ingen", Hovedopgave="Ingen", OpgaveType="Ingen", StudieJob="Ingen", Transport=true, DatoForOprettelse=DateTime.Now  }
-            };
+           
 
             return View(srepository.Students);
         }
@@ -252,6 +249,12 @@ namespace Hovedopgave1.Controllers
             return View();
         }
         public ActionResult BrugerRedigeret()
+        {
+            return View();
+        }
+        [HttpPost]
+        
+        public ActionResult SøgPåStudentNavn(string navn)
         {
             return View();
         }

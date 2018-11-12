@@ -21,8 +21,11 @@
 </head>
 <body>
     <div> 
-        <input type="text" placeholder="Søg" />
+        @using (Html.BeginForm("SøgPåStudentNavn", "Home"))
+        {
+        <input type="text" placeholder="Søg på Navn" />
         <input type="submit" value="Søg" />
+        }
     </div>
     <table class="table">
         <tr>
