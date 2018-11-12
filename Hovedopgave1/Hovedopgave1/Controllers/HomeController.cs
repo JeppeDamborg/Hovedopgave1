@@ -73,6 +73,17 @@ namespace Hovedopgave1.Controllers
             }
             return RedirectToAction("Forside");
         }
+        public ActionResult StudentDelete(int id)
+        {
+            Students students = srepository.SletStudent(id);
+            if (students != null)
+            {
+                TempData["message"] = string.Format("{0} was deleted", students.Id);
+
+            }
+            return RedirectToAction("Forside");
+        }
+
 
         public ActionResult OpretVirksomhed()
         {

@@ -76,12 +76,8 @@
 
             <td>@Html.ActionLink("Rediger", "RedigerStudent", "Home", new {id = item.Id }, new { @class = "btn btn-primary" })</td>
             <td>
-                @using (Html.BeginForm("StudentListe", "Home"))
-                {
-                    @Html.Hidden("Id", item.Id)
 
-                    <input type="submit" class="btn btn-primary" value="Slet" />
-                }
+                @Html.ActionLink("Slet", "StudentDelete", new { id = item.Id}, new { @class = "btn btn-primary" })
             </td>
 
         </tr>
