@@ -63,15 +63,11 @@ namespace Hovedopgave1.Controllers
         }
         [HttpPost]
 
-        public ActionResult StudentListe(int id)
+        public ActionResult StudentListe(string navn)
         {
-            Students students = srepository.SletStudent(id);
-            if(students != null)
-            {
-                TempData["message"] = string.Format("{0} was deleted", students.Id);
-                
-            }
-            return RedirectToAction("Forside");
+            srepository.SøgStudentPåNavn(navn);
+            
+            return View();
         }
         public ActionResult StudentDelete(int id)
         {

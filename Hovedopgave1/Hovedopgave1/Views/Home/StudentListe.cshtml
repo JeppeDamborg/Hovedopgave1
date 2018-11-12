@@ -21,9 +21,9 @@
 </head>
 <body>
     <div> 
-        @using (Html.BeginForm("SøgPåStudentNavn", "Home"))
+        @using (Html.BeginForm("StudentListe", "Home"))
         {
-        <input type="text" placeholder="Søg på Navn" />
+        <input type="text" placeholder="Søg på Navn" name="Navn" />
         <input type="submit" value="Søg" />
         }
     </div>

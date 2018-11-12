@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using Hovedopgave1.Abstract;
@@ -59,6 +60,15 @@ namespace Hovedopgave1.Concrete
                 context.SaveChanges();
             }
             return dbEntry;
+        }
+
+        public void SøgStudentPåNavn(string navn)
+        {
+            using(var dbcontext = new EFDbContext())
+            {
+                var søgstudent = dbcontext.Students.SqlQuery("Select * from Students where Navn=@navn", new SqlParameter("@navn", navn)).ToList<Students>();
+            }
+            
         }
     }
 }
