@@ -252,12 +252,7 @@ namespace Hovedopgave1.Controllers
         {
             return View();
         }
-        [HttpPost]
-        
-        public ActionResult SøgPåStudentNavn(string navn)
-        {
-            return View();
-        }
+      
 
 
 
