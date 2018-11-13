@@ -62,6 +62,17 @@ namespace Hovedopgave1.Concrete
             return dbEntry;
         }
 
+        public List<Students> SøgPåStudentUddannelse(string uddannelse)
+        {
+            List<Students> studentlist;
+            using(var dbcontext = new EFDbContext())
+            {
+                var søgstudent = dbcontext.Students.SqlQuery("Select * from Students where Uddannelse LIKE @uddannelse", new SqlParameter("@uddannelse", '%' + uddannelse + '%')).ToList<Students>();
+                studentlist = søgstudent;
+            }
+            return studentlist;
+        }
+
         public List<Students> SøgStudentPåNavn(string navn)
         {
             List<Students> studentlist;
