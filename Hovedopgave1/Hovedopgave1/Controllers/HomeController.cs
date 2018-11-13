@@ -63,7 +63,7 @@ namespace Hovedopgave1.Controllers
         }
         [HttpPost]
 
-        public ActionResult StudentListe(string navn, string uddannelse, string semester)
+        public ActionResult StudentListe(string navn, string uddannelse, string semester, string emne)
         {
             List<Students> studentlist = new List<Students>();
             if (ModelState.IsValid)
@@ -80,6 +80,10 @@ namespace Hovedopgave1.Controllers
                 if(semester != "")
                 {
                     studentlist = srepository.SøgPåStudentSemester(semester);
+                }
+                if(emne != "")
+                {
+                    studentlist = srepository.SøgPåStudentSPHOP(emne);
                 }
               
                 return View(studentlist);
