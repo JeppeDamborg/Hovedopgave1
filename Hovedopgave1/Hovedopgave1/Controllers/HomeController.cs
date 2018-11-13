@@ -69,11 +69,11 @@ namespace Hovedopgave1.Controllers
             if (ModelState.IsValid)
             {
                
-                if (navn != null)
+                if (navn != "")
                 {
                     studentlist = srepository.SøgStudentPåNavn(navn);
                 }
-                if(uddannelse != null) {
+                if(uddannelse != "") {
                     studentlist = srepository.SøgPåStudentUddannelse(uddannelse);
                 }
               
