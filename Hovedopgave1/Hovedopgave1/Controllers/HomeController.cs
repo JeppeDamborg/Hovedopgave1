@@ -65,14 +65,18 @@ namespace Hovedopgave1.Controllers
 
         public ActionResult StudentListe(string navn, string uddannelse)
         {
+            List<Students> studentlist = new List<Students>();
             if (ModelState.IsValid)
             {
-                List<Students> studentlist = srepository.SøgStudentPåNavn(navn);
-                if (navn == null && uddannelse != null)
+               
+                if (navn != null)
                 {
-                    studentlist = srepository.SøgPåStudentUddannelse(uddannelse);
-                    return View(studentlist);
+                    studentlist = srepository.SøgStudentPåNavn(navn);
                 }
+                if(uddannelse != null) {
+                    studentlist = srepository.SøgPåStudentUddannelse(uddannelse);
+                }
+              
                 return View(studentlist);
             }
             else
