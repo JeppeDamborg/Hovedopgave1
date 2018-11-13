@@ -20,12 +20,13 @@
     </style>
 </head>
 <body>
-    <div> 
+    <div>
         @using (Html.BeginForm("StudentListe", "Home"))
         {
-        <input type="text" placeholder="Søg på Navn" name="Navn" />
-        <input type="text" placeholder="Søg på Uddannelse" name="Uddannelse" />
-        <input type="submit" value="Søg" />
+            <input type="text" placeholder="Søg på Navn" name="Navn" />
+            <input type="text" placeholder="Søg på Uddannelse" name="Uddannelse" />
+            <input type="text" placeholder="Søg på Semester" name="Semester" />
+            <input type="submit" value="Søg" />
         }
     </div>
     <table class="table">
