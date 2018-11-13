@@ -62,6 +62,17 @@ namespace Hovedopgave1.Concrete
             return dbEntry;
         }
 
+        public List<Students> SøgPåStudentSemester(string semester)
+        {
+            List<Students> studentlist;
+            using (var dbcontext = new EFDbContext())
+            {
+                var søgstudent = dbcontext.Students.SqlQuery("Select * from Students where Semester Like @semester", new SqlParameter("@semester", '%' + semester + '%')).ToList<Students>();
+                studentlist = søgstudent;
+            }
+            return studentlist;
+        }
+
         public List<Students> SøgPåStudentUddannelse(string uddannelse)
         {
             List<Students> studentlist;
@@ -72,6 +83,7 @@ namespace Hovedopgave1.Concrete
             }
             return studentlist;
         }
+
 
         public List<Students> SøgStudentPåNavn(string navn)
         {
@@ -84,5 +96,7 @@ namespace Hovedopgave1.Concrete
             return studentlist;
             
         }
+
+
     }
 }

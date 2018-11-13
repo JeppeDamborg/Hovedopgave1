@@ -20,5 +20,7 @@ namespace Hovedopgave1.Abstract
         List<Students> SøgStudentPåNavn(string navn);
 
         List<Students> SøgPåStudentUddannelse(string uddannelse);
+
+        List<Students> SøgPåStudentSemester(string semester);
     }
 }
