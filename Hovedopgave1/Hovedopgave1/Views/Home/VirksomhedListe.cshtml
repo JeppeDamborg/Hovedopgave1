@@ -53,11 +53,8 @@
                 <td>@Html.ActionLink("Rediger", "RedigerVirksomhed", "Home", new {id = s.Id }, new { @class = "btn btn-primary" })</td>
 
                 <td>
-                @using (Html.BeginForm("VirksomhedListe", "Home"))
-                {
-                    @Html.Hidden("Id", s.Id)
-                <input type="submit" class="btn btn-primary" value="Slet" />
-                }
+
+                    @Html.ActionLink("Slet", "VirksomhedDelete", new { id = s.Id}, new { @class = "btn btn-primary" })
                 </td>
 
             </tr>

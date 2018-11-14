@@ -141,6 +141,16 @@ namespace Hovedopgave1.Controllers
             return RedirectToAction("Forside");
         }
 
+        public ActionResult VirksomhedDelete (int id)
+        {
+            Virksomhed virksomhed = vrespository.SletVirksomhed(id);
+            if (virksomhed != null)
+            {
+                TempData["message"] = string.Format("{0} has been deleted", virksomhed.Id);
+            }
+            return RedirectToAction("Forside");
+        }
+
         public ActionResult OpretTilføjer()
         {
             return View();
