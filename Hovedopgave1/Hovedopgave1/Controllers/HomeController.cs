@@ -98,6 +98,10 @@ namespace Hovedopgave1.Controllers
                 {
                     studentlist = srepository.SøgPåStudentSPHOP(emne);
                 }
+                if(navn != "" && emne != "")
+                {
+                    studentlist = srepository.SøgStudentPåNavnOgSPHOP(navn, emne);
+                }
               
                 return View(studentlist);
             }

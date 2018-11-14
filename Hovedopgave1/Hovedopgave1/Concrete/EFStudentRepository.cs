@@ -123,6 +123,21 @@ namespace Hovedopgave1.Concrete
             return studentlist;
         }
 
+        public List<Students> SøgStudentPåNavnOgSPHOP(string navn, string emne)
+        {
+            List<Students> studentlist;
+            using(var dbcontext = new EFDbContext())
+            {
+                string query = "Select * from Students where Navn Like @navn AND SemesterProjekt Like @emne Or Praktik Like @emne OR Hovedopgave Like @emne";
+                SqlParameter sql1 = new SqlParameter("@navn", '%' + navn + '%');
+                SqlParameter sql2 = new SqlParameter("@emne", '%' + emne + '%');
+                object[] parameter = new object[] { sql1, sql2 };
+                var søgstudent = dbcontext.Students.SqlQuery(query, parameter).ToList<Students>();
+                studentlist = søgstudent;
+            }
+            return studentlist;
+        }
+
         public List<Students> SøgStudentPåNavnOgUdannelse(string navn, string uddannelse)
         {
             List<Students> studentlist;
