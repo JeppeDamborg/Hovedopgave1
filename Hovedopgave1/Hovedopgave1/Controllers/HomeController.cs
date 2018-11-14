@@ -179,6 +179,10 @@ namespace Hovedopgave1.Controllers
                 {
                     virksomhedslist = vrespository.SøgVirksomhedPåStyrkeposition(position);
                 }
+                if(opgave != "" && position != "")
+                {
+                    virksomhedslist = vrespository.SøgVirksomhedPåOpgaverOgPosition(opgave, position);
+                }
                 
 
                 return View(virksomhedslist);
