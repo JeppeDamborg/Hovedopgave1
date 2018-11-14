@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using Hovedopgave1.Abstract;
@@ -53,6 +54,17 @@ namespace Hovedopgave1.Concrete
                 context.SaveChanges();
             }
             return dbvirksomhed;
+        }
+
+        public List<Virksomhed> SøgVirksomhedPåNavn(string navn)
+        {
+            List<Virksomhed> virksomhedsliste;
+            using(var dbcontext = new EFDbContext())
+            {
+                var søgvirksomhed = dbcontext.Virksomhed.SqlQuery("Select * from Virksomheds where Navn LIKE @navn", new SqlParameter("@navn", '%' + navn + '%')).ToList<Virksomhed>();
+                virksomhedsliste = søgvirksomhed;
+            }
+            return virksomhedsliste;
         }
     }
 }

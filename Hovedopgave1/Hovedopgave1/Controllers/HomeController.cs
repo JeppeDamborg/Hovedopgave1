@@ -131,14 +131,23 @@ namespace Hovedopgave1.Controllers
         }
 
         [HttpPost]
-        public ActionResult VirksomhedListe(int id)
+        public ActionResult VirksomhedListe(string navn)
         {
-            Virksomhed virksomhed = vrespository.SletVirksomhed(id);
-            if(virksomhed != null)
+            List<Virksomhed> virksomhedslist = new List<Virksomhed>();
+            if (ModelState.IsValid)
             {
-                TempData["message"] = string.Format("{0} has been deleted", virksomhed.Id);
+                
+                
+                    virksomhedslist = vrespository.SøgVirksomhedPåNavn(navn);
+                
+
+                return View(virksomhedslist);
             }
-            return RedirectToAction("Forside");
+            else
+            {
+                return View();
+            }
+
         }
 
         public ActionResult VirksomhedDelete (int id)

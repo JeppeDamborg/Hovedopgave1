@@ -19,10 +19,15 @@
     </style>
 </head>
 <body>
+   
     <div>
-        <input type="text" placeholder="Søg" />
-        <input type="submit" value="Søg" />
-    </div>
+        @using (Html.BeginForm("VirksomhedListe", "Home"))
+        {
+            <input type="text" placeholder="Søg på Navn" name="Navn" />
+            <input type="submit" value="Søg" />
+        }
+        </div>
+   
     <table class="table">
         <tr>
             <th>@Html.DisplayNameFor(model => model.Navn)</th>

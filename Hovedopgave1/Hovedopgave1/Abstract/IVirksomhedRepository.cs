@@ -14,5 +14,7 @@ namespace Hovedopgave1.Abstract
 
         void RedigerVirksomhed(Virksomhed virksomhed);
         Virksomhed SletVirksomhed(int id);
+
+        List<Virksomhed> SøgVirksomhedPåNavn(string navn);
     }
 }
