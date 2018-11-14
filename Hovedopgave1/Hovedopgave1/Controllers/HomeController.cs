@@ -76,6 +76,10 @@ namespace Hovedopgave1.Controllers
                 if(uddannelse != "") {
                     studentlist = srepository.SøgPåStudentUddannelse(uddannelse);
                 }
+                if(navn != "" && uddannelse != "")
+                {
+                    studentlist = srepository.SøgStudentPåNavnOgUdannelse(navn, uddannelse);
+                }
 
                 if(semester != "")
                 {
