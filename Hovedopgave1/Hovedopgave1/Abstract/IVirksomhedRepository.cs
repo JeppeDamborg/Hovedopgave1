@@ -16,5 +16,7 @@ namespace Hovedopgave1.Abstract
         Virksomhed SletVirksomhed(int id);
 
         List<Virksomhed> SøgVirksomhedPåNavn(string navn);
+
+        List<Virksomhed> SøgVirksomhedPåMuligeOpgaver(string opgave);
     }
 }

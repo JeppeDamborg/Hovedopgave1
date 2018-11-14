@@ -131,14 +131,20 @@ namespace Hovedopgave1.Controllers
         }
 
         [HttpPost]
-        public ActionResult VirksomhedListe(string navn)
+        public ActionResult VirksomhedListe(string navn, string opgave)
         {
             List<Virksomhed> virksomhedslist = new List<Virksomhed>();
             if (ModelState.IsValid)
             {
                 
-                
+                if(navn != "")
+                {
                     virksomhedslist = vrespository.SøgVirksomhedPåNavn(navn);
+                }
+                if(opgave != "")
+                {
+                    virksomhedslist = vrespository.SøgVirksomhedPåMuligeOpgaver(opgave);
+                }    
                 
 
                 return View(virksomhedslist);

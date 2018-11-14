@@ -56,6 +56,17 @@ namespace Hovedopgave1.Concrete
             return dbvirksomhed;
         }
 
+        public List<Virksomhed> SøgVirksomhedPåMuligeOpgaver(string opgave)
+        {
+            List<Virksomhed> virksomhedsliste;
+            using(var dbcontext = new EFDbContext())
+            {
+                var søgvirksomhed = dbcontext.Virksomhed.SqlQuery("Select * from Virksomheds where MuligeOpgaver LIKE @opgave", new SqlParameter("@opgave", '%' + opgave + '%')).ToList<Virksomhed>();
+                virksomhedsliste = søgvirksomhed;
+            }
+            return virksomhedsliste;
+        }
+
         public List<Virksomhed> SøgVirksomhedPåNavn(string navn)
         {
             List<Virksomhed> virksomhedsliste;
@@ -66,5 +77,7 @@ namespace Hovedopgave1.Concrete
             }
             return virksomhedsliste;
         }
+
+
     }
 }
