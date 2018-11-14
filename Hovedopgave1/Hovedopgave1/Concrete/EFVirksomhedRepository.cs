@@ -93,6 +93,23 @@ namespace Hovedopgave1.Concrete
             return virksomhedsliste;
         }
 
+        public List<Virksomhed> SøgVirksomhedPåOpgaverOgProfilerOgPosition(string opgave, string profiler, string position)
+        {
+            List<Virksomhed> virksomhedsliste;
+            using(var dbcontext = new EFDbContext())
+            {
+                string query = "Select * from Virksomheds where MuligeOpgaver Like @opgave And Profiler Like @profiler And Styrkeposition Like @position";
+                SqlParameter sql1 = new SqlParameter("@opgave", '%' + opgave + '%');
+                SqlParameter sql2 = new SqlParameter("@profiler", '%' + profiler + '%');
+                SqlParameter sql3 = new SqlParameter("@position", '%' + position + '%');
+                object[] parameter = new object[] { sql1, sql2, sql3 };
+                var søgvirksomhed = dbcontext.Virksomhed.SqlQuery(query, parameter).ToList<Virksomhed>();
+                virksomhedsliste = søgvirksomhed;
+
+            }
+            return virksomhedsliste;
+        }
+
         public List<Virksomhed> SøgVirksomhedPåProfiler(string profiler)
         {
             List<Virksomhed> virksomhsliste;
