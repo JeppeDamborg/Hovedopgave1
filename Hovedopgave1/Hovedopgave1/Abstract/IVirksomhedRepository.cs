@@ -24,5 +24,7 @@ namespace Hovedopgave1.Abstract
         List<Virksomhed> SøgVirksomhedPåStyrkeposition(string position);
 
         List<Virksomhed> SøgVirksomhedPåOpgaverOgPosition(string opgave, string position);
+
+        List<Virksomhed> SøgVirksomhedPåProfilerOgPosition(string profiler, string position);
     }
 }
