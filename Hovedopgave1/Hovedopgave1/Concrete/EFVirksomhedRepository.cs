@@ -88,5 +88,16 @@ namespace Hovedopgave1.Concrete
             }
             return virksomhsliste;
         }
+
+        public List<Virksomhed> SøgVirksomhedPåStyrkeposition(string position)
+        {
+            List<Virksomhed> virksomhsliste;
+            using (var dbcontext = new EFDbContext())
+            {
+                var søgvirksomhed = dbcontext.Virksomhed.SqlQuery("Select * from Virksomheds where Styrkeposition Like @position", new SqlParameter("@position", '%' + position + '%')).ToList<Virksomhed>();
+                virksomhsliste = søgvirksomhed;
+            }
+            return virksomhsliste;
+        }
     }
 }
