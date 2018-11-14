@@ -25,6 +25,8 @@ namespace Hovedopgave1.Abstract
 
         List<Students> SøgPåStudentSemester(string semester);
 
+        List<Students> SøgStudentPåUddannelseOgSemester(string uddannelse, string semester);
+
         List<Students> SøgPåStudentSPHOP(string emne);
 
         List<Students> SøgStudentPåNavnOgSemester(string navn, string semester);

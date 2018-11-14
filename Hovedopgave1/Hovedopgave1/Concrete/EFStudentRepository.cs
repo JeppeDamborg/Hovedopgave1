@@ -113,7 +113,7 @@ namespace Hovedopgave1.Concrete
             List<Students> studentlist;
             using (var dbcontext = new EFDbContext())
             {
-                string query = "Select * from Students where Navn Like @navn Or Semester Like @semester";
+                string query = "Select * from Students where Navn Like @navn And Semester Like @semester";
                 SqlParameter sql1 = new SqlParameter("@navn", '%' + navn + '%');
                 SqlParameter sql2 = new SqlParameter("@semester", '%' + semester + '%');
                 object[] parameter = new object[] { sql1, sql2 };
@@ -128,9 +128,24 @@ namespace Hovedopgave1.Concrete
             List<Students> studentlist;
             using(var dbcontext = new EFDbContext())
             {
-                string query = "Select * from Students where Navn Like @navn Or Uddannelse Like @uddannelse";
+                string query = "Select * from Students where Navn Like @navn And Uddannelse Like @uddannelse";
                 SqlParameter sql1 = new SqlParameter("@navn", '%' + navn + '%');
                 SqlParameter sql2 = new SqlParameter("@uddannelse", '%' + uddannelse + '%');
+                object[] parameter = new object[] { sql1, sql2 };
+                var søgstudent = dbcontext.Students.SqlQuery(query, parameter).ToList<Students>();
+                studentlist = søgstudent;
+            }
+            return studentlist;
+        }
+
+        public List<Students> SøgStudentPåUddannelseOgSemester(string uddannelse, string semester)
+        {
+            List<Students> studentlist;
+            using(var dbcontext = new EFDbContext())
+            {
+                string query = "Select * from Students where Uddannelse Like @uddannelse And Semester Like @semester";
+                SqlParameter sql1 = new SqlParameter("@uddannelse", '%' + uddannelse + '%');
+                SqlParameter sql2 = new SqlParameter("@semester", '%' + semester + '%');
                 object[] parameter = new object[] { sql1, sql2 };
                 var søgstudent = dbcontext.Students.SqlQuery(query, parameter).ToList<Students>();
                 studentlist = søgstudent;
