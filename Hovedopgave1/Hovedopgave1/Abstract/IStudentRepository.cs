@@ -34,5 +34,7 @@ namespace Hovedopgave1.Abstract
         List<Students> SøgStudentPåNavnOgSPHOP(string navn, string emne);
 
         List<Students> SøgStudentPåUddannelseOgSPHOP(string uddannelse, string emne);
+
+        List<Students> SøgStudentPåSemesterOgSPHOP(string semester, string emne);
     }
 }
