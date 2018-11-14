@@ -106,6 +106,10 @@ namespace Hovedopgave1.Controllers
                 {
                     studentlist = srepository.SøgStudentPåUddannelseOgSPHOP(uddannelse, emne);
                 }
+                if(semester != "" && emne != "")
+                {
+                    studentlist = srepository.SøgStudentPåSemesterOgSPHOP(semester, emne);
+                }
               
                 return View(studentlist);
             }
