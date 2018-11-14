@@ -131,7 +131,7 @@ namespace Hovedopgave1.Controllers
         }
 
         [HttpPost]
-        public ActionResult VirksomhedListe(string navn, string opgave)
+        public ActionResult VirksomhedListe(string navn, string opgave, string profiler)
         {
             List<Virksomhed> virksomhedslist = new List<Virksomhed>();
             if (ModelState.IsValid)
@@ -145,6 +145,10 @@ namespace Hovedopgave1.Controllers
                 {
                     virksomhedslist = vrespository.SøgVirksomhedPåMuligeOpgaver(opgave);
                 }    
+                if(profiler != "")
+                {
+                    virksomhedslist = vrespository.SøgVirksomhedPåProfiler(profiler);
+                }
                 
 
                 return View(virksomhedslist);

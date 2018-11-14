@@ -78,6 +78,15 @@ namespace Hovedopgave1.Concrete
             return virksomhedsliste;
         }
 
-
+        public List<Virksomhed> SøgVirksomhedPåProfiler(string profiler)
+        {
+            List<Virksomhed> virksomhsliste;
+            using(var dbcontext = new EFDbContext())
+            {
+                var søgvirksomhed = dbcontext.Virksomhed.SqlQuery("Select * from Virksomheds where Profiler Like @profiler", new SqlParameter("@profiler", '%' + profiler + '%')).ToList<Virksomhed>();
+                virksomhsliste = søgvirksomhed;
+            }
+            return virksomhsliste;
+        }
     }
 }
