@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Hovedopgave1.Models.Tilføjer>
 @{
     Layout = null;
 }
@@ -25,32 +25,38 @@
     </div>
     <table class="table">
         <tr>
-            <th>Navn</th>
-            <th>Telefon</th>
-            <th>E-mail</th>
-            <th>Uddanelse</th>
-            <th>Søgte job</th>
-            <th>Erhverseffaring</th>
-            <th>KerneKompetencer</th>
-            <th>Anden info</th>
-            <th>Ønsker at flytte</th>
+            <th>@Html.DisplayNameFor(model => model.Navn)</th>
+            <th>@Html.DisplayNameFor(model => model.Adresse)</th>
+            <th>@Html.DisplayNameFor(model => model.Telefon)</th>
+            <th>@Html.DisplayNameFor(model => model.Mail)</th>
+            <th>@Html.DisplayNameFor(model => model.Uddannelse)</th>
+            <th>@Html.DisplayNameFor(model => model.Erhvervserfaring)</th>
+            <th>@Html.DisplayNameFor(model => model.JobØnske)</th>
+            <th>@Html.DisplayNameFor(model => model.FagligeKompetencer)</th>
+            <th>@Html.DisplayNameFor(model => model.PersonligeKompetencer)</th>
+            <th>@Html.DisplayNameFor(model => model.GeneraltInfo)</th>
+            <th>@Html.DisplayNameFor(model => model.ØnskeAtFlytte)</th>
         </tr>
+        @foreach (var s in Model)
+        {
         <tr>
-            <td>Hans Morgensen</td>
-            <td>25-XX-XX-XX</td>
-            <td>Sejfyr28@hotmail.com</td>
-            <td>Datalog</td>
-            <td>It vejleder</td>
-            <td>10 års effaring med blue eagle</td>
-            <td>blabla</td>
-            <td>ingen</td>
-            <td>Ja</td>
+            <td>@Html.DisplayFor(models => s.Navn)</td>
+            <td>@Html.DisplayFor(models => s.Adresse)</td>
+            <td>@Html.DisplayFor(models => s.Telefon)</td>
+            <td>@Html.DisplayFor(models => s.Mail)</td>
+            <td>@Html.DisplayFor(models => s.Uddannelse)</td>
+            <td>@Html.DisplayFor(models => s.Erhvervserfaring)</td>
+            <td>@Html.DisplayFor(models => s.JobØnske)</td>
+            <td>@Html.DisplayFor(models => s.FagligeKompetencer)</td>
+            <td>@Html.DisplayFor(models => s.PersonligeKompetencer)</td>
+            <td>@Html.DisplayFor(models => s.GeneraltInfo)</td>
+            <td>@Html.DisplayFor(models => s.ØnskeAtFlytte)</td>
 
             <td>@Html.ActionLink("Rediger", "RedigerTilføjer", "Home", null, new { @class = "btn btn-primary" })</td>
             <td><input type="submit" class="btn btn-primary" value="Slet" /></td>
         </tr>
 
-
+        }
     </table>
 </body>
 </html>

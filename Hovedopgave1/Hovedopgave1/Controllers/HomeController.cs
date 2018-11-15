@@ -14,14 +14,16 @@ namespace Hovedopgave1.Controllers
         private IStudentRepository srepository;
         private IVirksomhedRepository vrespository;
         private IBrugerRepository brepository;
+        private ITilføjerRepository trepository;
         
         private EFDbContext context = new EFDbContext();
 
-        public HomeController(IStudentRepository studentRepository, IVirksomhedRepository virksomhedRepository, IBrugerRepository brugerRepository)
+        public HomeController(IStudentRepository studentRepository, IVirksomhedRepository virksomhedRepository, IBrugerRepository brugerRepository, ITilføjerRepository tilføjerRepository)
         {
             this.srepository = studentRepository;
             this.vrespository = virksomhedRepository;
             this.brepository = brugerRepository;
+            this.trepository = tilføjerRepository;
             
         }
 
@@ -219,7 +221,7 @@ namespace Hovedopgave1.Controllers
 
         public ActionResult TilføjerListe()
         {
-            return View();
+            return View(trepository.Tilføjer);
         }
 
         public ActionResult OpretBruger()
