@@ -12,5 +12,7 @@ namespace Hovedopgave1.Concrete
         public DbSet<Students> Students { get; set; }
         public DbSet<Virksomhed> Virksomhed { get; set; }
         public DbSet<Bruger> Bruger { get; set; }
+
+        public DbSet<Tilføjer> Tilføjer { get; set; }
     }
 }

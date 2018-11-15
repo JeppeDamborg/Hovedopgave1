@@ -163,6 +163,7 @@
   <ItemGroup>
     <Compile Include="Abstract\IBrugerRepository.cs" />
     <Compile Include="Abstract\IStudentRepository.cs" />
+    <Compile Include="Abstract\ITilføjerRepository.cs" />
     <Compile Include="Abstract\IVirksomhedRepository.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -171,6 +172,7 @@
     <Compile Include="Concrete\EFBrugerRepository.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Concrete\EFStudentRepository.cs" />
+    <Compile Include="Concrete\EFTilføjerRepository.cs" />
     <Compile Include="Concrete\EFVirksomhedRepository.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -197,6 +199,7 @@
       <DependentUpon>Student.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Students.cs" />
+    <Compile Include="Models\Tilføjer.cs" />
     <Compile Include="Models\Virksomhed.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
