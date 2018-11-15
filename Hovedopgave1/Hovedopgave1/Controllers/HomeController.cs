@@ -237,6 +237,28 @@ namespace Hovedopgave1.Controllers
             return View(trepository.Tilføjer);
         }
 
+        [HttpPost]
+        public ActionResult TilføjerListe(string uddannelse)
+        {
+            List<Tilføjer> tilføjerlist = new List<Tilføjer>();
+            if (ModelState.IsValid)
+            {
+
+                if (uddannelse != "")
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåUddannelse(uddannelse);
+                }
+
+                return View(tilføjerlist);
+            }
+            else
+            {
+                return View();
+            }
+ 
+            
+        }
+
         public ActionResult TilføjerDelete(int id)
         {
             Tilføjer tilføjer = trepository.SletTilføjer(id);

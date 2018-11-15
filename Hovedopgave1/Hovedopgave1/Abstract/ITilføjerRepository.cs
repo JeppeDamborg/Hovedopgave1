@@ -17,5 +17,7 @@ namespace Hovedopgave1.Abstract
         Tilføjer SletTilføjer(int id);
 
         void RedigerTilføjer(Tilføjer tilføjer);
+
+        List<Tilføjer> SøgTilføjerPåUddannelse(string uddannelse);
     }
 }

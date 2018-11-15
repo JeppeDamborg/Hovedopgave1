@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Hovedopgave1.Models;
+using System.Data.SqlClient;
 
 namespace Hovedopgave1.Concrete
 {
@@ -55,6 +56,17 @@ namespace Hovedopgave1.Concrete
                 context.SaveChanges();
             }
             return dbEntry;
+        }
+
+        public List<Tilføjer> SøgTilføjerPåUddannelse(string uddannelse)
+        {
+            List<Tilføjer> tilføjerlist;
+            using (var dbcontext = new EFDbContext())
+            {
+                var søgtilføjer = dbcontext.Tilføjer.SqlQuery("Select * from Tilføjer where Uddannelse Like @uddannelse", new SqlParameter("@uddannelse", '%' + uddannelse + '%')).ToList<Tilføjer>();
+                tilføjerlist = søgtilføjer;
+            }
+            return tilføjerlist;
         }
     }
 }
