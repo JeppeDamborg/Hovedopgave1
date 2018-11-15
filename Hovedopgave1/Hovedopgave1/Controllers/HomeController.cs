@@ -326,10 +326,23 @@ namespace Hovedopgave1.Controllers
                 return View(virksomhed);
             }
         }
-
-        public ActionResult RedigerTilføjer()
+        [HttpGet]
+        public ActionResult RedigerTilføjer(int id)
         {
-            return View();
+            var t1 = trepository.Tilføjer.Where(s => s.Id == id).FirstOrDefault();
+            return View(t1);
+        }
+        [HttpPost]
+        public ActionResult RedigerTilføjer(Tilføjer tilføjer)
+        {
+            if (ModelState.IsValid) {
+                trepository.RedigerTilføjer(tilføjer);
+                TempData["message"] = string.Format("{0} has been updated", tilføjer.Id);
+                return RedirectToAction("TilføjerRedigeret");
+                     }
+            else {
+                return View(tilføjer);
+            }
         }
         [HttpGet]
         public ActionResult RedigerBruger(int id)
@@ -368,6 +381,10 @@ namespace Hovedopgave1.Controllers
         }
 
         public ActionResult VirksomhedRedigeret()
+        {
+            return View();
+        }
+        public ActionResult TilføjerRedigeret()
         {
             return View();
         }

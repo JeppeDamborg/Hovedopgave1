@@ -26,6 +26,26 @@ namespace Hovedopgave1.Concrete
             context.SaveChanges();
         }
 
+        public void RedigerTilføjer(Tilføjer tilføjer)
+        {
+            Tilføjer dbtilføjer = context.Tilføjer.Find(tilføjer.Id);
+            if(dbtilføjer != null)
+            {
+                dbtilføjer.Navn = tilføjer.Navn;
+                dbtilføjer.Adresse = tilføjer.Adresse;
+                dbtilføjer.Telefon = tilføjer.Telefon;
+                dbtilføjer.Mail = tilføjer.Mail;
+                dbtilføjer.Uddannelse = tilføjer.Uddannelse;
+                dbtilføjer.Erhvervserfaring = tilføjer.Erhvervserfaring;
+                dbtilføjer.JobØnske = tilføjer.JobØnske;
+                dbtilføjer.FagligeKompetencer = tilføjer.FagligeKompetencer;
+                dbtilføjer.PersonligeKompetencer = tilføjer.PersonligeKompetencer;
+                dbtilføjer.GenereltInfo = tilføjer.GenereltInfo;
+                dbtilføjer.ØnskerAtFlytte = tilføjer.ØnskerAtFlytte;
+            }
+            context.SaveChanges();
+        }
+
         public Tilføjer SletTilføjer(int id)
         {
             Tilføjer dbEntry = context.Tilføjer.Find(id);
