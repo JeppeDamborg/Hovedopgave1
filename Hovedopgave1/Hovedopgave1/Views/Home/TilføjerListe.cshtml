@@ -34,8 +34,8 @@
             <th>@Html.DisplayNameFor(model => model.JobØnske)</th>
             <th>@Html.DisplayNameFor(model => model.FagligeKompetencer)</th>
             <th>@Html.DisplayNameFor(model => model.PersonligeKompetencer)</th>
-            <th>@Html.DisplayNameFor(model => model.GeneraltInfo)</th>
-            <th>@Html.DisplayNameFor(model => model.ØnskeAtFlytte)</th>
+            <th>@Html.DisplayNameFor(model => model.GenereltInfo)</th>
+            <th>@Html.DisplayNameFor(model => model.ØnskerAtFlytte)</th>
         </tr>
         @foreach (var s in Model)
         {
@@ -49,8 +49,8 @@
             <td>@Html.DisplayFor(models => s.JobØnske)</td>
             <td>@Html.DisplayFor(models => s.FagligeKompetencer)</td>
             <td>@Html.DisplayFor(models => s.PersonligeKompetencer)</td>
-            <td>@Html.DisplayFor(models => s.GeneraltInfo)</td>
-            <td>@Html.DisplayFor(models => s.ØnskeAtFlytte)</td>
+            <td>@Html.DisplayFor(models => s.GenereltInfo)</td>
+            <td>@Html.DisplayFor(models => s.ØnskerAtFlytte)</td>
 
             <td>@Html.ActionLink("Rediger", "RedigerTilføjer", "Home", null, new { @class = "btn btn-primary" })</td>
             <td><input type="submit" class="btn btn-primary" value="Slet" /></td>
