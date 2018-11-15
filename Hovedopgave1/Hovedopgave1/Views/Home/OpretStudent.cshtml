@@ -11,7 +11,7 @@
     <title>OpretStudent</title>
     <link rel="stylesheet" href="~/Content/bootstrap.css" />
 </head>
-<body >
+<body onload="getCurrentdate()">
     <div>
         * Skal udfyldes
     </div>
@@ -99,7 +99,7 @@
         Dato for oprettelse
     </div>
     <div>
-        <input type="date" id="DatoForOprettelse" name="DatoForOprettelse" placeholder="DatoForOprettelse" />*
+        <input type="text" id="DatoForOprettelse" name="DatoForOprettelse" placeholder="DatoForOprettelse" />*
     </div>
     <br />
     <div>
@@ -108,8 +108,15 @@
     }
 
     <script>
+        var dateObj = new Date();
+        var month = dateObj.getUTCMonth() + 1; //months from 1-12
+        var day = dateObj.getUTCDate();
+        var year = dateObj.getUTCFullYear();
+
+        newdate = year + "/" + month + "/" + day;
+
         function getCurrentdate() {
-            
+            document.getElementById('DatoForOprettelse').value = day + "/" + month + "/" + year;
         }
     </script>
 </body>
