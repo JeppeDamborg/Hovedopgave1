@@ -43,8 +43,10 @@ namespace Hovedopgave1.Models
 
         public bool Transport { get; set; }
 
+        private DateTime _datoforoprettelse = DateTime.Now;
+
         [DataType(DataType.Date)]
         [Column(TypeName ="datetime2")]
-        public DateTime DatoForOprettelse { get; set; }
+        public DateTime DatoForOprettelse { get { return _datoforoprettelse;  } set { _datoforoprettelse = value; } }
     }
 }
