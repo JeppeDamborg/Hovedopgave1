@@ -90,5 +90,16 @@ namespace Hovedopgave1.Concrete
             }
             return tilføjerlist;
         }
+
+        public List<Tilføjer> SøgTilføjerPåØnskeOmTilflytning(bool flytning)
+        {
+            List<Tilføjer> tilføjerlist;
+            using(var dbcontext = new EFDbContext())
+            {
+                var søgtilføjer = dbcontext.Tilføjer.SqlQuery("Select * from Tilføjer where ØnskerAtFlytte = @flytning", new SqlParameter("@flytning", true)).ToList<Tilføjer>();
+                tilføjerlist = søgtilføjer;
+            }
+            return tilføjerlist;
+        }
     }
 }
