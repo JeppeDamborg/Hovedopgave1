@@ -256,10 +256,7 @@ namespace Hovedopgave1.Controllers
                 {
                     tilføjerlist = trepository.SøgTilføjerPåFagligeKompetencer(kompetence);
                 }
-                if(flytning == true)
-                {
-                    tilføjerlist = trepository.SøgTilføjerPåØnskeOmTilflytning(flytning);
-                }
+               
 
                 return View(tilføjerlist);
             }
