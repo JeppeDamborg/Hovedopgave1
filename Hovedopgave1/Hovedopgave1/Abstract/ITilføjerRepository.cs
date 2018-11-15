@@ -13,5 +13,7 @@ namespace Hovedopgave1.Abstract
 
 
         void OpretTilføjer(Tilføjer tilføjer);
+
+        Tilføjer SletTilføjer(int id);
     }
 }

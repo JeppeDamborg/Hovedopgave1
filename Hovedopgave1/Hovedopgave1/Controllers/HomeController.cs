@@ -237,6 +237,16 @@ namespace Hovedopgave1.Controllers
             return View(trepository.Tilføjer);
         }
 
+        public ActionResult TilføjerDelete(int id)
+        {
+            Tilføjer tilføjer = trepository.SletTilføjer(id);
+            if(tilføjer != null)
+            {
+                TempData["message"] = string.Format("{0} has been deleted", tilføjer.Id);
+            }
+            return RedirectToAction("Forside");
+        }
+
         public ActionResult OpretBruger()
         {
             return View();

@@ -53,7 +53,7 @@
             <td>@Html.DisplayFor(models => s.ØnskerAtFlytte)</td>
 
             <td>@Html.ActionLink("Rediger", "RedigerTilføjer", "Home", null, new { @class = "btn btn-primary" })</td>
-            <td><input type="submit" class="btn btn-primary" value="Slet" /></td>
+            <td>@Html.ActionLink("Slet", "TilføjerDelete", "Home", new {id = s.Id }, new {@class="btn btn-primary" })</td>
         </tr>
 
         }
