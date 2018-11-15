@@ -238,7 +238,7 @@ namespace Hovedopgave1.Controllers
         }
 
         [HttpPost]
-        public ActionResult TilføjerListe(string uddannelse, string jobØnske, string kompetence, bool flytning)
+        public ActionResult TilføjerListe(string uddannelse, string jobØnske, string kompetence)
         {
             List<Tilføjer> tilføjerlist = new List<Tilføjer>();
             if (ModelState.IsValid)
