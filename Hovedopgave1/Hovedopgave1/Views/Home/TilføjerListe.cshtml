@@ -21,10 +21,11 @@
 <body>
     @using (Html.BeginForm("TilføjerListe", "Home"))
     {
-        <div>
-            <input type="text" placeholder="Søg på uddannelse" name="Uddannelse" />
-            <input type="submit" value="Søg" />
-        </div>
+    <div>
+        <input type="text" placeholder="Søg på uddannelse" name="Uddannelse" />
+        <input type="text" placeholder="Søg på Job Ønske" name="JobØnske" />
+        <input type="submit" value="Søg" />
+    </div>
     }
     <table class="table">
         <tr>

@@ -58,6 +58,17 @@ namespace Hovedopgave1.Concrete
             return dbEntry;
         }
 
+        public List<Tilføjer> SøgTilføjerPåJobØnske(string jobØnske)
+        {
+            List<Tilføjer> tilføjerlist;
+            using (var dbcontext = new EFDbContext())
+            {
+                var søgtilføjer = dbcontext.Tilføjer.SqlQuery("Select * from Tilføjer where JobØnske Like @jobØnske", new SqlParameter("@jobØnske", '%' + jobØnske + '%')).ToList<Tilføjer>();
+                tilføjerlist = søgtilføjer;
+            }
+            return tilføjerlist;
+        }
+
         public List<Tilføjer> SøgTilføjerPåUddannelse(string uddannelse)
         {
             List<Tilføjer> tilføjerlist;
