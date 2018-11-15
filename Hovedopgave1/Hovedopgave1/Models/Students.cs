@@ -9,6 +9,7 @@ namespace Hovedopgave1.Models
 {
     public class Students
     {
+    
         public int Id { get; set; }
         [Required(ErrorMessage ="Du skal skrive dit navn")]
         public string Navn { get; set; }
@@ -43,10 +44,10 @@ namespace Hovedopgave1.Models
 
         public bool Transport { get; set; }
 
-        private DateTime _datoforoprettelse = DateTime.Now;
+
 
         [DataType(DataType.Date)]
-        [Column(TypeName ="datetime2")]
-        public DateTime DatoForOprettelse { get { return _datoforoprettelse;  } set { _datoforoprettelse = value; } }
+        [Column(TypeName = "datetime2")]
+        public DateTime DatoForOprettelse { get; set; } = DateTime.Now;
     }
 }
