@@ -322,6 +322,7 @@
     <Content Include="Views\Home\VirksomhedRedigeret.cshtml" />
     <Content Include="Views\Home\BrugerOprettet.cshtml" />
     <Content Include="Views\Home\BrugerRedigeret.cshtml" />
+    <Content Include="Views\Home\TilføjerOprettet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

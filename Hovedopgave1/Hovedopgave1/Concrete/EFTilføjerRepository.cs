@@ -17,5 +17,13 @@ namespace Hovedopgave1.Concrete
             get { return context.Tilføjer; }
         }
 
+        public void OpretTilføjer(Tilføjer tilføjer)
+        {
+            if (tilføjer.Id == 0)
+            {
+                context.Tilføjer.Add(tilføjer);
+            }
+            context.SaveChanges();
+        }
     }
 }

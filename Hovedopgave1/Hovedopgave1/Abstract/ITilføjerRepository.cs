@@ -10,5 +10,8 @@ namespace Hovedopgave1.Abstract
    public interface ITilføjerRepository
     {
         IEnumerable<Tilføjer> Tilføjer { get; }
+
+
+        void OpretTilføjer(Tilføjer tilføjer);
     }
 }

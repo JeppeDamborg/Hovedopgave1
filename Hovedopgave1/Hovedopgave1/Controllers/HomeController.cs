@@ -213,10 +213,23 @@ namespace Hovedopgave1.Controllers
             }
             return RedirectToAction("Forside");
         }
-
         public ActionResult OpretTilføjer()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult OpretTilføjer(Tilføjer tilføjer)
+        {
+            if (ModelState.IsValid)
+            {
+                trepository.OpretTilføjer(tilføjer);
+                TempData["message"] = string.Format("{0} has been created", tilføjer.Id);
+                return RedirectToAction("TilføjerOprettet");
+            }
+            else
+            {
+                return View(tilføjer);
+            }
         }
 
         public ActionResult TilføjerListe()
@@ -345,6 +358,10 @@ namespace Hovedopgave1.Controllers
         }
 
         public ActionResult VirksomhedRedigeret()
+        {
+            return View();
+        }
+        public ActionResult TilføjerOprettet()
         {
             return View();
         }
