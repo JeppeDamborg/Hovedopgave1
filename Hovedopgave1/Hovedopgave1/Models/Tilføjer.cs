@@ -30,9 +30,9 @@ namespace Hovedopgave1.Models
 
         public string PersonligeKompetencer { get; set; }
 
-        public string GeneraltInfo { get; set; }
+        public string GenereltInfo { get; set; }
 
-        public bool ØnskeAtFlytte { get; set; }
+        public bool ØnskerAtFlytte { get; set; }
 
 
     }
