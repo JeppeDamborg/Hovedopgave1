@@ -1,4 +1,4 @@
-﻿
+﻿@model Hovedopgave1.Models.Tilføjer
 @{
     Layout = null;
 }
@@ -14,49 +14,76 @@
 </head>
 
 <body>
-    <div>
-        <input type="text" id="Navn" name="Navn" placeholder="Navn" />
-        <input type="text" id="Telefonnummer" name="Telefonnummer" placeholder="Telefonnummer" />
-        <input type="text" id="E-mail" name="E-mail" placeholder="E-mail" />
-    </div>
-    <br />
-    <div>
-        <input type="text" id="Uddannelse" name="Uddannelse" placeholder="Uddannelse" />
-        <input type="text" id="SøgerJob" name="SøgerJob" placeholder="Søger job som..." />
-    </div>
-    <br />
-    <div>
-        Erhverseffaring
-    </div>
+    @using (Html.BeginForm("OpretTilføjer", "Home", FormMethod.Post))
+    {
     <div>
 
-        @Html.TextArea("Erhverseffaring")
-        
-    </div>
+        @Html.TextBoxFor(m => m.Navn, new { @id = "Navn", @placeholder = "Navn" })*
+        @Html.ValidationMessageFor(model => model.Navn, "", new { @class = "text-danger" })
 
-    <br />
-    <div>
-        Faglige- og Personligekernekompetencer
-    </div>
-    <div>
-        
-        @Html.TextArea("kompetencer")
+        @Html.TextBoxFor(m => m.Adresse, new { @id = "Adresse", @placeholder = "Adresse" })*
+        @Html.ValidationMessageFor(model => model.Adresse, "", new { @class = "text-danger" })
+
     </div>
     <br />
     <div>
-        Anden information
+        @Html.TextBoxFor(m => m.Telefon, new { @id = "Telefon", @placeholder = "Telefonnummer" })*
+        @Html.ValidationMessageFor(model => model.Telefon, "", new { @class = "text-danger" })
+
+        @Html.TextBoxFor(m => m.Mail, new { @id = "Mail", @placeholder = "E-mail" })*
+        @Html.ValidationMessageFor(model => model.Mail, "", new { @class = "text-danger" })
     </div>
-    <div>
-        
-        @Html.TextArea("extrainfo")
-    </div>
-    <div>
-        Ønsker at flytte til området
-        <input type="checkbox" name="ja" value="Ja"> ja
-        <input type="checkbox" name="nej" value="Nej"> nej<br>
-    </div>
-    <div>
-        <input type="button" id="Opret" value="Opret" />
-    </div>
+        <br />
+        <div>
+            @Html.TextBoxFor(m => m.Uddannelse, new { @id = "Uddannelse", @placeholder = "Uddannelse" })*
+            @Html.ValidationMessageFor(model => model.Uddannelse, "", new { @class = "text-danger" })
+            <br />
+            <br />
+            <div>
+                <pre>Erhversefaring*             Job ønske*</pre>
+            </div>
+            <div>
+
+                @Html.TextAreaFor(m => m.Erhvervserfaring, new { @id = "Erhvervserfaring", @placeholder = "Erhvervserfaring" })
+                @Html.ValidationMessageFor(model => model.Erhvervserfaring, "", new { @class = "text-danger" })
+
+                @Html.TextAreaFor(m => m.JobØnske, new { @id = "JobØnske", @placeholder = "JobØnske" })
+                @Html.ValidationMessageFor(model => model.JobØnske, "", new { @class = "text-danger" })
+
+            </div>
+            <br />
+            <div>
+                <pre>FagligeKompetencer*          PersonligeKompetencer*</pre>
+            </div>
+            <div>
+
+                @Html.TextAreaFor(m => m.FagligeKompetencer, new { @id = "FagligeKompetencer", @placeholder = "FagligeKompetencer" })
+                @Html.ValidationMessageFor(model => model.FagligeKompetencer, "", new { @class = "text-danger" })
+
+                @Html.TextAreaFor(m => m.PersonligeKompetencer, new { @id = "PersonligeKompetencer", @placeholder = "PersonligeKompetencer" })
+                @Html.ValidationMessageFor(model => model.PersonligeKompetencer, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div>
+            <pre>GenereltInfo*</pre>
+        </div>
+        <div>
+            @Html.TextAreaFor(m => m.GenereltInfo, new { @id = "GenereltInfo", @placeholder = "GenereltInfo" })
+            @Html.ValidationMessageFor(model => model.GenereltInfo, "", new { @class = "text-danger" })
+        </div>
+        <div>
+
+            Ønsker du at flytte*
+            @Html.EditorFor(x => x.ØnskerAtFlytte) Klik på checkboxen hvis ja
+
+        </div>
+
+        <br />
+
+        <div>
+            <input type="button" id="Opret" value="Opret" />
+        </div>
+    }
 </body>
 </html>
