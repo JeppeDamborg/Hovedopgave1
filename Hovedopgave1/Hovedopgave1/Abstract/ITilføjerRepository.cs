@@ -27,5 +27,7 @@ namespace Hovedopgave1.Abstract
         List<Tilføjer> SøgTilføjerPåØnskeOmTilflytning(int? flytning);
 
         List<Tilføjer> SøgTilføjerPåUddannelseOgTilflytning(string uddannelse, int? flytning);
+
+        List<Tilføjer> SøgTilføjerPåJobØnskeOgTilflytning(string jobønske, int? flytning);
     }
 }
