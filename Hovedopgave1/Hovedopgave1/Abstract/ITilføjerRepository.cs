@@ -24,6 +24,6 @@ namespace Hovedopgave1.Abstract
 
         List<Tilføjer> SøgTilføjerPåFagligeKompetencer(string kompetence);
 
-        List<Tilføjer> SøgTilføjerPåØnskeOmTilflytning(bool flytning);
+        List<Tilføjer> SøgTilføjerPåØnskeOmTilflytning(int? flytning);
     }
 }
