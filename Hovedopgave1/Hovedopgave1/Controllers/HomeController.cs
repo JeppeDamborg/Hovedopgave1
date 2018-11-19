@@ -260,6 +260,10 @@ namespace Hovedopgave1.Controllers
                 {
                     tilføjerlist = trepository.SøgTilføjerPåØnskeOmTilflytning(flytning);
                 }
+                if(uddannelse != "" && flytning == 1)
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåUddannelseOgTilflytning(uddannelse, flytning);
+                }
 
                
 
