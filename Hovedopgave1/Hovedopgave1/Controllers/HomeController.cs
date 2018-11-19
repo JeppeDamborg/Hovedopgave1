@@ -268,6 +268,10 @@ namespace Hovedopgave1.Controllers
                 {
                     tilføjerlist = trepository.SøgTilføjerPåJobØnskeOgTilflytning(jobØnske, flytning);
                 }
+                if(kompetence != "" && flytning == 1)
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåKompetenceOgTilflytning(kompetence, flytning);
+                }
 
                
 
