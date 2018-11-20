@@ -53,6 +53,8 @@
             <th>@Html.DisplayNameFor(model => model.StudieJob)</th>
             <th>@Html.DisplayNameFor(model => model.Transport)</th>
             <th>@Html.DisplayNameFor(model => model.DatoForOprettelse)</th>
+            <th>@Html.DisplayNameFor(model => model.CV)</th>
+
         </tr>
 
 
@@ -78,11 +80,12 @@
             <td>@Html.DisplayFor(modelItem => item.StudieJob)</td>
             <td>@Html.DisplayFor(modelItem => item.Transport)</td>
             <td>@Html.DisplayFor(modelItem => item.DatoForOprettelse)</td>
+            <td>@Html.ActionLink("Hent CV", "DownloadCV", "Home", new { id= item.Id }, new {@target="_blank" })</td>
 
-            <td>@Html.ActionLink("Rediger", "RedigerStudent", "Home", new {id = item.Id }, new { @class = "btn btn-primary" })</td>
+            <td>@Html.ActionLink("Rediger", "RedigerStudent", "Home", new { id = item.Id }, new { @class = "btn btn-primary" })</td>
             <td>
 
-                @Html.ActionLink("Slet", "StudentDelete", new { id = item.Id}, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Slet", "StudentDelete", new { id = item.Id }, new { @class = "btn btn-primary" })
             </td>
 
         </tr>
