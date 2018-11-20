@@ -36,6 +36,8 @@ namespace Hovedopgave1.Models
         [Required(ErrorMessage = "Du skal skrive din uddannelse")]
         public bool ØnskerAtFlytte { get; set; }
 
+        public byte[] CV { get; set; }
+
 
     }
 }

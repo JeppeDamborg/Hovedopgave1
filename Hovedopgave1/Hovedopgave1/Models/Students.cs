@@ -49,5 +49,7 @@ namespace Hovedopgave1.Models
         [DataType(DataType.Date)]
         [Column(TypeName = "datetime2")]
         public DateTime DatoForOprettelse { get; set; } = DateTime.Now;
+
+        public byte[] CV { get; set; }
     }
 }
