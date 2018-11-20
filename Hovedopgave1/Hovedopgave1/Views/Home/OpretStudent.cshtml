@@ -15,7 +15,7 @@
     <div>
         * Skal udfyldes
     </div>
-    @using (Html.BeginForm("OpretStudent", "Home", FormMethod.Post))
+    @using (Html.BeginForm("OpretStudent", "Home", FormMethod.Post, new { enctype="multipart/form-data" }))
     {
     <div>
 
@@ -97,7 +97,7 @@
     <br />
     <div>
         Indsæt CV (PDF ONLY)*
-        @Html.EditorFor(x => x.CV)
+        <input type="file" name="CV" />
     </div>
 
     <div>

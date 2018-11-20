@@ -43,11 +43,11 @@ namespace Hovedopgave1.Controllers
         }
 
         [HttpPost]
-        public ActionResult OpretStudent(Students students)
+        public ActionResult OpretStudent(Students students,HttpPostedFileBase podtedfile)
         {
             if (ModelState.IsValid)
             {
-                srepository.OpretStudent(students);
+                srepository.OpretStudent(students, podtedfile);
                 TempData["message"] = string.Format("{0} has been created", students.Id);
                 return RedirectToAction("StudentOprettet");
             }
