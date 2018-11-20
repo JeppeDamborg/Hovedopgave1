@@ -473,6 +473,15 @@ namespace Hovedopgave1.Controllers
         {
             return View();
         }
+
+        public FileContentResult DownloadCV(int id)
+        {
+            if(id == 0) { return null; }
+            Students students = new Students();
+            students = context.Students.Where(s => s.Id == id).SingleOrDefault();
+            Response.AppendHeader("content-disposition", "inline; filename=file.pdf");
+            return File(students.CV, "application/pdf");
+        }
       
 
 
