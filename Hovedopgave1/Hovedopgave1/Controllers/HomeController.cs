@@ -43,11 +43,24 @@ namespace Hovedopgave1.Controllers
         }
 
         [HttpPost]
-        public ActionResult OpretStudent(Students students,HttpPostedFileBase podtedfile)
+        public ActionResult OpretStudent([Bind(Exclude = "CV")]Students students,HttpPostedFileBase CV)
         {
+
+            if(CV != null)
+            {
+                if(CV.ContentLength > 0)
+                {
+                    byte[] cvbinarydata = new byte[CV.ContentLength];
+                    int readresult = CV.InputStream.Read(cvbinarydata, 0, CV.ContentLength);
+                    students.CV = cvbinarydata;
+                }
+            }
+
+
             if (ModelState.IsValid)
             {
-                srepository.OpretStudent(students, podtedfile);
+                
+                srepository.OpretStudent(students);
                 TempData["message"] = string.Format("{0} has been created", students.Id);
                 return RedirectToAction("StudentOprettet");
             }

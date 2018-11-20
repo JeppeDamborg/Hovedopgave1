@@ -17,18 +17,12 @@ namespace Hovedopgave1.Concrete
             get { return context.Students; }
         }
 
-        public void OpretStudent(Students students, HttpPostedFileBase postedfile)
+        public void OpretStudent(Students students)
         {
-            byte[] bytes;
-            using(BinaryReader br = new BinaryReader(postedfile.InputStream))
-            {
-                bytes = br.ReadBytes(postedfile.ContentLength);
-            }
-
 
             if(students.Id == 0)
             {
-                students.CV = bytes;
+               
                 context.Students.Add(students);
             }
             context.SaveChanges();

@@ -12,7 +12,7 @@ namespace Hovedopgave1.Abstract
     {
         IEnumerable<Students> Students { get; }
 
-        void OpretStudent(Students students, HttpPostedFileBase postedfile);
+        void OpretStudent(Students students);
 
         Students SletStudent(int studentid);
 
