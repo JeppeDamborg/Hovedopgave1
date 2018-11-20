@@ -42,25 +42,27 @@
             <th>@Html.DisplayNameFor(model => model.PersonligeKompetencer)</th>
             <th>@Html.DisplayNameFor(model => model.GenereltInfo)</th>
             <th>@Html.DisplayNameFor(model => model.ØnskerAtFlytte)</th>
+            <th>@Html.DisplayNameFor(model => model.CV)</th>
         </tr>
         @foreach (var s in Model)
         {
-            <tr>
-                <td>@Html.DisplayFor(models => s.Navn)</td>
-                <td>@Html.DisplayFor(models => s.Adresse)</td>
-                <td>@Html.DisplayFor(models => s.Telefon)</td>
-                <td>@Html.DisplayFor(models => s.Mail)</td>
-                <td>@Html.DisplayFor(models => s.Uddannelse)</td>
-                <td>@Html.DisplayFor(models => s.Erhvervserfaring)</td>
-                <td>@Html.DisplayFor(models => s.JobØnske)</td>
-                <td>@Html.DisplayFor(models => s.FagligeKompetencer)</td>
-                <td>@Html.DisplayFor(models => s.PersonligeKompetencer)</td>
-                <td>@Html.DisplayFor(models => s.GenereltInfo)</td>
-                <td>@Html.DisplayFor(models => s.ØnskerAtFlytte)</td>
+        <tr>
+            <td>@Html.DisplayFor(models => s.Navn)</td>
+            <td>@Html.DisplayFor(models => s.Adresse)</td>
+            <td>@Html.DisplayFor(models => s.Telefon)</td>
+            <td>@Html.DisplayFor(models => s.Mail)</td>
+            <td>@Html.DisplayFor(models => s.Uddannelse)</td>
+            <td>@Html.DisplayFor(models => s.Erhvervserfaring)</td>
+            <td>@Html.DisplayFor(models => s.JobØnske)</td>
+            <td>@Html.DisplayFor(models => s.FagligeKompetencer)</td>
+            <td>@Html.DisplayFor(models => s.PersonligeKompetencer)</td>
+            <td>@Html.DisplayFor(models => s.GenereltInfo)</td>
+            <td>@Html.DisplayFor(models => s.ØnskerAtFlytte)</td>
+            <td>@Html.ActionLink("Hent CV", "DownloadTilføjerCV", "Home", new { id = s.Id }, new { @target = "_blank" })</td>
 
-                <td>@Html.ActionLink("Rediger", "RedigerTilføjer", "Home", new { id = s.Id }, new { @class = "btn btn-primary" })</td>
-                <td>@Html.ActionLink("Slet", "TilføjerDelete", "Home", new { id = s.Id }, new { @class = "btn btn-primary" })</td>
-            </tr>
+            <td>@Html.ActionLink("Rediger", "RedigerTilføjer", "Home", new { id = s.Id }, new { @class = "btn btn-primary" })</td>
+            <td>@Html.ActionLink("Slet", "TilføjerDelete", "Home", new { id = s.Id }, new { @class = "btn btn-primary" })</td>
+        </tr>
 
         }
     </table>

@@ -80,7 +80,7 @@
             <td>@Html.DisplayFor(modelItem => item.StudieJob)</td>
             <td>@Html.DisplayFor(modelItem => item.Transport)</td>
             <td>@Html.DisplayFor(modelItem => item.DatoForOprettelse)</td>
-            <td>@Html.ActionLink("Hent CV", "DownloadCV", "Home", new { id= item.Id }, new {@target="_blank" })</td>
+            <td>@Html.ActionLink("Hent CV", "DownloadStudentCV", "Home", new { id= item.Id }, new {@target="_blank" })</td>
 
             <td>@Html.ActionLink("Rediger", "RedigerStudent", "Home", new { id = item.Id }, new { @class = "btn btn-primary" })</td>
             <td>
