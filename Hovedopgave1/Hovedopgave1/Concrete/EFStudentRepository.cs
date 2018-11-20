@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using Hovedopgave1.Abstract;
@@ -16,10 +17,18 @@ namespace Hovedopgave1.Concrete
             get { return context.Students; }
         }
 
-        public void OpretStudent(Students students)
+        public void OpretStudent(Students students, HttpPostedFileBase postedfile)
         {
+            byte[] bytes;
+            using(BinaryReader br = new BinaryReader(postedfile.InputStream))
+            {
+                bytes = br.ReadBytes(postedfile.ContentLength);
+            }
+
+
             if(students.Id == 0)
             {
+                students.CV = bytes;
                 context.Students.Add(students);
             }
             context.SaveChanges();

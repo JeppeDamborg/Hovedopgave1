@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using Hovedopgave1.Models;
 
 namespace Hovedopgave1.Abstract
@@ -11,7 +12,7 @@ namespace Hovedopgave1.Abstract
     {
         IEnumerable<Students> Students { get; }
 
-        void OpretStudent(Students students);
+        void OpretStudent(Students students, HttpPostedFileBase postedfile);
 
         Students SletStudent(int studentid);
 
