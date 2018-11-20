@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    @using (Html.BeginForm("OpretTilføjer", "Home", FormMethod.Post))
+    @using (Html.BeginForm("OpretTilføjer", "Home", FormMethod.Post, new {enctype="multipart/form-data" }))
     {
     <div>
 
@@ -80,7 +80,10 @@
         </div>
 
         <br />
-
+        <div>
+            Indsæt CV (PDF ONLY!)*
+            <input type="file" name="CV" />
+        </div>
         <div>
             <input type="submit" id="Opret" value="Opret" />
         </div>

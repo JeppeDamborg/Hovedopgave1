@@ -231,8 +231,20 @@ namespace Hovedopgave1.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult OpretTilføjer(Tilføjer tilføjer)
+        public ActionResult OpretTilføjer([Bind(Exclude = "CV")]Tilføjer tilføjer, HttpPostedFileBase CV)
         {
+
+
+            if (CV != null)
+            {
+                if (CV.ContentLength > 0)
+                {
+                    byte[] cvbinarydata = new byte[CV.ContentLength];
+                    int readresult = CV.InputStream.Read(cvbinarydata, 0, CV.ContentLength);
+                    tilføjer.CV = cvbinarydata;
+                }
+            }
+
             if (ModelState.IsValid)
             {
                 trepository.OpretTilføjer(tilføjer);
