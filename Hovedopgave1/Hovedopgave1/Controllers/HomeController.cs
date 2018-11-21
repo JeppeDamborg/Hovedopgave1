@@ -234,7 +234,7 @@ namespace Hovedopgave1.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult OpretTilføjer([Bind(Exclude = "CV")]Tilføjer tilføjer, HttpPostedFileBase CV)
+        public ActionResult OpretTilføjer([Bind(Exclude = "CV, CVTitel")]Tilføjer tilføjer, HttpPostedFileBase CV)
         {
 
 
@@ -242,8 +242,10 @@ namespace Hovedopgave1.Controllers
             {
                 if (CV.ContentLength > 0)
                 {
+                    var filename = Path.GetFileName(CV.FileName);
                     byte[] cvbinarydata = new byte[CV.ContentLength];
                     int readresult = CV.InputStream.Read(cvbinarydata, 0, CV.ContentLength);
+                    tilføjer.CVTitel = filename;
                     tilføjer.CV = cvbinarydata;
                 }
             }
@@ -486,12 +488,12 @@ namespace Hovedopgave1.Controllers
             return File(students.CV, "application/pdf");
         }
 
-        public FileContentResult DownloadTilføjerCV(int id)
+        public FileContentResult DownloadTilføjerCV(int id, string cvtitel)
         {
             if(id == 0) { return null; }
             Tilføjer tilføjer = new Tilføjer();
             tilføjer = context.Tilføjer.Where(s => s.Id == id).SingleOrDefault();
-            Response.AppendHeader("content-disposition", "inline; filename=file.pdf");
+            Response.AppendHeader("content-disposition", "inline; filename=" + cvtitel);
             return File(tilføjer.CV, "application/pdf");
         }
       
