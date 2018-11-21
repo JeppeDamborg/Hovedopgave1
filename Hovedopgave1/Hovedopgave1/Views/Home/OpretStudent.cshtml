@@ -19,13 +19,13 @@
     {
     <div>
 
-        @Html.TextBoxFor(m => m.Navn, new { @id="Navn", @placeholder = "Navn" })*        
+        @Html.TextBoxFor(m => m.Navn, new { @id="Navn", @placeholder = "Fulde navn" })*        
         @Html.ValidationMessageFor(model => model.Navn, "", new { @class = "text-danger" })
 
-        @Html.TextBoxFor(m => m.Adresse, new { @id="Adresse", @placeholder ="Adresse"})*
+        @Html.TextBoxFor(m => m.Adresse, new { @id="Adresse", @placeholder ="Vej"})*
         @Html.ValidationMessageFor(model => model.Adresse, "", new { @class = "text-danger" })
 
-        @Html.TextBoxFor(m => m.Bopæl, new { @id="Bopæl", @placeholder ="Bopæl"})*
+        @Html.TextBoxFor(m => m.Bopæl, new { @id="Bopæl", @placeholder ="Bynavn"})*
         @Html.ValidationMessageFor(model => model.Bopæl, "", new { @class = "text-danger" })
     </div>
     <br />
@@ -33,7 +33,7 @@
         @Html.TextBoxFor(m => m.Nationalitet, new { @id = "Nationalitet", @placeholder = "Nationalitet" })*
         @Html.ValidationMessageFor(model => model.Nationalitet, "", new { @class = "text-danger" })
 
-        @Html.TextBoxFor(m => m.SprogKundskab, new { @id = "SprogKundskab", @placeholder = "SprogKundskab" })*
+        @Html.TextBoxFor(m => m.SprogKundskab, new { @id = "SprogKundskab", @placeholder = "Modersprog" })*
         @Html.ValidationMessageFor(model => model.SprogKundskab, "", new { @class = "text-danger" })
     </div>
     <br />
@@ -50,7 +50,7 @@
         @Html.TextBoxFor(m => m.Uddannelse, new { @id = "Uddannelse", @placeholder = "Uddannelse" })*
         @Html.ValidationMessageFor(model => model.Uddannelse, "", new { @class = "text-danger" })
 
-        @Html.TextBoxFor(m => m.Periode, new { @id = "Periode", @placeholder = "Periode" })*
+        @Html.TextBoxFor(m => m.Periode, new { @id = "Periode", @placeholder = "Start/SlutDato" })*
         @Html.ValidationMessageFor(model => model.Periode, "", new { @class = "text-danger" })
 
         @Html.TextBoxFor(m => m.Semester, new { @id = "Semester", @placeholder = "Nuværende Semester" })*
@@ -58,10 +58,10 @@
     </div>
     <br />
     <div>
-        Specialisering
+        Specialisering/Fokusområde*
     </div>
     <div>
-        @Html.TextAreaFor(m => m.Specialisering, new { @id = "Specialisering", @placeholder = "Skriv din Specialisering Her, ellers skriv 'Ingen'" })*
+        @Html.TextAreaFor(m => m.Specialisering, new { @id = "Specialisering", @placeholder = "Skriv din Specialisering eller fokusområde Her, ellers skriv 'Ingen'" })
         @Html.ValidationMessageFor(model => model.Specialisering, "", new { @class = "text-danger" })
 
     </div>
@@ -71,7 +71,7 @@
     </div>
     <br />
     <div>
-        <pre>Semesterprojekt           Praktik              Hovedopgave</pre>
+        <pre>Skriv hvis du ønsker et Semester Projekt, Praktikplads eller HovedOpgave. Udfyld de relevante felter med emne og tidsperiode</pre>
     </div>
     <div>
         @Html.TextAreaFor(m => m.SemesterProjekt, new { @id = "SemesterProjekt", @placeholder = "Skriv dit Semester Projekt, hvis du har et" })

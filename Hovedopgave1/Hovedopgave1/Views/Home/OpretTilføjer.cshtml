@@ -10,7 +10,7 @@
 
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="~/Content/bootstrap.css" />
-    <title>OpretTilføjer</title>
+    <title>OpretTilflytter</title>
 </head>
 
 <body>
@@ -18,7 +18,7 @@
     {
     <div>
 
-        @Html.TextBoxFor(m => m.Navn, new { @id = "Navn", @placeholder = "Navn" })*
+        @Html.TextBoxFor(m => m.Navn, new { @id = "Navn", @placeholder = "Fulde navn" })*
         @Html.ValidationMessageFor(model => model.Navn, "", new { @class = "text-danger" })
 
         @Html.TextBoxFor(m => m.Adresse, new { @id = "Adresse", @placeholder = "Adresse" })*
@@ -40,7 +40,7 @@
             <br />
             <br />
             <div>
-                <pre>Erhversefaring*             Job ønske*</pre>
+                <pre>Erhvervserfaring*             Job ønske*</pre>
             </div>
             <div>
 

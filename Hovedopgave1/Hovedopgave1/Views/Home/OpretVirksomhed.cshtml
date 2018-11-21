@@ -15,7 +15,7 @@
     @using (Html.BeginForm("OpretVirksomhed", "Home", FormMethod.Post))
     {
     <div>
-        @Html.TextBoxFor(m => m.Navn, new { @id = "Navn", @placeholder = "Navn" })*
+        @Html.TextBoxFor(m => m.Navn, new { @id = "Navn", @placeholder = "Virksomheds navn" })*
         @Html.ValidationMessageFor(model => model.Navn, "", new { @class = "text-danger" })
 
         @Html.TextBoxFor(m => m.KontaktPerson, new { @id = "KontaktPerson", @placeholder = "KontaktPerson" })*
@@ -46,10 +46,10 @@
         </div>
         <br />
         <div>
-            Profiler
+            Profiler*
         </div>
         <div>
-            @Html.TextAreaFor(m => m.Profiler, new { @id = "Profiler", @placeholder = "Skriv Profiler" })*
+            @Html.TextAreaFor(m => m.Profiler, new { @id = "Profiler", @placeholder = "Uddannelsesprofiler" })
             @Html.ValidationMessageFor(model => model.Profiler, "", new { @class = "text-danger" })
         </div>
         <br />
