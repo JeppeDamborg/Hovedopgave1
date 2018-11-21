@@ -477,12 +477,12 @@ namespace Hovedopgave1.Controllers
             return View();
         }
 
-        public FileContentResult DownloadStudentCV(int id)
+        public FileContentResult DownloadStudentCV(int id, string cvtitel)
         {
             if(id == 0) { return null; }
             Students students = new Students();
             students = context.Students.Where(s => s.Id == id).SingleOrDefault();
-            Response.AppendHeader("content-disposition", "inline; filename=file.pdf");
+            Response.AppendHeader("content-disposition", "inline; filename=" + cvtitel);
             return File(students.CV, "application/pdf");
         }
 
