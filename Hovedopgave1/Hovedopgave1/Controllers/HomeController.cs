@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -43,15 +44,17 @@ namespace Hovedopgave1.Controllers
         }
 
         [HttpPost]
-        public ActionResult OpretStudent([Bind(Exclude = "CV")]Students students,HttpPostedFileBase CV)
+        public ActionResult OpretStudent([Bind(Exclude = "CV, CVTitel")]Students students,HttpPostedFileBase CV)
         {
 
             if(CV != null)
             {
                 if(CV.ContentLength > 0)
                 {
+                    var filename = Path.GetFileName(CV.FileName);
                     byte[] cvbinarydata = new byte[CV.ContentLength];
                     int readresult = CV.InputStream.Read(cvbinarydata, 0, CV.ContentLength);
+                    students.CVTitel = filename;
                     students.CV = cvbinarydata;
                 }
             }
