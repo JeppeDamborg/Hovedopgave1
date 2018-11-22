@@ -14,28 +14,28 @@
 </head>
 
 <body>
-    @using (Html.BeginForm("OpretTilføjer", "Home", FormMethod.Post, new {enctype="multipart/form-data" }))
+    @using (Html.BeginForm("OpretTilføjer", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
-    <div>
+        <div>
 
-        @Html.TextBoxFor(m => m.Navn, new { @id = "Navn", @placeholder = "Fulde navn" })*
-        @Html.ValidationMessageFor(model => model.Navn, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(m => m.Navn, new { @id = "Navn", @placeholder = "Fulde navn" })*
+            @Html.ValidationMessageFor(model => model.Navn, "", new { @class = "text-danger" })
 
-        @Html.TextBoxFor(m => m.Vej, new { @id = "Vej", @placeholder = "Vejadresse" })*
-        @Html.ValidationMessageFor(model => model.Vej, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(m => m.Vej, new { @id = "Vej", @placeholder = "Vejadresse" })*
+            @Html.ValidationMessageFor(model => model.Vej, "", new { @class = "text-danger" })
 
-        @Html.TextBoxFor(m => m.By, new { @id = "By", @placeholder = "Bynavn" })*
-        @Html.ValidationMessageFor(model => model.By, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(m => m.By, new { @id = "By", @placeholder = "Bynavn" })*
+            @Html.ValidationMessageFor(model => model.By, "", new { @class = "text-danger" })
 
-    </div>
-    <br />
-    <div>
-        @Html.TextBoxFor(m => m.Telefon, new { @id = "Telefon", @placeholder = "Telefonnummer" })*
-        @Html.ValidationMessageFor(model => model.Telefon, "", new { @class = "text-danger" })
+        </div>
+        <br />
+        <div>
+            @Html.TextBoxFor(m => m.Telefon, new { @id = "Telefon", @placeholder = "Telefonnummer" })*
+            @Html.ValidationMessageFor(model => model.Telefon, "", new { @class = "text-danger" })
 
-        @Html.TextBoxFor(m => m.Mail, new { @id = "Mail", @placeholder = "E-mail" })*
-        @Html.ValidationMessageFor(model => model.Mail, "", new { @class = "text-danger" })
-    </div>
+            @Html.TextBoxFor(m => m.Mail, new { @id = "Mail", @placeholder = "E-mail" })*
+            @Html.ValidationMessageFor(model => model.Mail, "", new { @class = "text-danger" })
+        </div>
         <br />
         <div>
             @Html.TextBoxFor(m => m.PrimærUddannelse, new { @id = "PrimærUddannelse", @placeholder = "PrimærUddannelse" })*
@@ -78,21 +78,23 @@
             @Html.TextAreaFor(m => m.GenereltInfo, new { @id = "GenereltInfo", @placeholder = "GenereltInfo" })
             @Html.ValidationMessageFor(model => model.GenereltInfo, "", new { @class = "text-danger" })
         </div>
-        <div>
 
-            Ønsker du at flytte*
-            @Html.EditorFor(x => x.ØnskerAtFlytte) Klik på checkboxen hvis ja
+        @Html.TextBoxFor(m => m.DatoForOprettelse, new { @id = "DatoForOprettelse", @placeholder = "DatoForOprettelse" })
+<div>
 
-        </div>
+    Ønsker du at flytte*
+    @Html.EditorFor(x => x.ØnskerAtFlytte) Klik på checkboxen hvis ja
 
-        <br />
-        <div>
-            Indsæt CV (PDF ONLY!)*
-            <input type="file" name="CV" accept="application/pdf" />
-        </div>
-        <div>
-            <input type="submit" id="Opret" value="Opret" />
-        </div>
-    }
+</div>
+
+<br />
+<div>
+    Indsæt CV (PDF ONLY!)*
+    <input type="file" name="CV" accept="application/pdf" />
+</div>
+<div>
+    <input type="submit" id="Opret" value="Opret" />
+</div>
+}
 </body>
 </html>

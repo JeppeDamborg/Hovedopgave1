@@ -45,6 +45,7 @@ namespace Hovedopgave1.Concrete
                 dbtilføjer.PersonligeKompetencer = tilføjer.PersonligeKompetencer;
                 dbtilføjer.GenereltInfo = tilføjer.GenereltInfo;
                 dbtilføjer.ØnskerAtFlytte = tilføjer.ØnskerAtFlytte;
+                dbtilføjer.DatoForOprettelse = tilføjer.DatoForOprettelse;
             }
             context.SaveChanges();
         }

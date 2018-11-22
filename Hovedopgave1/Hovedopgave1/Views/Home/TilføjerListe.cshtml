@@ -47,6 +47,7 @@
             <th>@Html.DisplayNameFor(model => model.PersonligeKompetencer)</th>
             <th>@Html.DisplayNameFor(model => model.GenereltInfo)</th>
             <th>@Html.DisplayNameFor(model => model.ØnskerAtFlytte)</th>
+            <th>@Html.DisplayNameFor(model => model.DatoForOprettelse)</th>
             <th>@Html.DisplayNameFor(model => model.CV)</th>
         </tr>
         @foreach (var s in Model)
@@ -65,6 +66,7 @@
             <td>@Html.DisplayFor(models => s.PersonligeKompetencer)</td>
             <td>@Html.DisplayFor(models => s.GenereltInfo)</td>
             <td>@Html.DisplayFor(models => s.ØnskerAtFlytte)</td>
+            <td>@Html.DisplayFor(models => s.DatoForOprettelse)</td>
             <td>@Html.ActionLink("Hent CV", "DownloadTilføjerCV", "Home", new { id = s.Id, cvtitel = s.CVTitel }, new { @target = "_blank" })</td>
 
             <td>@Html.ActionLink("Rediger", "RedigerTilføjer", "Home", new { id = s.Id }, new { @class = "btn btn-primary" })</td>
