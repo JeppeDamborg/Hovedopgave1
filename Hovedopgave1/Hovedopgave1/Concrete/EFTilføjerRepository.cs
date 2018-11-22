@@ -175,5 +175,24 @@ namespace Hovedopgave1.Concrete
             }
             return tilføjerlist;
         }
+
+        public List<Tilføjer> SøgTilføjerPåAlt(string navn, string uddannelse, string sekundærUddannelse, string jobØnske, string kompetence, int? flytning)
+        {
+            List<Tilføjer> tilføjerlist;
+            using(var dbcontext = new EFDbContext())
+            {
+                string query = "Select * from Tilføjer Where Navn Like @navn And PrimærUddannelse Like @uddannelse And SekundærUddannelse Like @sekundærUddannelse And JobØnske Like jobØnske And FagligeKompetencer Like @kompetence And ØnskerAtFlytte = @flytning";
+                SqlParameter sql1 = new SqlParameter("@navn", '%' + navn + '%');
+                SqlParameter sql2 = new SqlParameter("@uddannelse", '%' + uddannelse + '%');
+                SqlParameter sql3 = new SqlParameter("@sekundærUddannelse", '%' + sekundærUddannelse + '%');
+                SqlParameter sql4 = new SqlParameter("@jobØnske", '%' + jobØnske + '%');
+                SqlParameter sql5 = new SqlParameter("@kompetence", '%' + kompetence + '%');
+                SqlParameter sql6 = new SqlParameter("@flytning", flytning);
+                object[] parameter = new object[] { sql1, sql2, sql3, sql4, sql5, sql6 };
+                var søgtilføjer = dbcontext.Tilføjer.SqlQuery(query, parameter).ToList<Tilføjer>();
+                tilføjerlist = søgtilføjer;
+            }
+            return tilføjerlist;
+        }
     }
 }
