@@ -38,7 +38,8 @@
             <th>@Html.DisplayNameFor(model => model.Adresse)</th>
             <th>@Html.DisplayNameFor(model => model.Bopæl)</th>
             <th>@Html.DisplayNameFor(model => model.Nationalitet)</th>
-            <th>@Html.DisplayNameFor(model => model.SprogKundskab)</th>
+            <th>@Html.DisplayNameFor(model => model.Modersmål)</th>
+            <th>@Html.DisplayNameFor(model => model.Fremmedsprog)</th>
             <th>@Html.DisplayNameFor(model => model.Telefon)</th>
             <th>@Html.DisplayNameFor(model => model.Mail)</th>
             <th>@Html.DisplayNameFor(model => model.Uddannelse)</th>
@@ -65,7 +66,8 @@
             <td>@Html.DisplayFor(modelItem => item.Adresse)</td>
             <td>@Html.DisplayFor(modelItem => item.Bopæl)</td>
             <td>@Html.DisplayFor(modelItem => item.Nationalitet)</td>
-            <td>@Html.DisplayFor(modelItem => item.SprogKundskab)</td>
+            <td>@Html.DisplayFor(modelItem => item.Modersmål)</td>
+            <td>@Html.DisplayFor(modelItem => item.Fremmedsprog)</td>
             <td>@Html.DisplayFor(modelItem => item.Telefon)</td>
             <td>@Html.DisplayFor(modelItem => item.Mail)</td>
             <td>@Html.DisplayFor(modelItem => item.Uddannelse)</td>
@@ -80,7 +82,7 @@
             <td>@Html.DisplayFor(modelItem => item.StudieJob)</td>
             <td>@Html.DisplayFor(modelItem => item.Transport)</td>
             <td>@Html.DisplayFor(modelItem => item.DatoForOprettelse)</td>
-            <td>@Html.ActionLink("Hent CV", "DownloadStudentCV", "Home", new { id= item.Id, cvtitel = item.CVTitel }, new {@target="_blank", @class = "btn btn-primary" })</td>
+            <td>@Html.ActionLink("Hent CV", "DownloadStudentCV", "Home", new { id = item.Id, cvtitel = item.CVTitel }, new { @target = "_blank", @class = "btn btn-primary" })</td>
 
             <td>@Html.ActionLink("Rediger", "RedigerStudent", "Home", new { id = item.Id }, new { @class = "btn btn-primary" })</td>
             <td>

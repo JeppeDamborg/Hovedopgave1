@@ -19,8 +19,9 @@ namespace Hovedopgave1.Models
         public string Bopæl { get; set; }
         [Required(ErrorMessage = "Du skal skrive din nationalitet")]
         public string Nationalitet { get; set; }
-        [Required(ErrorMessage = "Du skal skrive din sprogkundskaber")]
-        public string SprogKundskab { get; set; }
+        [Required(ErrorMessage = "Du skal skrive dit modersmål")]
+        public string Modersmål { get; set; }
+        public string Fremmedsprog { get; set; }
         [Required(ErrorMessage = "Du skal skrive dit telefonnummer")]
         public string Telefon { get; set; }
         [Required(ErrorMessage = "Du skal skrive din mail")]

@@ -33,8 +33,10 @@
         @Html.TextBoxFor(m => m.Nationalitet, new { @id = "Nationalitet", @placeholder = "Nationalitet" })*
         @Html.ValidationMessageFor(model => model.Nationalitet, "", new { @class = "text-danger" })
 
-        @Html.TextBoxFor(m => m.SprogKundskab, new { @id = "SprogKundskab", @placeholder = "Modersprog" })*
-        @Html.ValidationMessageFor(model => model.SprogKundskab, "", new { @class = "text-danger" })
+        @Html.TextBoxFor(m => m.Modersmål, new { @id = "Modersmål", @placeholder = "Modersmål" })*
+        @Html.ValidationMessageFor(model => model.Modersmål, "", new { @class = "text-danger" })
+
+        @Html.TextBoxFor(m => m.Fremmedsprog, new { @id = "Fremmedsprog", @placeholder = "Fremmedsprog" })
     </div>
     <br />
     <div>

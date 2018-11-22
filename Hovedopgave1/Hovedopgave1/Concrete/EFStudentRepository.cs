@@ -37,7 +37,8 @@ namespace Hovedopgave1.Concrete
                 dbstudent.Adresse = students.Adresse;
                 dbstudent.Bopæl = students.Bopæl;
                 dbstudent.Nationalitet = students.Nationalitet;
-                dbstudent.SprogKundskab = students.SprogKundskab;
+                dbstudent.Modersmål = students.Modersmål;
+                dbstudent.Fremmedsprog = students.Fremmedsprog;
                 dbstudent.Telefon = students.Telefon;
                 dbstudent.Mail = students.Mail;
                 dbstudent.Uddannelse = students.Uddannelse;
