@@ -148,5 +148,20 @@ namespace Hovedopgave1.Concrete
             }
             return tilføjerlist;
         }
+
+        public List<Tilføjer> SøtTilføjerPåSekundærUddannelseOgJobØnske(string sekundærUddannelse, string jobØnske)
+        {
+            List<Tilføjer> tilføjerlist;
+            using (var dbcontext = new EFDbContext())
+            {
+                string query = "Select * from Tilføjer where SekundærUddannelse Like @sekundærUddannelse AND JobØnske Like @jobØnske";
+                SqlParameter sql1 = new SqlParameter("@sekundærUddannelse", '%' + sekundærUddannelse + '%');
+                SqlParameter sql2 = new SqlParameter("@jobØnske", '%' + jobØnske + '%');
+                object[] parameter = new object[] { sql1, sql2 };
+                var søgtilføjer = dbcontext.Tilføjer.SqlQuery(query, parameter).ToList<Tilføjer>();
+                tilføjerlist = søgtilføjer;
+            }
+            return tilføjerlist;
+        }
     }
 }
