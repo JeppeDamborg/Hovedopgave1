@@ -18,6 +18,8 @@ namespace Hovedopgave1.Abstract
 
         void RedigerTilføjer(Tilføjer tilføjer);
 
+        List<Tilføjer> SøgTilføjerPåNavn(string navn);
+
         List<Tilføjer> SøgTilføjerPåUddannelse(string uddannelse);
 
         List<Tilføjer> SøgTilføjerPåJobØnske(string jobØnske);

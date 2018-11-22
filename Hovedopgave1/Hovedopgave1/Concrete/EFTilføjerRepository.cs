@@ -164,5 +164,16 @@ namespace Hovedopgave1.Concrete
             }
             return tilføjerlist;
         }
+
+        public List<Tilføjer> SøgTilføjerPåNavn(string navn)
+        {
+            List<Tilføjer> tilføjerlist;
+            using(var dbcontext = new EFDbContext())
+            {
+                var søgtilføjer = dbcontext.Tilføjer.SqlQuery("Select * from Tilføjer Where Navn Like @navn", new SqlParameter("@navn", '%' + navn + '%')).ToList<Tilføjer>();
+                tilføjerlist = søgtilføjer;
+            }
+            return tilføjerlist;
+        }
     }
 }

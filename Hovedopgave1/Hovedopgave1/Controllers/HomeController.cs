@@ -284,7 +284,7 @@ namespace Hovedopgave1.Controllers
         }
 
         [HttpPost]
-        public ActionResult TilføjerListe(string uddannelse, string jobØnske, string kompetence, int? flytning, string sekundærUddannelse)
+        public ActionResult TilføjerListe(string navn ,string uddannelse, string jobØnske, string kompetence, int? flytning, string sekundærUddannelse)
         {
             List<Tilføjer> tilføjerlist = new List<Tilføjer>();
             if (ModelState.IsValid)
@@ -293,6 +293,10 @@ namespace Hovedopgave1.Controllers
                 if (uddannelse != "")
                 {
                     tilføjerlist = trepository.SøgTilføjerPåUddannelse(uddannelse);
+                }
+                if(navn != "")
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåNavn(navn);
                 }
                 if (jobØnske != "")
                 {
