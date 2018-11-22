@@ -38,6 +38,9 @@ namespace Hovedopgave1.Models
         [Required(ErrorMessage = "Du skal skrive din uddannelse")]
         public bool ØnskerAtFlytte { get; set; }
 
+
+        [DataType(DataType.Date)]
+        [Column(TypeName ="datetime2")]
         public DateTime DatoForOprettelse { get; set; }
 
         public string CVTitel { get; set; }
