@@ -21,8 +21,11 @@
         @Html.TextBoxFor(m => m.Navn, new { @id = "Navn", @placeholder = "Fulde navn" })*
         @Html.ValidationMessageFor(model => model.Navn, "", new { @class = "text-danger" })
 
-        @Html.TextBoxFor(m => m.Adresse, new { @id = "Adresse", @placeholder = "Adresse" })*
-        @Html.ValidationMessageFor(model => model.Adresse, "", new { @class = "text-danger" })
+        @Html.TextBoxFor(m => m.Vej, new { @id = "Vej", @placeholder = "Vejadresse" })*
+        @Html.ValidationMessageFor(model => model.Vej, "", new { @class = "text-danger" })
+
+        @Html.TextBoxFor(m => m.By, new { @id = "By", @placeholder = "Bynavn" })*
+        @Html.ValidationMessageFor(model => model.By, "", new { @class = "text-danger" })
 
     </div>
     <br />
@@ -35,8 +38,11 @@
     </div>
         <br />
         <div>
-            @Html.TextBoxFor(m => m.Uddannelse, new { @id = "Uddannelse", @placeholder = "Uddannelse" })*
-            @Html.ValidationMessageFor(model => model.Uddannelse, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(m => m.PrimærUddannelse, new { @id = "PrimærUddannelse", @placeholder = "PrimærUddannelse" })*
+            @Html.ValidationMessageFor(model => model.PrimærUddannelse, "", new { @class = "text-danger" })
+
+            @Html.TextBoxFor(m => m.SekundærUddannelse, new { @id = "SekundærUddannelse", @placeholder = "SekundærUddannelse" })
+            @Html.ValidationMessageFor(model => model.SekundærUddannelse, "", new { @class = "text-danger" })
             <br />
             <br />
             <div>

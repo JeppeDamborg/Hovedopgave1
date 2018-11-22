@@ -14,15 +14,17 @@ namespace Hovedopgave1.Models
 
         [Required(ErrorMessage = "Du skal skrive dit navn")]
         public string Navn { get; set; }
-        [Required(ErrorMessage = "Du skal skrive din adresse")]
-        public string Adresse { get; set; }
+        [Required(ErrorMessage = "Du skal skrive din vejadresse")]
+        public string Vej { get; set; }
+        public string By { get; set; }
         [Required(ErrorMessage = "Du skal skrive dit telefonnummer")]
         public string Telefon { get; set; }
         [Required(ErrorMessage = "Du skal skrive din mail")]
         [EmailAddress(ErrorMessage = "Ugyldigt Email Addresse")]
         public string Mail { get; set; }
-        [Required(ErrorMessage = "Du skal skrive din uddannelse")]
-        public string Uddannelse { get; set; }
+        [Required(ErrorMessage = "Du skal skrive din primære uddannelse")]
+        public string PrimærUddannelse { get; set; }
+        public string SekundærUddannelse { get; set; }
         [Required(ErrorMessage = "Du skal skrive dine erhvervserfaringer")]
         public string Erhvervserfaring { get; set; }
         [Required(ErrorMessage = "Du skal skrive dit job ønske")]

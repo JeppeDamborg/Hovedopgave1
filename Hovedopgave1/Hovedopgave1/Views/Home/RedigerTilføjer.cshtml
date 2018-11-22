@@ -29,10 +29,17 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Adresse, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Vej, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Adresse, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Adresse, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Vej, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Vej, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.By, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.By, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.By, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
@@ -51,10 +58,17 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Uddannelse, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.PrimærUddannelse, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Uddannelse, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Uddannelse, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.PrimærUddannelse, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PrimærUddannelse, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.SekundærUddannelse, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SekundærUddannelse, new { htmlAttributes = new { @class = "form-control" } })
+                
             </div>
         </div>
         <div class="form-group">
@@ -102,8 +116,8 @@
         <br />
         <div class="form-group">
             <div class="col-md-10">
-            <input type="submit" id="Rediger" value="Rediger" />
-                </div>
+                <input type="submit" id="Rediger" value="Rediger" />
+            </div>
         </div>
     </div>
     }

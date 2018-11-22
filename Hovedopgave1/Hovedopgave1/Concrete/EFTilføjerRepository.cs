@@ -33,10 +33,12 @@ namespace Hovedopgave1.Concrete
             if(dbtilføjer != null)
             {
                 dbtilføjer.Navn = tilføjer.Navn;
-                dbtilføjer.Adresse = tilføjer.Adresse;
+                dbtilføjer.Vej = tilføjer.Vej;
+                dbtilføjer.By = tilføjer.By;
                 dbtilføjer.Telefon = tilføjer.Telefon;
                 dbtilføjer.Mail = tilføjer.Mail;
-                dbtilføjer.Uddannelse = tilføjer.Uddannelse;
+                dbtilføjer.PrimærUddannelse = tilføjer.PrimærUddannelse;
+                dbtilføjer.SekundærUddannelse = tilføjer.SekundærUddannelse;
                 dbtilføjer.Erhvervserfaring = tilføjer.Erhvervserfaring;
                 dbtilføjer.JobØnske = tilføjer.JobØnske;
                 dbtilføjer.FagligeKompetencer = tilføjer.FagligeKompetencer;
