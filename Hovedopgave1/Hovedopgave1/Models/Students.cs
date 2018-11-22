@@ -13,10 +13,10 @@ namespace Hovedopgave1.Models
         public int Id { get; set; }
         [Required(ErrorMessage ="Du skal skrive dit navn")]
         public string Navn { get; set; }
-        [Required(ErrorMessage = "Du skal skrive din adresse")]
-        public string Adresse { get; set; }
-        [Required(ErrorMessage = "Du skal skrive din Bopæl")]
-        public string Bopæl { get; set; }
+        [Required(ErrorMessage = "Du skal skrive din vejadresse")]
+        public string Vej { get; set; }
+        [Required(ErrorMessage = "Du skal skrive navnet på den by du bor i")]
+        public string By { get; set; }
         [Required(ErrorMessage = "Du skal skrive din nationalitet")]
         public string Nationalitet { get; set; }
         [Required(ErrorMessage = "Du skal skrive dit modersmål")]

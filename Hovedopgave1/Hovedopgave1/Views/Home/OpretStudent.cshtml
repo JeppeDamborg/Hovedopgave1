@@ -22,11 +22,11 @@
         @Html.TextBoxFor(m => m.Navn, new { @id="Navn", @placeholder = "Fulde navn" })*        
         @Html.ValidationMessageFor(model => model.Navn, "", new { @class = "text-danger" })
 
-        @Html.TextBoxFor(m => m.Adresse, new { @id="Adresse", @placeholder ="Vej"})*
-        @Html.ValidationMessageFor(model => model.Adresse, "", new { @class = "text-danger" })
+        @Html.TextBoxFor(m => m.Vej, new { @id= "Vej", @placeholder ="Vej"})*
+        @Html.ValidationMessageFor(model => model.Vej, "", new { @class = "text-danger" })
 
-        @Html.TextBoxFor(m => m.Bopæl, new { @id="Bopæl", @placeholder ="Bynavn"})*
-        @Html.ValidationMessageFor(model => model.Bopæl, "", new { @class = "text-danger" })
+        @Html.TextBoxFor(m => m.By, new { @id= "By", @placeholder ="Bynavn"})*
+        @Html.ValidationMessageFor(model => model.By, "", new { @class = "text-danger" })
     </div>
     <br />
     <div>

@@ -34,8 +34,8 @@ namespace Hovedopgave1.Concrete
             if(dbstudent != null)
             {
                 dbstudent.Navn = students.Navn;
-                dbstudent.Adresse = students.Adresse;
-                dbstudent.Bopæl = students.Bopæl;
+                dbstudent.Vej = students.Vej;
+                dbstudent.By = students.By;
                 dbstudent.Nationalitet = students.Nationalitet;
                 dbstudent.Modersmål = students.Modersmål;
                 dbstudent.Fremmedsprog = students.Fremmedsprog;
