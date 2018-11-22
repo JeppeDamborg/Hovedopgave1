@@ -30,5 +30,7 @@ namespace Hovedopgave1.Models
         public string OpgaveLøsning { get; set; }
         [Required(ErrorMessage = "Du skal have styrkeposition med")]
         public string Styrkeposition { get; set; }
+
+        public bool Aflønning { get; set; }
     }
 }

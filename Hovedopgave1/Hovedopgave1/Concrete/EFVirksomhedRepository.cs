@@ -40,6 +40,7 @@ namespace Hovedopgave1.Concrete
                 dbvirksomhed.Profiler = virksomhed.Profiler;
                 dbvirksomhed.OpgaveLøsning = virksomhed.OpgaveLøsning;
                 dbvirksomhed.Styrkeposition = virksomhed.Styrkeposition;
+                dbvirksomhed.Aflønning = virksomhed.Aflønning;
 
             }
             context.SaveChanges();

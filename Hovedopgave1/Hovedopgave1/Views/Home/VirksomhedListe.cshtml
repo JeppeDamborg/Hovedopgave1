@@ -43,6 +43,7 @@
             <th>@Html.DisplayNameFor(model => model.Profiler)</th>
             <th>@Html.DisplayNameFor(model => model.OpgaveLøsning)</th>
             <th>@Html.DisplayNameFor(model => model.Styrkeposition)</th>
+            <th>@Html.DisplayNameFor(model => model.Aflønning)</th>
         </tr>
         @foreach (var s in Model)
         {
@@ -58,6 +59,7 @@
                 <td>@Html.DisplayFor(models => s.Profiler)</td>
                 <td>@Html.DisplayFor(models => s.OpgaveLøsning)</td>
                 <td>@Html.DisplayFor(models => s.Styrkeposition)</td>
+                <td>@Html.DisplayFor(models => s.Aflønning)</td>
 
                 <td>@Html.ActionLink("Rediger", "RedigerVirksomhed", "Home", new {id = s.Id }, new { @class = "btn btn-primary" })</td>
 
