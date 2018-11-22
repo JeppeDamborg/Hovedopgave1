@@ -117,7 +117,7 @@ namespace Hovedopgave1.Concrete
             List<Tilføjer> tilføjerlist;
             using (var dbcontext = new EFDbContext())
             {
-                var søgtilføjer = dbcontext.Tilføjer.SqlQuery("Select * from Tilføjer where Uddannelse Like @uddannelse", new SqlParameter("@uddannelse", '%' + uddannelse + '%')).ToList<Tilføjer>();
+                var søgtilføjer = dbcontext.Tilføjer.SqlQuery("Select * from Tilføjer where PrimærUddannelse Like @uddannelse", new SqlParameter("@uddannelse", '%' + uddannelse + '%')).ToList<Tilføjer>();
                 tilføjerlist = søgtilføjer;
             }
             return tilføjerlist;
@@ -128,7 +128,7 @@ namespace Hovedopgave1.Concrete
             List<Tilføjer> tilføjerlist;
             using(var dbcontext = new EFDbContext())
             {
-                string query = "Select * from Tilføjer where Uddannelse Like @uddannelse AND ØnskerAtFlytte = @flytning";
+                string query = "Select * from Tilføjer where PrimærUddannelse Like @uddannelse AND ØnskerAtFlytte = @flytning";
                 SqlParameter sql1 = new SqlParameter("@uddannelse", '%' + uddannelse + '%');
                 SqlParameter sql2 = new SqlParameter("@flytning", flytning);
                 object[] parameter = new object[] { sql1, sql2 };
