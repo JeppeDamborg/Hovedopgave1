@@ -150,7 +150,7 @@ namespace Hovedopgave1.Concrete
             return tilføjerlist;
         }
 
-        public List<Tilføjer> SøtTilføjerPåSekundærUddannelseOgJobØnske(string sekundærUddannelse, string jobØnske)
+        public List<Tilføjer> SøgTilføjerPåSekundærUddannelseOgJobØnske(string sekundærUddannelse, string jobØnske)
         {
             List<Tilføjer> tilføjerlist;
             using (var dbcontext = new EFDbContext())
