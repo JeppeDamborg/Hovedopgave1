@@ -213,6 +213,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\RedigeretForside.PNG" />
     <Content Include="Models\Student.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Student.Context.cs</LastGenOutput>
