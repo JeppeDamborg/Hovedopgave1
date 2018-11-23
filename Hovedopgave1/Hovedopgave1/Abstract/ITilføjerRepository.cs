@@ -39,5 +39,27 @@ namespace Hovedopgave1.Abstract
         List<Tilføjer> SøgTilføjerPåAlt(string navn, string uddannelse, string sekundærUddannelse, string jobØnske, string kompetence, int? flytning);
 
         List<Tilføjer> SøgTilføjerPåSekundærUddannelseOgFlytning(string sekundærUddannelse, int? flytning);
+
+        List<Tilføjer> SøgTilføjerPåUddannelseOgJobØnske(string uddannelse, string jobØnske);
+
+        List<Tilføjer> SøgTilføjerPåUddannelseOgKompetence(string uddannelse, string kompetence);
+
+        List<Tilføjer> SøgTilføjerPåUddannelseOgSekundærUddannelse(string uddannelse, string sekundærUddannelse);
+
+        List<Tilføjer> SøgTilføjerPåJobØnskeOgKompetence(string jobØnske, string kompetence);
+
+        List<Tilføjer> SøgTilføjerPåKompetenceOgSekundærUddannelse(string kompetence, string sekundærUddannelse);
+
+        List<Tilføjer> SøgTilføjerPåUddannelseOgJobØnskeOgKompetence(string uddannelse, string jobØnske, string kompetence);
+
+        List<Tilføjer> SøgTilføjerPåUddannelseOgSekundærUddannelseOgJobØnske(string uddannelse, string sekundærUddannelse, string jobØnske);
+
+        List<Tilføjer> SøgTilføjerPåUddannelseOgFlytningOgJobØnske(string uddannelse, int? flytning, string jobØnske);
+
+        List<Tilføjer> SøgTilføjerPåUddannelseOgFlytningOgKompetence(string uddannelse, int? flytning, string kompetence);
+
+        List<Tilføjer> SøgTilføjerPåUddannelseOgFlytningOgSekundærUddannelse(string uddannelse, int? flytning, string sekundærUddannelse);
+
+        List<Tilføjer> SøgTilføjerPåUddannelseOgSekundærUddannelseOgKompetence(string uddannelse, string sekundærUddannelse, string kompetence);
     }
 }

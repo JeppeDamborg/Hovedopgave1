@@ -200,7 +200,7 @@ namespace Hovedopgave1.Concrete
             List<Tilføjer> tilføjerlist;
             using (var dbcontext = new EFDbContext())
             {
-                string query = "Select * from TIlføjer Where SekundærUddannelse Like @sekundærUddannelse And ØnskerAtFlytte = @flytning";
+                string query = "Select * from Tilføjer Where SekundærUddannelse Like @sekundærUddannelse And ØnskerAtFlytte = @flytning";
                 SqlParameter sql1 = new SqlParameter("@sekundærUddannelse", '%' + sekundærUddannelse + '%');
                 SqlParameter sql2 = new SqlParameter("@flytning", flytning);
                 object[] parameter = new object[] { sql1, sql2};
@@ -208,6 +208,122 @@ namespace Hovedopgave1.Concrete
                 tilføjerlist = søgtilføjer;
             }
             return tilføjerlist;
+        }
+
+        public List<Tilføjer> SøgTilføjerPåUddannelseOgJobØnske(string uddannelse, string jobØnske)
+        {
+            List<Tilføjer> tilføjerlist;
+            using (var dbcontext = new EFDbContext())
+            {
+                string query = "Select * from Tilføjer Where PrimærUddannelse Like @uddannelse And JobØnske Like @jobØnske";
+                SqlParameter sql1 = new SqlParameter("@uddannelse", '%' + uddannelse + '%');
+                SqlParameter sql2 = new SqlParameter("@jobØnske", '%' + jobØnske + '%');
+                object[] parameter = new object[] { sql1, sql2 };
+                var søgtilføjer = dbcontext.Tilføjer.SqlQuery(query, parameter).ToList<Tilføjer>();
+                tilføjerlist = søgtilføjer;
+            }
+            return tilføjerlist;
+        }
+
+        public List<Tilføjer> SøgTilføjerPåUddannelseOgKompetence(string uddannelse, string kompetence)
+        {
+            List<Tilføjer> tilføjerlist;
+            using (var dbcontext = new EFDbContext())
+            {
+                string query = "Select * from Tilføjer Where PrimærUddannelse Like @uddannelse And FagligeKompetencer Like @kompetence Or PersonligeKompetencer Like @kompetence";
+                SqlParameter sql1 = new SqlParameter("@uddannelse", '%' + uddannelse + '%');
+                SqlParameter sql2 = new SqlParameter("@kompetence", '%' + kompetence + '%');
+                object[] parameter = new object[] { sql1, sql2 };
+                var søgtilføjer = dbcontext.Tilføjer.SqlQuery(query, parameter).ToList<Tilføjer>();
+                tilføjerlist = søgtilføjer;
+            }
+            return tilføjerlist;
+        }
+
+        public List<Tilføjer> SøgTilføjerPåUddannelseOgSekundærUddannelse(string uddannelse, string sekundærUddannelse)
+        {
+            List<Tilføjer> tilføjerlist;
+            using (var dbcontext = new EFDbContext())
+            {
+                string query = "Select * from Tilføjer Where PrimærUddannelse Like @uddannelse And SekundærUddannelse Like @sekundærUddannelse";
+                SqlParameter sql1 = new SqlParameter("@uddannelse", '%' + uddannelse + '%');
+                SqlParameter sql2 = new SqlParameter("@sekundærUddannelse", '%' + sekundærUddannelse + '%');
+                object[] parameter = new object[] { sql1, sql2 };
+                var søgtilføjer = dbcontext.Tilføjer.SqlQuery(query, parameter).ToList<Tilføjer>();
+                tilføjerlist = søgtilføjer;
+            }
+            return tilføjerlist;
+        }
+
+        public List<Tilføjer> SøgTilføjerPåJobØnskeOgKompetence(string jobØnske, string kompetence)
+        {
+            List<Tilføjer> tilføjerlist;
+            using (var dbcontext = new EFDbContext())
+            {
+                string query = "Select * from Tilføjer Where JobØnske Like @jobØnske And FagligeKompetencer Like @kompetence Or PersonligeKompetencer Like @kompetence";
+                SqlParameter sql1 = new SqlParameter("@jobØnske", '%' + jobØnske + '%');
+                SqlParameter sql2 = new SqlParameter("@kompetence", '%' + kompetence + '%');
+                object[] parameter = new object[] { sql1, sql2 };
+                var søgtilføjer = dbcontext.Tilføjer.SqlQuery(query, parameter).ToList<Tilføjer>();
+                tilføjerlist = søgtilføjer;
+            }
+            return tilføjerlist;
+        }
+
+        public List<Tilføjer> SøgTilføjerPåKompetenceOgSekundærUddannelse(string kompetence, string sekundærUddannelse)
+        {
+            List<Tilføjer> tilføjerlist;
+            using (var dbcontext = new EFDbContext())
+            {
+                string query = "Select * from Tilføjer Where FagligeKompetencer Like @kompetence Or PersonligeKompetencer Like @kompetence And SekundærUddannelse Like @sekundærUddannelse";
+                SqlParameter sql1 = new SqlParameter("@kompetence", '%' + kompetence + '%');
+                SqlParameter sql2 = new SqlParameter("@sekundærUddannelse", '%' + sekundærUddannelse + '%');
+                object[] parameter = new object[] { sql1, sql2 };
+                var søgtilføjer = dbcontext.Tilføjer.SqlQuery(query, parameter).ToList<Tilføjer>();
+                tilføjerlist = søgtilføjer;
+            }
+            return tilføjerlist;
+        }
+
+        public List<Tilføjer> SøgTilføjerPåUddannelseOgJobØnskeOgKompetence(string uddannelse, string jobØnske, string kompetence)
+        {
+            List<Tilføjer> tilføjerlist;
+            using (var dbcontext = new EFDbContext())
+            {
+                string query = "Select * from Tilføjer Where PrimærUddannelse Like @uddannelse And JobØnske Like @jobØnske And FagligeKompetencer Like @kompetence Or PersonligeKompetencer Like @kompetence";
+                SqlParameter sql1 = new SqlParameter("@uddannelse", '%' + uddannelse + '%');
+                SqlParameter sql2 = new SqlParameter("@jobØnske", '%' + jobØnske + '%');
+                SqlParameter sql3 = new SqlParameter("@kompetence", '%' + kompetence + '%');
+                object[] parameter = new object[] { sql1, sql2, sql3 };
+                var søgtilføjer = dbcontext.Tilføjer.SqlQuery(query, parameter).ToList<Tilføjer>();
+                tilføjerlist = søgtilføjer;
+            }
+            return tilføjerlist;
+        }
+
+        public List<Tilføjer> SøgTilføjerPåUddannelseOgSekundærUddannelseOgJobØnske(string uddannelse, string sekundærUddannelse, string jobØnske)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Tilføjer> SøgTilføjerPåUddannelseOgFlytningOgJobØnske(string uddannelse, int? flytning, string jobØnske)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Tilføjer> SøgTilføjerPåUddannelseOgFlytningOgKompetence(string uddannelse, int? flytning, string kompetence)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Tilføjer> SøgTilføjerPåUddannelseOgFlytningOgSekundærUddannelse(string uddannelse, int? flytning, string sekundærUddannelse)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Tilføjer> SøgTilføjerPåUddannelseOgSekundærUddannelseOgKompetence(string uddannelse, string sekundærUddannelse, string kompetence)
+        {
+            throw new NotImplementedException();
         }
     }
 }
