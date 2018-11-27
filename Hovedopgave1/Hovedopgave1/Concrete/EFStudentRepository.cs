@@ -33,7 +33,7 @@ namespace Hovedopgave1.Concrete
             Students dbstudent = context.Students.Find(students.Id);
             if(dbstudent != null)
             {
-                dbstudent.Navn = students.Navn;
+                dbstudent.Navn = students.Navn; 
                 dbstudent.Vej = students.Vej;
                 dbstudent.By = students.By;
                 dbstudent.Nationalitet = students.Nationalitet;
@@ -53,6 +53,25 @@ namespace Hovedopgave1.Concrete
                 dbstudent.Transport = students.Transport;
             }
             context.SaveChanges();
+        }
+
+        public static void SletAutomatiskStudent()
+        {
+            var dato = DateTime.Now.AddMonths(-6);
+
+            
+            using (var dbcontext = new EFDbContext())
+            {
+                var findstudent = dbcontext.Students.SqlQuery("Select * from Students Where DatoForOprettelse <= @date", new SqlParameter("@date", dato));
+
+                if (findstudent != null)
+                {
+                    var deletestudent = dbcontext.Students.SqlQuery("Delete from Students Where DatoForOprettelse <= @dato", new SqlParameter("@dato", dato));
+                    
+                }
+            }
+
+           
         }
 
         public Students SletStudent(int id)

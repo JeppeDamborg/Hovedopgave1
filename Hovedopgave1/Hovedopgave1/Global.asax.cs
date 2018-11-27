@@ -19,6 +19,7 @@ namespace Hovedopgave1
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             Database.SetInitializer<EFDbContext>(null);
+            EFStudentRepository.SletAutomatiskStudent();
         }
     }
 }
