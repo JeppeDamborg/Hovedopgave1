@@ -382,6 +382,10 @@ namespace Hovedopgave1.Controllers
                 {
                     tilføjerlist = trepository.SøgTilføjerPåSekundærUddannelseOgKompetencerOgJobØnske(sekundærUddannelse, kompetence, jobØnske);
                 }
+                if(flytning == 1 && jobØnske != "" && kompetence != "")
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåFlytningOgJobØnskeOgKompetence(flytning, jobØnske, kompetence);
+                }
 
                
 
