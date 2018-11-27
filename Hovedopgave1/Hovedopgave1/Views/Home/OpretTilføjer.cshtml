@@ -13,7 +13,7 @@
     <title>OpretTilflytter</title>
 </head>
 
-<body>
+<body onload="getCurrentdate()">
     @using (Html.BeginForm("OpretTilføjer", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         <div>
@@ -77,24 +77,36 @@
         <div>
             @Html.TextAreaFor(m => m.GenereltInfo, new { @id = "GenereltInfo", @placeholder = "GenereltInfo" })
             @Html.ValidationMessageFor(model => model.GenereltInfo, "", new { @class = "text-danger" })
+            
+            <div style="display: none;">
+                <input type="text" id="DatoForOprettelse" name="DatoForOprettelse" placeholder="DatoForOprettelse" />*
+            </div>
+
+            Ønsker du at flytte*
+            @Html.EditorFor(x => x.ØnskerAtFlytte) Klik på checkboxen hvis ja
+
         </div>
 
-        @Html.TextBoxFor(m => m.DatoForOprettelse, new { @id = "DatoForOprettelse", @placeholder = "DatoForOprettelse" })
-<div>
+        <br />
+        <div>
+            Indsæt CV (PDF ONLY!)*
+            <input type="file" name="CV" accept="application/pdf" />
+        </div>
+        <div>
+            <input type="submit" id="Opret" value="Opret" />
+        </div>
+    }
+    <script>
+        var dateObj = new Date();
+        var month = dateObj.getUTCMonth() + 1; //months from 1-12
+        var day = dateObj.getUTCDate();
+        var year = dateObj.getUTCFullYear();
 
-    Ønsker du at flytte*
-    @Html.EditorFor(x => x.ØnskerAtFlytte) Klik på checkboxen hvis ja
+  
 
-</div>
-
-<br />
-<div>
-    Indsæt CV (PDF ONLY!)*
-    <input type="file" name="CV" accept="application/pdf" />
-</div>
-<div>
-    <input type="submit" id="Opret" value="Opret" />
-</div>
-}
+        function getCurrentdate() {
+            document.getElementById('DatoForOprettelse').value = day + "/" + month + "/" + year;
+        }
+    </script>
 </body>
 </html>
