@@ -325,5 +325,25 @@ namespace Hovedopgave1.Concrete
         {
             throw new NotImplementedException();
         }
+
+        public List<Tilføjer> SøgTilføjerPåSekundærUddannelseOgKompetencerOgJobØnske(string sekundærUddannelse, string kometence, string jobØnske)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Tilføjer> SøgTilføjerPåFlytningOgJobØnskeOgKompetence(int? flytning, string jobØnske, string kompetence)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Tilføjer> SøgTilføjerPåFlytningOgJobØnskeOgSekundærUddannelse(int? flytning, string JobØnske, string sekundærUddannelse)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Tilføjer> SøgTilføjerPåFlytningOgKompetenceOgSekundærUddannelse(int? flytning, string kompetence, string sekundærUddannelse)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
