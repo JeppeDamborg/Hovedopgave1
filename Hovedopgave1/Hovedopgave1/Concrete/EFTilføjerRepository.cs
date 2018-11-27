@@ -335,12 +335,34 @@ namespace Hovedopgave1.Concrete
 
         public List<Tilføjer> SøgTilføjerPåUddannelseOgFlytningOgKompetence(string uddannelse, int? flytning, string kompetence)
         {
-            throw new NotImplementedException();
+            List<Tilføjer> tilføjerlist;
+            using(var dbcontext = new EFDbContext())
+            {
+                string query = "Select * from Tilføjer Where PrimærUddannelse Like @uddannelse And ØnskerAtFlytte = @flytning And FagligeKompetencer Like @kompetence";
+                SqlParameter sql1 = new SqlParameter("@uddannelse", '%' + uddannelse + '%');
+                SqlParameter sql2 = new SqlParameter("@flytning", flytning);
+                SqlParameter sql3 = new SqlParameter("@kompetence", '%' + kompetence + '%');
+                object[] parameter = new object[] { sql1, sql2, sql3 };
+                var søgtilføjer = dbcontext.Tilføjer.SqlQuery(query, parameter).ToList<Tilføjer>();
+                tilføjerlist = søgtilføjer;
+            }
+            return tilføjerlist;
         }
 
         public List<Tilføjer> SøgTilføjerPåUddannelseOgFlytningOgSekundærUddannelse(string uddannelse, int? flytning, string sekundærUddannelse)
         {
-            throw new NotImplementedException();
+            List<Tilføjer> tilføjerlist;
+            using (var dbcontext = new EFDbContext())
+            {
+                string query = "Select * from Tilføjer Where PrimærUddannelse Like @uddannelse And ØnskerAtFlytte = @flytning And SekundærUddannelse Like @sekundærUddannelse";
+                SqlParameter sql1 = new SqlParameter("@uddannelse", '%' + uddannelse + '%');
+                SqlParameter sql2 = new SqlParameter("@flytning", flytning);
+                SqlParameter sql3 = new SqlParameter("@sekundærUddannelse", '%' + sekundærUddannelse + '%');
+                object[] parameter = new object[] { sql1, sql2, sql3 };
+                var søgtilføjer = dbcontext.Tilføjer.SqlQuery(query, parameter).ToList<Tilføjer>();
+                tilføjerlist = søgtilføjer;
+            }
+            return tilføjerlist;
         }
 
         public List<Tilføjer> SøgTilføjerPåUddannelseOgSekundærUddannelseOgKompetence(string uddannelse, string sekundærUddannelse, string kompetence)
