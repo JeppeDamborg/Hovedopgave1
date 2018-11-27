@@ -68,7 +68,7 @@
             <td>@Html.DisplayFor(models => s.GenereltInfo)</td>
             <td>@Html.DisplayFor(models => s.ØnskerAtFlytte)</td>
             <td>@Html.DisplayFor(models => s.DatoForOprettelse)</td>
-            <td>@Html.ActionLink("Hent CV", "DownloadTilføjerCV", "Home", new { id = s.Id, cvtitel = s.CVTitel }, new { @target = "_blank" })</td>
+            <td>@Html.ActionLink("Hent CV", "DownloadTilføjerCV", "Home", new { id = s.Id, cvtitel = s.CVTitel }, new { @target = "_blank", @class = "btn btn-primary" })</td>
 
             <td>@Html.ActionLink("Rediger", "RedigerTilføjer", "Home", new { id = s.Id }, new { @class = "btn btn-primary" })</td>
             <td>@Html.ActionLink("Slet", "TilføjerDelete", "Home", new { id = s.Id }, new { @class = "btn btn-primary" })</td>
