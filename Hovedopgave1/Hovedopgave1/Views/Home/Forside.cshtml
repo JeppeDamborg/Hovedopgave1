@@ -20,13 +20,16 @@
             width: 200px;
             height: 50px;
         }
+        #FD {
+            margin-top: 320px;
+        }
     body { background-image: url('../../Images/RedigeretForside.PNG'); background-size: cover; }
     </style>
 </head>
 <body>
         
         <h2>Velkommen til InnoVest</h2>
-        <div align="center">
+        <div id="FD" align="center">
             <div>
                 <input type="button" class="button" value="Opret Student" onclick="location.href='@Url.Action("OpretStudent", "Home")'" />
                 <input type="button" class="button" value="Student Liste" onclick="location.href='@Url.Action("StudentListe", "Home")'" />
