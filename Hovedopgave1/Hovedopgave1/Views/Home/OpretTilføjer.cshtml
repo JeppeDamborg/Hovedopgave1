@@ -10,92 +10,103 @@
 
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <style>
+        #tv {
+            position: relative;
+            right: -25px;
+        }
+    </style>
     <title>OpretTilflytter</title>
 </head>
 
 <body onload="getCurrentdate()">
-    @using (Html.BeginForm("OpretTilføjer", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-    {
+    <div id="tv">
         <div>
-
-            @Html.TextBoxFor(m => m.Navn, new { @id = "Navn", @placeholder = "Fulde navn" })*
-            @Html.ValidationMessageFor(model => model.Navn, "", new { @class = "text-danger" })
-
-            @Html.TextBoxFor(m => m.Vej, new { @id = "Vej", @placeholder = "Vejadresse" })*
-            @Html.ValidationMessageFor(model => model.Vej, "", new { @class = "text-danger" })
-
-            @Html.TextBoxFor(m => m.By, new { @id = "By", @placeholder = "Bynavn" })*
-            @Html.ValidationMessageFor(model => model.By, "", new { @class = "text-danger" })
-
+            * Skal udfyldes
         </div>
-        <br />
-        <div>
-            @Html.TextBoxFor(m => m.Telefon, new { @id = "Telefon", @placeholder = "Telefonnummer" })*
-            @Html.ValidationMessageFor(model => model.Telefon, "", new { @class = "text-danger" })
-
-            @Html.TextBoxFor(m => m.Mail, new { @id = "Mail", @placeholder = "E-mail" })*
-            @Html.ValidationMessageFor(model => model.Mail, "", new { @class = "text-danger" })
-        </div>
-        <br />
-        <div>
-            @Html.TextBoxFor(m => m.PrimærUddannelse, new { @id = "PrimærUddannelse", @placeholder = "PrimærUddannelse" })*
-            @Html.ValidationMessageFor(model => model.PrimærUddannelse, "", new { @class = "text-danger" })
-
-            @Html.TextBoxFor(m => m.SekundærUddannelse, new { @id = "SekundærUddannelse", @placeholder = "SekundærUddannelse" })
-            @Html.ValidationMessageFor(model => model.SekundærUddannelse, "", new { @class = "text-danger" })
-            <br />
-            <br />
-            <div>
-                <pre>Erhvervserfaring*             Job ønske*</pre>
-            </div>
+        @using (Html.BeginForm("OpretTilføjer", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
             <div>
 
-                @Html.TextAreaFor(m => m.Erhvervserfaring, new { @id = "Erhvervserfaring", @placeholder = "Erhvervserfaring" })
-                @Html.ValidationMessageFor(model => model.Erhvervserfaring, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(m => m.Navn, new { @id = "Navn", @placeholder = "Fulde navn" })*
+                @Html.ValidationMessageFor(model => model.Navn, "", new { @class = "text-danger" })
 
-                @Html.TextAreaFor(m => m.JobØnske, new { @id = "JobØnske", @placeholder = "JobØnske" })
-                @Html.ValidationMessageFor(model => model.JobØnske, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(m => m.Vej, new { @id = "Vej", @placeholder = "Vejadresse" })*
+                @Html.ValidationMessageFor(model => model.Vej, "", new { @class = "text-danger" })
+
+                @Html.TextBoxFor(m => m.By, new { @id = "By", @placeholder = "Bynavn" })*
+                @Html.ValidationMessageFor(model => model.By, "", new { @class = "text-danger" })
 
             </div>
             <br />
             <div>
-                <pre>FagligeKompetencer*          PersonligeKompetencer*</pre>
+                @Html.TextBoxFor(m => m.Telefon, new { @id = "Telefon", @placeholder = "Telefonnummer" })*
+                @Html.ValidationMessageFor(model => model.Telefon, "", new { @class = "text-danger" })
+
+                @Html.TextBoxFor(m => m.Mail, new { @id = "Mail", @placeholder = "E-mail" })*
+                @Html.ValidationMessageFor(model => model.Mail, "", new { @class = "text-danger" })
+            </div>
+            <br />
+            <div>
+                @Html.TextBoxFor(m => m.PrimærUddannelse, new { @id = "PrimærUddannelse", @placeholder = "PrimærUddannelse" })*
+                @Html.ValidationMessageFor(model => model.PrimærUddannelse, "", new { @class = "text-danger" })
+
+                @Html.TextBoxFor(m => m.SekundærUddannelse, new { @id = "SekundærUddannelse", @placeholder = "SekundærUddannelse" })
+                @Html.ValidationMessageFor(model => model.SekundærUddannelse, "", new { @class = "text-danger" })
+                <br />
+                <br />
+                <div>
+                    <pre>Erhvervserfaring*             Job ønske*</pre>
+                </div>
+                <div>
+
+                    @Html.TextAreaFor(m => m.Erhvervserfaring, new { @id = "Erhvervserfaring", @placeholder = "Erhvervserfaring" })
+                    @Html.ValidationMessageFor(model => model.Erhvervserfaring, "", new { @class = "text-danger" })
+
+                    @Html.TextAreaFor(m => m.JobØnske, new { @id = "JobØnske", @placeholder = "JobØnske" })
+                    @Html.ValidationMessageFor(model => model.JobØnske, "", new { @class = "text-danger" })
+
+                </div>
+                <br />
+                <div>
+                    <pre>FagligeKompetencer*          PersonligeKompetencer*</pre>
+                </div>
+                <div>
+
+                    @Html.TextAreaFor(m => m.FagligeKompetencer, new { @id = "FagligeKompetencer", @placeholder = "FagligeKompetencer" })
+                    @Html.ValidationMessageFor(model => model.FagligeKompetencer, "", new { @class = "text-danger" })
+
+                    @Html.TextAreaFor(m => m.PersonligeKompetencer, new { @id = "PersonligeKompetencer", @placeholder = "PersonligeKompetencer" })
+                    @Html.ValidationMessageFor(model => model.PersonligeKompetencer, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br />
+            <div>
+                <pre>GenereltInfo</pre>
             </div>
             <div>
+                @Html.TextAreaFor(m => m.GenereltInfo, new { @id = "GenereltInfo", @placeholder = "GenereltInfo" })
+                @Html.ValidationMessageFor(model => model.GenereltInfo, "", new { @class = "text-danger" })
 
-                @Html.TextAreaFor(m => m.FagligeKompetencer, new { @id = "FagligeKompetencer", @placeholder = "FagligeKompetencer" })
-                @Html.ValidationMessageFor(model => model.FagligeKompetencer, "", new { @class = "text-danger" })
+                <div style="display: none;">
+                    <input type="text" id="DatoForOprettelse" name="DatoForOprettelse" placeholder="DatoForOprettelse" />*
+                </div>
 
-                @Html.TextAreaFor(m => m.PersonligeKompetencer, new { @id = "PersonligeKompetencer", @placeholder = "PersonligeKompetencer" })
-                @Html.ValidationMessageFor(model => model.PersonligeKompetencer, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <br />
-        <div>
-            <pre>GenereltInfo</pre>
-        </div>
-        <div>
-            @Html.TextAreaFor(m => m.GenereltInfo, new { @id = "GenereltInfo", @placeholder = "GenereltInfo" })
-            @Html.ValidationMessageFor(model => model.GenereltInfo, "", new { @class = "text-danger" })
-            
-            <div style="display: none;">
-                <input type="text" id="DatoForOprettelse" name="DatoForOprettelse" placeholder="DatoForOprettelse" />*
+                Ønsker du at flytte*
+                @Html.EditorFor(x => x.ØnskerAtFlytte) Klik på checkboxen hvis ja
+
             </div>
 
-            Ønsker du at flytte*
-            @Html.EditorFor(x => x.ØnskerAtFlytte) Klik på checkboxen hvis ja
-
-        </div>
-
-        <br />
-        <div>
-            Indsæt CV (PDF ONLY!)*
-            <input type="file" name="CV" accept="application/pdf" />
-        </div>
-        <div>
-            <input type="submit" id="Opret" value="Opret" />
-        </div>
-    }
+            <br />
+            <div>
+                Indsæt CV (PDF ONLY!)*
+                <input type="file" name="CV" accept="application/pdf" />
+            </div>
+            <div>
+                <input type="submit" id="Opret" value="Opret" />
+            </div>
+        }
+    </div>
     <script>
         var dateObj = new Date();
         var month = dateObj.getUTCMonth() + 1; //months from 1-12

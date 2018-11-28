@@ -10,69 +10,80 @@
     <meta name="viewport" content="width=device-width" />
     <title>OpretVirksomhed</title>
     <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <style>
+        #vv {
+            position: relative;
+            right: -25px;
+        }
+    </style>
 </head>
 <body>
-    @using (Html.BeginForm("OpretVirksomhed", "Home", FormMethod.Post))
-    {
-    <div>
-        @Html.TextBoxFor(m => m.Navn, new { @id = "Navn", @placeholder = "Virksomheds navn" })*
-        @Html.ValidationMessageFor(model => model.Navn, "", new { @class = "text-danger" })
+    <div id="vv">
+        <div>
+            * Skal udfyldes
+        </div>
+        @using (Html.BeginForm("OpretVirksomhed", "Home", FormMethod.Post))
+        {
+            <div>
+                @Html.TextBoxFor(m => m.Navn, new { @id = "Navn", @placeholder = "Virksomheds navn" })*
+                @Html.ValidationMessageFor(model => model.Navn, "", new { @class = "text-danger" })
 
-        @Html.TextBoxFor(m => m.KontaktPerson, new { @id = "KontaktPerson", @placeholder = "KontaktPerson" })*
-        @Html.ValidationMessageFor(model => model.KontaktPerson, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(m => m.KontaktPerson, new { @id = "KontaktPerson", @placeholder = "KontaktPerson" })*
+                @Html.ValidationMessageFor(model => model.KontaktPerson, "", new { @class = "text-danger" })
 
+            </div>
+            <br />
+
+            <div>
+                @Html.TextBoxFor(m => m.Telefon, new { @id = "Telefon", @placeholder = "Telefon" })*
+                @Html.ValidationMessageFor(model => model.Telefon, "", new { @class = "text-danger" })
+
+                @Html.TextBoxFor(m => m.Mail, new { @id = "Mail", @placeholder = "Mail" })*
+                @Html.ValidationMessageFor(model => model.Mail, "", new { @class = "text-danger" })
+
+            </div>
+            <br />
+
+            <div>
+                <pre>Virksomhedsinfo              Mulige Opgaver*</pre>
+            </div>
+            <div>
+                @Html.TextAreaFor(m => m.VirksomhedsInfo, new { @id = "VirksomhedsInfo", @placeholder = "Skriv VirksomhedsInfo" })
+
+
+                @Html.TextAreaFor(m => m.MuligeOpgaver, new { @id = "MuligeOpgaver", @placeholder = "Skriv MuligeOpgaver" })
+                @Html.ValidationMessageFor(model => model.MuligeOpgaver, "", new { @class = "text-danger" })
+            </div>
+            <br />
+            <div>
+                Profiler*
+            </div>
+            <div>
+                @Html.TextAreaFor(m => m.Profiler, new { @id = "Profiler", @placeholder = "Uddannelsesprofiler" })
+                @Html.ValidationMessageFor(model => model.Profiler, "", new { @class = "text-danger" })
+            </div>
+            <br />
+            <div>
+                @Html.TextBoxFor(m => m.OpgaveLøsning, new { @id = "OpgaveLøsning", @placeholder = "OpgaveLøsning" })
+
+            </div>
+            <br />
+            <div>
+                @Html.TextBoxFor(m => m.Styrkeposition, new { @id = "Styrkeposition", @placeholder = "Styrkeposition" })*
+                @Html.ValidationMessageFor(model => model.Styrkeposition, "", new { @class = "text-danger" })
+
+
+            </div>
+            <br />
+
+            <div>
+                Er villig til at finansere praktikant?*
+                @Html.EditorFor(m => m.Aflønning) Klik på feltet for ja
+            </div>
+            <div>
+                <input type="submit" id="OpretVirksomhed" value="Opret Virksomhed" />
+            </div>
+        }
     </div>
-        <br />
-
-        <div>
-            @Html.TextBoxFor(m => m.Telefon, new { @id = "Telefon", @placeholder = "Telefon" })*
-            @Html.ValidationMessageFor(model => model.Telefon, "", new { @class = "text-danger" })
-
-            @Html.TextBoxFor(m => m.Mail, new { @id = "Mail", @placeholder = "Mail" })*
-            @Html.ValidationMessageFor(model => model.Mail, "", new { @class = "text-danger" })
-
-        </div>
-        <br />
-
-        <div>
-            <pre>Virksomhedsinfo              Mulige Opgaver*</pre>
-        </div>
-        <div>
-            @Html.TextAreaFor(m => m.VirksomhedsInfo, new { @id = "VirksomhedsInfo", @placeholder = "Skriv VirksomhedsInfo" })
-           
-
-            @Html.TextAreaFor(m => m.MuligeOpgaver, new { @id = "MuligeOpgaver", @placeholder = "Skriv MuligeOpgaver" })
-            @Html.ValidationMessageFor(model => model.MuligeOpgaver, "", new { @class = "text-danger" })
-        </div>
-        <br />
-        <div>
-            Profiler*
-        </div>
-        <div>
-            @Html.TextAreaFor(m => m.Profiler, new { @id = "Profiler", @placeholder = "Uddannelsesprofiler" })
-            @Html.ValidationMessageFor(model => model.Profiler, "", new { @class = "text-danger" })
-        </div>
-        <br />
-        <div>
-            @Html.TextBoxFor(m => m.OpgaveLøsning, new { @id = "OpgaveLøsning", @placeholder = "OpgaveLøsning" })
-            
-        </div>
-        <br />
-        <div>
-            @Html.TextBoxFor(m => m.Styrkeposition, new { @id = "Styrkeposition", @placeholder = "Styrkeposition" })*
-            @Html.ValidationMessageFor(model => model.Styrkeposition, "", new { @class = "text-danger" })
-
-
-        </div>
-        <br />
-
-        <div>
-            Er villig til at finansere praktikant?*
-            @Html.EditorFor(m => m.Aflønning) Klik på feltet for ja
-        </div>
-        <div>
-            <input type="submit" id="OpretVirksomhed" value="Opret Virksomhed" />
-        </div>
-    }
 </body>
 </html>

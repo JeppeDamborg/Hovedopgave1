@@ -10,110 +10,118 @@
     <meta name="viewport" content="width=device-width" />
     <title>OpretStudent</title>
     <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <style>
+        #sv {
+            position: relative;
+            right: -25px;
+        }
+
+    </style>
 </head>
-<body onload="getCurrentdate()">
+<body id="sv" onload="getCurrentdate()">
     <div>
-        * Skal udfyldes
-    </div>
-    @using (Html.BeginForm("OpretStudent", "Home", FormMethod.Post, new { enctype="multipart/form-data" }))
-    {
-    <div>
+        <div>
+            * Skal udfyldes
+        </div>
+        @using (Html.BeginForm("OpretStudent", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div>
 
-        @Html.TextBoxFor(m => m.Navn, new { @id="Navn", @placeholder = "Fulde navn" })*        
-        @Html.ValidationMessageFor(model => model.Navn, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(m => m.Navn, new { @id = "Navn", @placeholder = "Fulde navn" })*
+                @Html.ValidationMessageFor(model => model.Navn, "", new { @class = "text-danger" })
 
-        @Html.TextBoxFor(m => m.Vej, new { @id= "Vej", @placeholder ="Vej"})*
-        @Html.ValidationMessageFor(model => model.Vej, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(m => m.Vej, new { @id = "Vej", @placeholder = "Vej" })*
+                @Html.ValidationMessageFor(model => model.Vej, "", new { @class = "text-danger" })
 
-        @Html.TextBoxFor(m => m.By, new { @id= "By", @placeholder ="Bynavn"})*
-        @Html.ValidationMessageFor(model => model.By, "", new { @class = "text-danger" })
-    </div>
-    <br />
-    <div>
-        @Html.TextBoxFor(m => m.Nationalitet, new { @id = "Nationalitet", @placeholder = "Nationalitet" })*
-        @Html.ValidationMessageFor(model => model.Nationalitet, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(m => m.By, new { @id = "By", @placeholder = "Bynavn" })*
+                @Html.ValidationMessageFor(model => model.By, "", new { @class = "text-danger" })
+            </div>
+            <br />
+            <div>
+                @Html.TextBoxFor(m => m.Nationalitet, new { @id = "Nationalitet", @placeholder = "Nationalitet" })*
+                @Html.ValidationMessageFor(model => model.Nationalitet, "", new { @class = "text-danger" })
 
-        @Html.TextBoxFor(m => m.Modersmål, new { @id = "Modersmål", @placeholder = "Modersmål" })*
-        @Html.ValidationMessageFor(model => model.Modersmål, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(m => m.Modersmål, new { @id = "Modersmål", @placeholder = "Modersmål" })*
+                @Html.ValidationMessageFor(model => model.Modersmål, "", new { @class = "text-danger" })
 
-        @Html.TextBoxFor(m => m.Fremmedsprog, new { @id = "Fremmedsprog", @placeholder = "Fremmedsprog" })
-    </div>
-    <br />
-    <div>
+                @Html.TextBoxFor(m => m.Fremmedsprog, new { @id = "Fremmedsprog", @placeholder = "Fremmedsprog" })
+            </div>
+            <br />
+            <div>
 
-        @Html.TextBoxFor(m => m.Telefon, new { @id = "Telefon", @placeholder = "Telefon" })*
-        @Html.ValidationMessageFor(model => model.Telefon, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(m => m.Telefon, new { @id = "Telefon", @placeholder = "Telefon" })*
+                @Html.ValidationMessageFor(model => model.Telefon, "", new { @class = "text-danger" })
 
-        @Html.TextBoxFor(m => m.Mail, new { @id = "Mail", @placeholder = "Mail" })*
-        @Html.ValidationMessageFor(model => model.Mail, "", new { @class = "text-danger" })
-    </div>
-    <br />
-    <div>
-        @Html.TextBoxFor(m => m.Uddannelse, new { @id = "Uddannelse", @placeholder = "Uddannelse" })*
-        @Html.ValidationMessageFor(model => model.Uddannelse, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(m => m.Mail, new { @id = "Mail", @placeholder = "Mail" })*
+                @Html.ValidationMessageFor(model => model.Mail, "", new { @class = "text-danger" })
+            </div>
+            <br />
+            <div>
+                @Html.TextBoxFor(m => m.Uddannelse, new { @id = "Uddannelse", @placeholder = "Uddannelse" })*
+                @Html.ValidationMessageFor(model => model.Uddannelse, "", new { @class = "text-danger" })
 
-        @Html.TextBoxFor(m => m.Periode, new { @id = "Periode", @placeholder = "Start/SlutDato" })*
-        @Html.ValidationMessageFor(model => model.Periode, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(m => m.Periode, new { @id = "Periode", @placeholder = "Start/SlutDato" })*
+                @Html.ValidationMessageFor(model => model.Periode, "", new { @class = "text-danger" })
 
-        @Html.TextBoxFor(m => m.Semester, new { @id = "Semester", @placeholder = "Nuværende Semester" })*
-        @Html.ValidationMessageFor(model => model.Semester, "", new { @class = "text-danger" })
-    </div>
-    <br />
-    <div>
-        Specialisering/Fokusområde*
-    </div>
-    <div>
-        @Html.TextAreaFor(m => m.Specialisering, new { @id = "Specialisering", @placeholder = "Skriv din Specialisering eller fokusområde Her, ellers skriv 'Ingen'" })
-        @Html.ValidationMessageFor(model => model.Specialisering, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(m => m.Semester, new { @id = "Semester", @placeholder = "Nuværende Semester" })*
+                @Html.ValidationMessageFor(model => model.Semester, "", new { @class = "text-danger" })
+            </div>
+            <br />
+            <div>
+                Specialisering/Fokusområde*
+            </div>
+            <div>
+                @Html.TextAreaFor(m => m.Specialisering, new { @id = "Specialisering", @placeholder = "Skriv din Specialisering eller fokusområde Her, ellers skriv 'Ingen'" })
+                @Html.ValidationMessageFor(model => model.Specialisering, "", new { @class = "text-danger" })
 
-    </div>
-    <br />
-    <div>
-        @Html.TextBoxFor(m => m.Overbygning, new { @id = "Overbygning", @placeholder = "Overbygning" })
-    </div>
-    <br />
-    <div>
-        <pre>Skriv hvis du ønsker et Semester Projekt, Praktikplads eller HovedOpgave. Udfyld de relevante felter med emne og tidsperiode</pre>
-    </div>
-    <div>
-        @Html.TextAreaFor(m => m.SemesterProjekt, new { @id = "SemesterProjekt", @placeholder = "Skriv dit Semester Projekt, hvis du har et" })
-        @Html.TextAreaFor(m => m.Praktik, new { @id = "Praktik", @placeholder = "Skriv din Praktik Projekt/Opgave, hvis du har et " })
-        @Html.TextAreaFor(m => m.Hovedopgave, new { @id = "Hovedopgave", @placeholder = "Skriv din Hovedopgave, hvis du har et " })
-    </div>
+            </div>
+            <br />
+            <div>
+                @Html.TextBoxFor(m => m.Overbygning, new { @id = "Overbygning", @placeholder = "Overbygning" })
+            </div>
+            <br />
+            <div>
+                <pre>Skriv hvis du ønsker et Semester Projekt, Praktikplads eller HovedOpgave. Udfyld de relevante felter med emne og tidsperiode</pre>
+            </div>
+            <div>
+                @Html.TextAreaFor(m => m.SemesterProjekt, new { @id = "SemesterProjekt", @placeholder = "Skriv dit Semester Projekt, hvis du har et" })
+                @Html.TextAreaFor(m => m.Praktik, new { @id = "Praktik", @placeholder = "Skriv din Praktik Projekt/Opgave, hvis du har et " })
+                @Html.TextAreaFor(m => m.Hovedopgave, new { @id = "Hovedopgave", @placeholder = "Skriv din Hovedopgave, hvis du har et " })
+            </div>
 
-    <br />
-    <div>
-        @Html.TextBoxFor(m => m.OpgaveType, new { @id = "OpgaveType", @placeholder = "OpgaveType" })
-        
-    </div>
-    <br />
-    <div>
-        @Html.TextBoxFor(m => m.StudieJob, new { @id = "StudieJob", @placeholder = "StudieJob" })
-    </div>
-    <br />
-    <div>
-        Har du egen transport(bil)*
-        @Html.EditorFor(x => x.Transport) Klik på checkboxen hvis ja
+            <br />
+            <div>
+                @Html.TextBoxFor(m => m.OpgaveType, new { @id = "OpgaveType", @placeholder = "OpgaveType" })
 
-    </div>
-    <br />
-    <div>
-        Indsæt CV (PDF ONLY)*
-        <input type="file" name="CV" accept="application/pdf" />
-    </div>
+            </div>
+            <br />
+            <div>
+                @Html.TextBoxFor(m => m.StudieJob, new { @id = "StudieJob", @placeholder = "StudieJob" })
+            </div>
+            <br />
+            <div>
+                Har du egen transport(bil)*
+                @Html.EditorFor(x => x.Transport) Klik på checkboxen hvis ja
 
-    <div>
+            </div>
+            <br />
+            <div>
+                Indsæt CV (PDF ONLY)*
+                <input type="file" name="CV" accept="application/pdf" />
+            </div>
 
-    </div>
-    <div style="display: none;">
-        <input type="text" id="DatoForOprettelse" name="DatoForOprettelse" placeholder="DatoForOprettelse" />*
-    </div>
-    <br />
-    <div>
-        <input type="submit" id="OpretStudent" value="Opret" />
-    </div>
-    }
+            <div>
 
+            </div>
+            <div style="display: none;">
+                <input type="text" id="DatoForOprettelse" name="DatoForOprettelse" placeholder="DatoForOprettelse" />*
+            </div>
+            <br />
+            <div>
+                <input type="submit" id="OpretStudent" value="Opret" />
+            </div>
+        }
+    </div>
     <script>
         var dateObj = new Date();
         var month = dateObj.getUTCMonth() + 1; //months from 1-12

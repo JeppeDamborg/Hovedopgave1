@@ -10,28 +10,39 @@
     <meta name="viewport" content="width=device-width" />
     <title>OpretBruger</title>
     <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <style>
+        #bv {
+            position: relative;
+            right: -25px;
+        }
+    </style>
 </head>
 <body>
-    @using (Html.BeginForm("OpretBruger", "Home", FormMethod.Post))
-    {
-    <div>
-        @Html.TextBoxFor(m => m.Brugernavn, new { @id = "Brugernavn", @placeholder = "Brugernavn" })*
-        @Html.ValidationMessageFor(model => model.Brugernavn, "", new { @class = "text-danger" })
-    </div>
+    <div id="bv">
+        <div>
+            * Skal udfyldes
+        </div>
+        @using (Html.BeginForm("OpretBruger", "Home", FormMethod.Post))
+        {
+            <div>
+                @Html.TextBoxFor(m => m.Brugernavn, new { @id = "Brugernavn", @placeholder = "Brugernavn" })*
+                @Html.ValidationMessageFor(model => model.Brugernavn, "", new { @class = "text-danger" })
+            </div>
 
-    <div>
-        @Html.TextBoxFor(m => m.Password, new { @id = "Password", @placeholder = "Password" })*
-        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-    </div>
+            <div>
+                @Html.TextBoxFor(m => m.Password, new { @id = "Password", @placeholder = "Password" })*
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
 
-    <div>
-        @Html.TextBoxFor(m => m.Rettighed, new { @id = "Rettighed", @placeholder = "Rettighed" })*
-        @Html.ValidationMessageFor(model => model.Rettighed, "", new { @class = "text-danger" })
-    </div>
+            <div>
+                @Html.TextBoxFor(m => m.Rettighed, new { @id = "Rettighed", @placeholder = "Rettighed" })*
+                @Html.ValidationMessageFor(model => model.Rettighed, "", new { @class = "text-danger" })
+            </div>
 
-    <div>
-        <input type="submit" id="Opretbruger" value="Opret Bruger" />
+            <div>
+                <input type="submit" id="Opretbruger" value="Opret Bruger" />
+            </div>
+        }
     </div>
-    }
 </body>
 </html>
