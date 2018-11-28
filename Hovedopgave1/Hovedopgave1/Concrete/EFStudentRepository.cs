@@ -57,18 +57,20 @@ namespace Hovedopgave1.Concrete
 
         public static void SletAutomatiskStudent()
         {
-            var dato = DateTime.Now.AddMonths(-6);
+            //var dato = DateTime.Now.AddMonths(-6);
 
             
             using (var dbcontext = new EFDbContext())
             {
-                var findstudent = dbcontext.Students.SqlQuery("Select * from Students Where DatoForOprettelse <= @date", new SqlParameter("@date", dato));
 
-                if (findstudent != null)
-                {
-                    var deletestudent = dbcontext.Students.SqlQuery("Delete from Students Where DatoForOprettelse <= @dato", new SqlParameter("@dato", dato));
+               dbcontext.Students.SqlQuery("Delete * From Students Where DatoForOprettelse <= dateadd(day, -1, getdate())");
+                //var findstudent = dbcontext.Students.SqlQuery("Select * from Students Where DatoForOprettelse <= @date", new SqlParameter("@date", dato));
+
+                //if (findstudent != null)
+                //{
+                    //var deletestudent = dbcontext.Students.SqlQuery("Delete from Students Where DatoForOprettelse <= @dato", new SqlParameter("@dato", dato));
                     
-                }
+                //}
             }
 
            
