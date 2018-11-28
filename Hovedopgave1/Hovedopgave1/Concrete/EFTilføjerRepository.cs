@@ -448,7 +448,20 @@ namespace Hovedopgave1.Concrete
 
         public List<Tilføjer> SøgTilføjerPåKompetenceOgUddannelseOgJobØnskeOgSekundærUddannelseOgFlytning(string kompetence, string uddannelse, string jobØnske, string sekundærUddannelse, int? flytning)
         {
-            throw new NotImplementedException();
+            List<Tilføjer> tilføjerlist;
+            using(var dbcontext = new EFDbContext())
+            {
+                string query = "Select * From Tilføjer Where FagligeKompetencer Like @kompetence And PrimærUddannelse Like @uddannelse And JobØnske Like @jobØnske And SekundærUddannelse Like @sekundærUddannelse And ØnskerAtFlytte = @flytning";
+                SqlParameter sql1 = new SqlParameter("@kompetence", '%' + kompetence + '%');
+                SqlParameter sql2 = new SqlParameter("@uddannelse", '%' + uddannelse + '%');
+                SqlParameter sql3 = new SqlParameter("@jobØnske", '%' + jobØnske + '%');
+                SqlParameter sql4 = new SqlParameter("@sekundærUddannelse", '%' + sekundærUddannelse + '%');
+                SqlParameter sql5 = new SqlParameter("@flytning", flytning);
+                object[] parameter = new object[] { sql1, sql2, sql3, sql4, sql5 };
+                var søgtilføjer = dbcontext.Tilføjer.SqlQuery(query, parameter).ToList<Tilføjer>();
+                tilføjerlist = søgtilføjer;
+            }
+            return tilføjerlist;
         }
 
         public List<Tilføjer> SøgTilføjerPåUddannelseOgJobØnskeOgKompetenceOgFlytning(string uddannelse, string jobØnske, string kompetence, int? flytning)
