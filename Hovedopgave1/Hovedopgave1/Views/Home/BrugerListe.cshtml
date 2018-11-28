@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="~/Content/bootstrap.css" />
 </head>
 <body>
+    <div>
+        <input type="button" class="button" value="Tilbage til forside" onclick="location.href='@Url.Action("Forside", "Home")'" />
+    </div>
    <table class="table">
        <tr>
            <th>@Html.DisplayNameFor(model => model.Brugernavn)</th>
