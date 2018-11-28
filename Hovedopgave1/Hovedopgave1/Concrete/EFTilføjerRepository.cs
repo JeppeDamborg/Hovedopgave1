@@ -414,14 +414,36 @@ namespace Hovedopgave1.Concrete
             return tilføjerlist;
         }
 
-        public List<Tilføjer> SøgTilføjerPåFlytningOgJobØnskeOgSekundærUddannelse(int? flytning, string JobØnske, string sekundærUddannelse)
+        public List<Tilføjer> SøgTilføjerPåFlytningOgJobØnskeOgSekundærUddannelse(int? flytning, string jobØnske, string sekundærUddannelse)
         {
-            throw new NotImplementedException();
+            List<Tilføjer> tilføjerlist;
+            using(var dbcontext = new EFDbContext())
+            {
+                string query = "Select * from Tilføjer Where ØnskerAtFlytte = @flytning AND JobØnske Like @jobØnske AND SekundærUddannelse Like @sekundærUddannelse";
+                SqlParameter sql1 = new SqlParameter("@flytning", flytning);
+                SqlParameter sql2 = new SqlParameter("@jobØnske", '%' + jobØnske + '%');
+                SqlParameter sql3 = new SqlParameter("@sekundærUddannelse", '%' + sekundærUddannelse + '%');
+                object[] parameter = new object[] { sql1, sql2, sql3 };
+                var søgtilføjer = dbcontext.Tilføjer.SqlQuery(query, parameter).ToList<Tilføjer>();
+                tilføjerlist = søgtilføjer;
+            }
+            return tilføjerlist;
         }
 
         public List<Tilføjer> SøgTilføjerPåFlytningOgKompetenceOgSekundærUddannelse(int? flytning, string kompetence, string sekundærUddannelse)
         {
-            throw new NotImplementedException();
+            List<Tilføjer> tilføjerlist;
+            using(var dbcontext = new EFDbContext())
+            {
+                string query = "Select * from Tilføjer Where ØnskerAtFlytte = @flytning And FagligeKompetencer Like @kompetence And SekundærUddannelse Like @sekundærUddannelse";
+                SqlParameter sql1 = new SqlParameter("@flytning", flytning);
+                SqlParameter sql2 = new SqlParameter("@kompetence", '%' + kompetence + '%');
+                SqlParameter sql3 = new SqlParameter("@sekundærUddannelse", '%' + sekundærUddannelse + '%');
+                object[] parameter = new object[] { sql1, sql2, sql3 };
+                var søgtilføjer = dbcontext.Tilføjer.SqlQuery(query, parameter).ToList<Tilføjer>();
+                tilføjerlist = søgtilføjer;
+            }
+            return tilføjerlist;
         }
     }
 }

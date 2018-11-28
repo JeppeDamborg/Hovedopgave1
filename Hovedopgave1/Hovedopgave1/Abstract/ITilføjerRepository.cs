@@ -66,7 +66,7 @@ namespace Hovedopgave1.Abstract
 
         List<Tilføjer> SøgTilføjerPåFlytningOgJobØnskeOgKompetence(int? flytning, string jobØnske, string kompetence);
 
-        List<Tilføjer> SøgTilføjerPåFlytningOgJobØnskeOgSekundærUddannelse(int? flytning, string JobØnske, string sekundærUddannelse);
+        List<Tilføjer> SøgTilføjerPåFlytningOgJobØnskeOgSekundærUddannelse(int? flytning, string jobØnske, string sekundærUddannelse);
 
         List<Tilføjer> SøgTilføjerPåFlytningOgKompetenceOgSekundærUddannelse(int? flytning, string kompetence, string sekundærUddannelse);
     }
