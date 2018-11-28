@@ -124,14 +124,17 @@
     </div>
     <script>
         var dateObj = new Date();
-        var month = dateObj.getUTCMonth() + 1; //months from 1-12
+        var seconds = dateObj.getUTCSeconds();
+        var minutes = dateObj.getUTCMinutes();
+        var hour = dateObj.getUTCHours() + 1; 
+        var month = dateObj.getUTCMonth() + 1; 
         var day = dateObj.getUTCDate();
         var year = dateObj.getUTCFullYear();
 
         
 
         function getCurrentdate() {
-            document.getElementById('DatoForOprettelse').value = day + "/" + month + "/" + year;
+            document.getElementById('DatoForOprettelse').value = hour + ":" + minutes + " " + day + "/" + month + "/" + year;
         }
     </script>
 </body>

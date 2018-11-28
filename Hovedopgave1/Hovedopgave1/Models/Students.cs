@@ -47,9 +47,9 @@ namespace Hovedopgave1.Models
 
 
 
-        [DataType(DataType.Date)]
-        [Column(TypeName = "datetime2")]
-        public DateTime DatoForOprettelse { get; set; } = DateTime.Now;
+   //     [DataType(DataType.Date)]
+   //     [Column(TypeName = "datetime2")]
+        public DateTime DatoForOprettelse { get; set; } 
 
         public string CVTitel { get; set; }
 
