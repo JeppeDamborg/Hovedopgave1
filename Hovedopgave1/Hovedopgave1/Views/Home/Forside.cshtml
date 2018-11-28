@@ -26,12 +26,19 @@
             right: 35%;
 
         }
+        #Ftekst {
+            color: #3927F0;
+        }
+        #Ftekst2 {
+            color: #3927F0;
+        }
     body { background-image: url('../../Images/RedigeretForside.PNG'); background-size: cover; }
     </style>
 </head>
 <body>
         
-        <h2>Velkommen til InnoVest</h2>
+        <h2 id="Ftekst" style="font-size:300%; font-family:verdana;" align="center" >Velkommen til Danmarks største Arbejdsplads</h2>
+    <h3 align="center" id="Ftekst2">Database til kandidater</h3>
         <div id="FD">
             <div>
                 <input type="button" class="button" value="Opret Student" onclick="location.href='@Url.Action("OpretStudent", "Home")'" />
