@@ -405,6 +405,14 @@ namespace Hovedopgave1.Controllers
                 {
                     tilføjerlist = trepository.SøgTilføjerPåUddannelseOgJobØnskeOgSekundærUddannelseOgFlytning(uddannelse, jobØnske, sekundærUddannelse, flytning);
                 }
+                if(uddannelse != "" && kompetence != "" && sekundærUddannelse != "" && flytning == 1)
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåUddannelseOgKompetenceOgSekundærUddannelseOgFlytning(uddannelse, kompetence, sekundærUddannelse, flytning);
+                }
+                if(jobØnske != "" && kompetence != "" && sekundærUddannelse != "" && flytning == 1)
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåJobØnskeOgKompetenceOgSekundærUddannelseOgFlytning(jobØnske, kompetence, sekundærUddannelse, flytning);
+                }
 
                 if(kompetence != "" && uddannelse != "" && jobØnske != "" && sekundærUddannelse != "" && flytning == 1)
                 {
