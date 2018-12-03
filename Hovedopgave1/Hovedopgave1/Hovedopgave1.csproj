@@ -328,10 +328,10 @@
     <Content Include="Views\Home\BrugerRedigeret.cshtml" />
     <Content Include="Views\Home\TilføjerOprettet.cshtml" />
     <Content Include="Views\Home\TilføjerRedigeret.cshtml" />
+    <Content Include="Views\Bruger\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Bruger\" />
     <Folder Include="Views\SuccesViews\" />
   </ItemGroup>
   <ItemGroup>
