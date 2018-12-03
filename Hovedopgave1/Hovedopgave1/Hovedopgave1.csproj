@@ -161,6 +161,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IAuthProvider.cs" />
     <Compile Include="Abstract\IBrugerRepository.cs" />
     <Compile Include="Abstract\IStudentRepository.cs" />
     <Compile Include="Abstract\ITilføjerRepository.cs" />
