@@ -176,6 +176,7 @@
     <Compile Include="Concrete\EFTilføjerRepository.cs" />
     <Compile Include="Concrete\EFVirksomhedRepository.cs" />
     <Compile Include="Concrete\FormsAuthProvider.cs" />
+    <Compile Include="Controllers\BrugerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -330,6 +331,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Bruger\" />
     <Folder Include="Views\SuccesViews\" />
   </ItemGroup>
   <ItemGroup>
