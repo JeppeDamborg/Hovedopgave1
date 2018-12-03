@@ -35,6 +35,7 @@ namespace Hovedopgave1.Infrastructure
             kernel.Bind<IVirksomhedRepository>().To<EFVirksomhedRepository>();
             kernel.Bind<IBrugerRepository>().To<EFBrugerRepository>();
             kernel.Bind<ITilføjerRepository>().To<EFTilføjerRepository>();
+            kernel.Bind<IAuthProvider>().To<FormsAuthProvider>();
         }
     }
 }
