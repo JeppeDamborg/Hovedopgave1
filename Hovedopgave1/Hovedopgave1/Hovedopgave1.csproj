@@ -175,6 +175,7 @@
     <Compile Include="Concrete\EFStudentRepository.cs" />
     <Compile Include="Concrete\EFTilføjerRepository.cs" />
     <Compile Include="Concrete\EFVirksomhedRepository.cs" />
+    <Compile Include="Concrete\FormsAuthProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

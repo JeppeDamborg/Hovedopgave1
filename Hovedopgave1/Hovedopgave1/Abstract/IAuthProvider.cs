@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hovedopgave1.Abstract
 {
-    interface IAuthProvider
+   public interface IAuthProvider
     {
         bool Authenticate(string username, string password);
     }
