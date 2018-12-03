@@ -29,7 +29,7 @@ namespace Hovedopgave1.Controllers
         }
 
 
-
+        [Authorize]
         public ActionResult Forside()
         {
             return View();
@@ -72,7 +72,7 @@ namespace Hovedopgave1.Controllers
                 return View(students);
             }
         }
-        
+        [Authorize]
         public ActionResult StudentListe()
         {
            
@@ -175,7 +175,7 @@ namespace Hovedopgave1.Controllers
             }
             
         }
-
+        [Authorize]
         public ActionResult VirksomhedListe()
         {
             return View(vrespository.Virksomhed);
@@ -277,7 +277,7 @@ namespace Hovedopgave1.Controllers
                 return View(tilføjer);
             }
         }
-
+        [Authorize]
         public ActionResult TilføjerListe()
         {
             return View(trepository.Tilføjer);
@@ -459,7 +459,7 @@ namespace Hovedopgave1.Controllers
                 return View (bruger);
             }
         }
-
+        [Authorize]
         public ActionResult BrugerListe()
         {
             return View(brepository.Bruger);
