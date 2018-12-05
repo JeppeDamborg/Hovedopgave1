@@ -332,6 +332,8 @@
     <Content Include="Views\Home\BrugerForside.cshtml" />
     <Content Include="Views\Home\MedarbejderForside.cshtml" />
     <Content Include="Views\Home\TilføjerListeBruger.cshtml" />
+    <Content Include="Views\Home\StudentListeMedarbejder.cshtml" />
+    <Content Include="Views\Home\TilføjerListeMedarbejder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
