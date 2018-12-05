@@ -330,6 +330,8 @@
     <Content Include="Views\Home\TilføjerRedigeret.cshtml" />
     <Content Include="Views\Bruger\Login.cshtml" />
     <Content Include="Views\Home\BrugerForside.cshtml" />
+    <Content Include="Views\Home\MedarbejderForside.cshtml" />
+    <Content Include="Views\Home\TilføjerListeBruger.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

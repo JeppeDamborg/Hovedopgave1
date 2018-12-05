@@ -294,6 +294,12 @@ namespace Hovedopgave1.Controllers
             return View(trepository.Tilføjer);
         }
 
+        [Authorize]
+        public ActionResult TilføjerListeBruger()
+        {
+            return View(trepository.Tilføjer);
+        }
+
         [HttpPost]
         public ActionResult TilføjerListe(string navn ,string uddannelse, string jobØnske, string kompetence, int? flytning, string sekundærUddannelse)
         {
