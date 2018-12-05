@@ -1,0 +1,59 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Forside</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <style>
+        input[type=button] {
+            cursor: pointer;
+            font-size: medium;
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            width: 150px;
+            height: 40px;
+        }
+
+        #FD {
+            position: absolute;
+            bottom: 0.1%;
+            right: 35%;
+        }
+
+        #Ftekst {
+            color: white;
+        }
+
+        #Ftekst2 {
+            color: white;
+        }
+
+        body {
+            background-image: url('../../Images/RedigeretForside.PNG');
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="FD">
+        <div>
+            <h3 align="center" id="Ftekst2" style="font-family:'Times New Roman'">Database til kandidater</h3>
+        </div>
+
+
+        <div>
+           
+            <input type="button" class="button" value="Tilflytter Liste" onclick="location.href='@Url.Action("TilføjerListe", "Home")'" />
+        </div>
+
+    </div>
+</body>
+</html>

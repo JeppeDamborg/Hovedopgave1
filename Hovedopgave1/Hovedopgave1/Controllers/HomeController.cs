@@ -34,7 +34,18 @@ namespace Hovedopgave1.Controllers
         {
             return View();
         }
-      
+
+        [Authorize]
+        public ActionResult BrugerForside()
+        {
+            return View();
+        }
+        [Authorize]
+        public ActionResult MedarbejderForside()
+        {
+            return View();
+        }
+
 
         public ActionResult OpretStudent()
         {
