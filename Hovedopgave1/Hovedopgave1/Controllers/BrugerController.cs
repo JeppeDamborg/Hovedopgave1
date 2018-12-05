@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Hovedopgave1.Abstract;
+using Hovedopgave1.Concrete;
 using Hovedopgave1.Models;
 
 namespace Hovedopgave1.Controllers
@@ -11,6 +12,7 @@ namespace Hovedopgave1.Controllers
     public class BrugerController : Controller
     {
         IAuthProvider authProvider;
+        
 
         public BrugerController(IAuthProvider auth)
         {
@@ -25,22 +27,34 @@ namespace Hovedopgave1.Controllers
 
 
         [HttpPost]
-        public ActionResult Login(Bruger bruger, string returnUrl)
+        public ActionResult Login(Bruger bruger)
         {
-            if (ModelState.IsValid)
+            if (bruger.Brugernavn != null)
             {
-                if(authProvider.Authenticate(bruger.Brugernavn, bruger.Password))
+
+
+
+                if (ModelState.IsValid)
                 {
-                    return Redirect(returnUrl ?? Url.Action("Forside", "Home"));
+                    EFDbContext context = new EFDbContext();
+                    var login = context.Bruger.Where(a => a.Brugernavn == bruger.Brugernavn && a.Password == bruger.Password).FirstOrDefault();
+                    if (login != null)
+                    {
+                        return RedirectToAction("Forside", "Home");
+                    }
+                    //else
+                    //{
+
+
+                       
+                        //return View();
+                    //}
                 }
-                else
-                {
-                    ModelState.AddModelError("", "Forkert brugernavn eller password");
-                    return View();
-                }
+                return RedirectToAction("Forside", "Home");
             }
             else
             {
+                ModelState.AddModelError("", "Forkert brugernavn eller password");
                 return View();
             }
         }
