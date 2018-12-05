@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Hovedopgave1.Abstract;
 using Hovedopgave1.Concrete;
 using Hovedopgave1.Models;
+using System.Web.Security;
 
 namespace Hovedopgave1.Controllers
 {
@@ -19,7 +20,7 @@ namespace Hovedopgave1.Controllers
             authProvider = auth;
         }
 
-
+        [HttpGet]
         public ActionResult Login()
         {
             return View();
@@ -29,34 +30,37 @@ namespace Hovedopgave1.Controllers
         [HttpPost]
         public ActionResult Login(Bruger bruger)
         {
-            if (bruger.Brugernavn != null)
-            {
+            //if (bruger.Brugernavn != null)
+            //{
 
 
 
-                if (ModelState.IsValid)
+                 if(ModelState.IsValid)
                 {
                     EFDbContext context = new EFDbContext();
-                    var login = context.Bruger.Where(a => a.Brugernavn == bruger.Brugernavn && a.Password == bruger.Password).FirstOrDefault();
+                    var login = context.Bruger.FirstOrDefault(a => a.Brugernavn == bruger.Brugernavn && a.Password == bruger.Password);
                     if (login != null)
                     {
+                        FormsAuthentication.SetAuthCookie(bruger.Brugernavn, false);
                         return RedirectToAction("Forside", "Home");
                     }
-                    //else
-                    //{
+                    else
+                    {
+                    ModelState.AddModelError("", "Forkert brugernavn eller password");
 
 
-                       
-                        //return View();
-                    //}
+                
+                    }
+                return View(bruger);
                 }
-                return RedirectToAction("Forside", "Home");
-            }
-            else
-            {
-                ModelState.AddModelError("", "Forkert brugernavn eller password");
-                return View();
-            }
+            return View();
+                //return RedirectToAction("Forside", "Home");
+            //}
+            //else
+            //{
+                //ModelState.AddModelError("", "Forkert brugernavn eller password");
+               // return View();
+            //}
         }
     }
 }
