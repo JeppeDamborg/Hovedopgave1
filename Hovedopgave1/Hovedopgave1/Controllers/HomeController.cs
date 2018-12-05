@@ -90,6 +90,13 @@ namespace Hovedopgave1.Controllers
 
             return View(srepository.Students);
         }
+        [Authorize]
+        public ActionResult StudentListeMedarbejder()
+        {
+
+
+            return View(srepository.Students);
+        }
         [HttpPost]
 
         public ActionResult StudentListe(string navn, string uddannelse, string semester, string emne)
@@ -188,6 +195,11 @@ namespace Hovedopgave1.Controllers
         }
         [Authorize]
         public ActionResult VirksomhedListe()
+        {
+            return View(vrespository.Virksomhed);
+        }
+        [Authorize]
+        public ActionResult VirksomhedListeMedarbejder()
         {
             return View(vrespository.Virksomhed);
         }
@@ -290,6 +302,12 @@ namespace Hovedopgave1.Controllers
         }
         [Authorize]
         public ActionResult TilføjerListe()
+        {
+            return View(trepository.Tilføjer);
+        }
+
+        [Authorize]
+        public ActionResult TilføjerListeMedarbejder()
         {
             return View(trepository.Tilføjer);
         }
