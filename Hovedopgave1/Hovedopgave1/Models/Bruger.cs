@@ -15,7 +15,7 @@ namespace Hovedopgave1.Models
         public string Brugernavn { get; set; }
         [Required(ErrorMessage = "Du skal skrive et password")]
         public string Password { get; set; }
-     //   [Required(ErrorMessage = "Du skal skrive hvilken rettighed brugeren har")]
+        [Required(ErrorMessage = "Du skal skrive hvilken rettighed brugeren har")]
         public string Rettighed { get; set; }
 
     }

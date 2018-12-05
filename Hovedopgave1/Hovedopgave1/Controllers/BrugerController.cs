@@ -38,15 +38,23 @@ namespace Hovedopgave1.Controllers
                  if(ModelState.IsValid)
                 {
                     EFDbContext context = new EFDbContext();
-                    var login = context.Bruger.FirstOrDefault(a => a.Brugernavn == bruger.Brugernavn && a.Password == bruger.Password);
+                    var login = context.Bruger.FirstOrDefault(a => a.Brugernavn == bruger.Brugernavn && a.Password == bruger.Password && a.Rettighed == bruger.Rettighed);
                     if (login != null)
+                    {
+                   if (login.Rettighed == "Admin")
                     {
                         FormsAuthentication.SetAuthCookie(bruger.Brugernavn, false);
                         return RedirectToAction("Forside", "Home");
                     }
+                   if(login.Rettighed == "Bruger")
+                    {
+                        FormsAuthentication.SetAuthCookie(bruger.Brugernavn, false);
+                        return RedirectToAction("BrugerForside", "Home");
+                    }
+                    }
                     else
                     {
-                    ModelState.AddModelError("", "Forkert brugernavn eller password");
+                    ModelState.AddModelError("", "Forkert brugernavn eller password eller rettighed");
 
 
                 
