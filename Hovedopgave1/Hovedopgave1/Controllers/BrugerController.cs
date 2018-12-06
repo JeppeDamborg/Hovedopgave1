@@ -72,5 +72,12 @@ namespace Hovedopgave1.Controllers
                // return View();
             //}
         }
+
+
+        public ActionResult Log_Ud()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login", "Bruger");
+        }
     }
 }
