@@ -97,6 +97,72 @@ namespace Hovedopgave1.Controllers
 
             return View(srepository.Students);
         }
+
+        [HttpPost]
+        public ActionResult StudentListeMedarbejder(string navn, string uddannelse, string semester, string emne)
+        {
+            List<Students> studentlist = new List<Students>();
+            if (ModelState.IsValid)
+            {
+
+                if (navn != "")
+                {
+                    studentlist = srepository.SøgStudentPåNavn(navn);
+                }
+                if (uddannelse != "")
+                {
+                    studentlist = srepository.SøgPåStudentUddannelse(uddannelse);
+                }
+                if (navn != "" && uddannelse != "")
+                {
+                    studentlist = srepository.SøgStudentPåNavnOgUdannelse(navn, uddannelse);
+                }
+                if (navn != "" && semester != "")
+                {
+                    studentlist = srepository.SøgStudentPåNavnOgSemester(navn, semester);
+                }
+
+                if (uddannelse != "" && semester != "")
+                {
+                    studentlist = srepository.SøgStudentPåUddannelseOgSemester(uddannelse, semester);
+                }
+
+                if (semester != "")
+                {
+                    studentlist = srepository.SøgPåStudentSemester(semester);
+                }
+                if (emne != "")
+                {
+                    studentlist = srepository.SøgPåStudentSPHOP(emne);
+                }
+                if (navn != "" && emne != "")
+                {
+                    studentlist = srepository.SøgStudentPåNavnOgSPHOP(navn, emne);
+                }
+                if (uddannelse != "" && emne != "")
+                {
+                    studentlist = srepository.SøgStudentPåUddannelseOgSPHOP(uddannelse, emne);
+                }
+                if (semester != "" && emne != "")
+                {
+                    studentlist = srepository.SøgStudentPåSemesterOgSPHOP(semester, emne);
+                }
+                if (uddannelse != "" && semester != "" && emne != "")
+                {
+                    studentlist = srepository.SøgStudentPåUddannelseOgSemesterOgSPHOP(uddannelse, semester, emne);
+                }
+                if (navn != "" && semester != "" && uddannelse != "" && emne != "")
+                {
+                    studentlist = srepository.SøgStudentPÅAlt(navn, semester, emne, uddannelse);
+                }
+
+                return View(studentlist);
+            }
+            else
+            {
+                return View();
+            }
+        }
         [HttpPost]
 
         public ActionResult StudentListe(string navn, string uddannelse, string semester, string emne)
@@ -202,6 +268,60 @@ namespace Hovedopgave1.Controllers
         public ActionResult VirksomhedListeMedarbejder()
         {
             return View(vrespository.Virksomhed);
+        }
+
+        [HttpPost]
+        public ActionResult VirksomhedListeMedarbejder(string navn, string opgave, string profiler, string position)
+        {
+            List<Virksomhed> virksomhedslist = new List<Virksomhed>();
+            if (ModelState.IsValid)
+            {
+
+                if (navn != "")
+                {
+                    virksomhedslist = vrespository.SøgVirksomhedPåNavn(navn);
+                }
+                if (opgave != "")
+                {
+                    virksomhedslist = vrespository.SøgVirksomhedPåMuligeOpgaver(opgave);
+                }
+                if (profiler != "")
+                {
+                    virksomhedslist = vrespository.SøgVirksomhedPåProfiler(profiler);
+                }
+
+                if (position != "")
+                {
+                    virksomhedslist = vrespository.SøgVirksomhedPåStyrkeposition(position);
+                }
+                if (opgave != "" && position != "")
+                {
+                    virksomhedslist = vrespository.SøgVirksomhedPåOpgaverOgPosition(opgave, position);
+                }
+                if (position != "" && profiler != "")
+                {
+                    virksomhedslist = vrespository.SøgVirksomhedPåProfilerOgPosition(profiler, position);
+                }
+                if (opgave != "" && profiler != "")
+                {
+                    virksomhedslist = vrespository.SøgVirksomhedPåOpgaverOgProfiler(opgave, profiler);
+                }
+                if (opgave != "" && profiler != "" && position != "")
+                {
+                    virksomhedslist = vrespository.SøgVirksomhedPåOpgaverOgProfilerOgPosition(opgave, profiler, position);
+                }
+                if (navn != "" && opgave != "" && profiler != "" && position != "")
+                {
+                    virksomhedslist = vrespository.SøgVirksomhedPåAlt(navn, opgave, profiler, position);
+                }
+
+
+                return View(virksomhedslist);
+            }
+            else
+            {
+                return View();
+            }
         }
 
         [HttpPost]
