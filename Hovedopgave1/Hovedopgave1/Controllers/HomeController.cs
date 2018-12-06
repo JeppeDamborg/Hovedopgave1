@@ -432,6 +432,153 @@ namespace Hovedopgave1.Controllers
             return View(trepository.Tilføjer);
         }
 
+        [HttpPost]
+        public ActionResult TilføjerListeMedarbejder(string navn, string uddannelse, string jobØnske, string kompetence, int? flytning, string sekundærUddannelse)
+        {
+            List<Tilføjer> tilføjerlist = new List<Tilføjer>();
+            if (ModelState.IsValid)
+            {
+
+                if (uddannelse != "")
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåUddannelse(uddannelse);
+                }
+                if (navn != "")
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåNavn(navn);
+                }
+                if (jobØnske != "")
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåJobØnske(jobØnske);
+                }
+                if (kompetence != "")
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåFagligeKompetencer(kompetence);
+                }
+                if (flytning == 1)
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåØnskeOmTilflytning(flytning);
+                }
+                if (uddannelse != "" && flytning == 1)
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåUddannelseOgTilflytning(uddannelse, flytning);
+                }
+                if (jobØnske != "" && flytning == 1)
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåJobØnskeOgTilflytning(jobØnske, flytning);
+                }
+                if (kompetence != "" && flytning == 1)
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåKompetenceOgTilflytning(kompetence, flytning);
+                }
+                if (sekundærUddannelse != "" && jobØnske != "")
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåSekundærUddannelseOgJobØnske(sekundærUddannelse, jobØnske);
+                }
+                if (navn != "" && uddannelse != "" && sekundærUddannelse != "" && jobØnske != "" && kompetence != "" && flytning == 1)
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåAlt(navn, uddannelse, sekundærUddannelse, jobØnske, kompetence, flytning);
+                }
+                if (sekundærUddannelse != "" && flytning == 1)
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåSekundærUddannelseOgFlytning(sekundærUddannelse, flytning);
+                }
+                if (uddannelse != "" && jobØnske != "")
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåUddannelseOgJobØnske(uddannelse, jobØnske);
+                }
+                if (uddannelse != "" && kompetence != "")
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåUddannelseOgKompetence(uddannelse, kompetence);
+                }
+                if (uddannelse != "" && sekundærUddannelse != "")
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåUddannelseOgSekundærUddannelse(uddannelse, sekundærUddannelse);
+                }
+                if (jobØnske != "" && kompetence != "")
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåJobØnskeOgKompetence(jobØnske, kompetence);
+                }
+                if (kompetence != "" && sekundærUddannelse != "")
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåKompetenceOgSekundærUddannelse(kompetence, sekundærUddannelse);
+                }
+                if (uddannelse != "" && jobØnske != "" && kompetence != "")
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåUddannelseOgJobØnskeOgKompetence(uddannelse, jobØnske, kompetence);
+                }
+                if (uddannelse != "" && sekundærUddannelse != "" && jobØnske != "")
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåUddannelseOgSekundærUddannelseOgJobØnske(uddannelse, sekundærUddannelse, jobØnske);
+                }
+                if (uddannelse != "" && flytning == 1 && jobØnske != "")
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåUddannelseOgFlytningOgJobØnske(uddannelse, flytning, jobØnske);
+                }
+                if (uddannelse != "" && flytning == 1 && kompetence != "")
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåUddannelseOgFlytningOgKompetence(uddannelse, flytning, kompetence);
+                }
+                if (uddannelse != "" && flytning == 1 && sekundærUddannelse != "")
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåUddannelseOgFlytningOgSekundærUddannelse(uddannelse, flytning, sekundærUddannelse);
+                }
+                if (uddannelse != "" && sekundærUddannelse != "" && kompetence != "")
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåUddannelseOgSekundærUddannelseOgKompetence(uddannelse, sekundærUddannelse, kompetence);
+                }
+                if (sekundærUddannelse != "" && kompetence != "" && jobØnske != "")
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåSekundærUddannelseOgKompetencerOgJobØnske(sekundærUddannelse, kompetence, jobØnske);
+                }
+                if (flytning == 1 && jobØnske != "" && kompetence != "")
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåFlytningOgJobØnskeOgKompetence(flytning, jobØnske, kompetence);
+                }
+                if (flytning == 1 && jobØnske != "" && sekundærUddannelse != "")
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåFlytningOgJobØnskeOgKompetence(flytning, jobØnske, kompetence);
+                }
+                if (flytning == 1 && kompetence != "" && sekundærUddannelse != "")
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåFlytningOgKompetenceOgSekundærUddannelse(flytning, kompetence, sekundærUddannelse);
+                }
+                if (uddannelse != "" && jobØnske != "" && kompetence != "" && flytning == 1)
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåUddannelseOgJobØnskeOgKompetenceOgFlytning(uddannelse, jobØnske, kompetence, flytning);
+                }
+                if (uddannelse != "" && jobØnske != "" && kompetence != "" && sekundærUddannelse != "")
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåUddannelseOgJobØnskeOgKompetenceOgSekundærUddannelse(uddannelse, jobØnske, kompetence, sekundærUddannelse);
+                }
+                if (uddannelse != "" && jobØnske != "" && sekundærUddannelse != "" && flytning == 1)
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåUddannelseOgJobØnskeOgSekundærUddannelseOgFlytning(uddannelse, jobØnske, sekundærUddannelse, flytning);
+                }
+                if (uddannelse != "" && kompetence != "" && sekundærUddannelse != "" && flytning == 1)
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåUddannelseOgKompetenceOgSekundærUddannelseOgFlytning(uddannelse, kompetence, sekundærUddannelse, flytning);
+                }
+                if (jobØnske != "" && kompetence != "" && sekundærUddannelse != "" && flytning == 1)
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåJobØnskeOgKompetenceOgSekundærUddannelseOgFlytning(jobØnske, kompetence, sekundærUddannelse, flytning);
+                }
+
+                if (kompetence != "" && uddannelse != "" && jobØnske != "" && sekundærUddannelse != "" && flytning == 1)
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåKompetenceOgUddannelseOgJobØnskeOgSekundærUddannelseOgFlytning(kompetence, uddannelse, jobØnske, sekundærUddannelse, flytning);
+                }
+
+
+
+                return View(tilføjerlist);
+            }
+            else
+            {
+                return View();
+            }
+        }
+
         [Authorize]
         public ActionResult TilføjerListeBruger()
         {
