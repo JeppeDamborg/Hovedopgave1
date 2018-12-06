@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Hovedopgave1.Models.Students>
 @{
     Layout = null;
 }
@@ -8,10 +8,85 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>StudentListeMedarbejder</title>
+    <title>StudentListe</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <style>
+        .divider {
+            width: 5px;
+            height: auto;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
-    <div> 
+    <div>
+        @using (Html.BeginForm("StudentListe", "Home"))
+        {
+            <input type="text" placeholder="Søg på Navn" name="Navn" />
+            <input type="text" placeholder="Søg på Uddannelse" name="Uddannelse" />
+            <input type="text" placeholder="Søg på Semester" name="Semester" />
+            <input type="text" placeholder="Søg på Praktik/Hovedopgave/Semester Projekt" size="36" name="Emne" />
+            <input type="submit" value="Søg" />
+            <input type="reset" value="Ryd felter" />
+            <input type="button" class="button" value="Vis hele listen" onclick="location.href='@Url.Action("StudentListeMedarbejder", "Home")'" />
+            <input type="button" class="button" value="Tilbage til forside" onclick="location.href='@Url.Action("MedarbejderForside", "Home")'" />
+        }
+
     </div>
+    <table class="table">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Navn)</th>
+            <th>@Html.DisplayNameFor(model => model.Vej)</th>
+            <th>@Html.DisplayNameFor(model => model.By)</th>
+            <th>@Html.DisplayNameFor(model => model.Nationalitet)</th>
+            <th>@Html.DisplayNameFor(model => model.Modersmål)</th>
+            <th>@Html.DisplayNameFor(model => model.Fremmedsprog)</th>
+            <th>@Html.DisplayNameFor(model => model.Telefon)</th>
+            <th>@Html.DisplayNameFor(model => model.Mail)</th>
+            <th>@Html.DisplayNameFor(model => model.Uddannelse)</th>
+            <th>@Html.DisplayNameFor(model => model.Periode)</th>
+            <th>@Html.DisplayNameFor(model => model.Semester)</th>
+            <th>@Html.DisplayNameFor(model => model.Specialisering)</th>
+            <th>@Html.DisplayNameFor(model => model.Overbygning)</th>
+            <th>@Html.DisplayNameFor(model => model.SemesterProjekt)</th>
+            <th>@Html.DisplayNameFor(model => model.Praktik)</th>
+            <th>@Html.DisplayNameFor(model => model.Hovedopgave)</th>
+            <th>@Html.DisplayNameFor(model => model.OpgaveType)</th>
+            <th>@Html.DisplayNameFor(model => model.StudieJob)</th>
+            <th>@Html.DisplayNameFor(model => model.Transport)</th>
+            <th>@Html.DisplayNameFor(model => model.DatoForOprettelse)</th>
+            <th>@Html.DisplayNameFor(model => model.CV)</th>
+
+        </tr>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Navn)</td>
+                <td>@Html.DisplayFor(modelItem => item.Vej)</td>
+                <td>@Html.DisplayFor(modelItem => item.By)</td>
+                <td>@Html.DisplayFor(modelItem => item.Nationalitet)</td>
+                <td>@Html.DisplayFor(modelItem => item.Modersmål)</td>
+                <td>@Html.DisplayFor(modelItem => item.Fremmedsprog)</td>
+                <td>@Html.DisplayFor(modelItem => item.Telefon)</td>
+                <td>@Html.DisplayFor(modelItem => item.Mail)</td>
+                <td>@Html.DisplayFor(modelItem => item.Uddannelse)</td>
+                <td>@Html.DisplayFor(modelItem => item.Periode)</td>
+                <td>@Html.DisplayFor(modelItem => item.Semester)</td>
+                <td>@Html.DisplayFor(modelItem => item.Specialisering)</td>
+                <td>@Html.DisplayFor(modelItem => item.Overbygning)</td>
+                <td>@Html.DisplayFor(modelItem => item.SemesterProjekt)</td>
+                <td>@Html.DisplayFor(modelItem => item.Praktik)</td>
+                <td>@Html.DisplayFor(modelItem => item.Hovedopgave)</td>
+                <td>@Html.DisplayFor(modelItem => item.OpgaveType)</td>
+                <td>@Html.DisplayFor(modelItem => item.StudieJob)</td>
+                <td>@Html.DisplayFor(modelItem => item.Transport)</td>
+                <td>@Html.DisplayFor(modelItem => item.DatoForOprettelse)</td>
+                <td>@Html.ActionLink("Hent CV", "DownloadStudentCV", "Home", new { id = item.Id, cvtitel = item.CVTitel }, new { @target = "_blank", @class = "btn btn-primary" })</td>
+
+            </tr>
+        }
+    </table>
 </body>
 </html>
