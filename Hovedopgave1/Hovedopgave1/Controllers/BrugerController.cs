@@ -51,13 +51,15 @@ namespace Hovedopgave1.Controllers
                         FormsAuthentication.SetAuthCookie(bruger.Brugernavn, false);
                         return RedirectToAction("BrugerForside", "Home");
                     }
+                   if(login.Rettighed == "Medarbejder")
+                    {
+                        FormsAuthentication.SetAuthCookie(bruger.Brugernavn, false);
+                        return RedirectToAction("MedarbejderForside", "Home");
+                    }
                     }
                     else
                     {
-                    ModelState.AddModelError("", "Forkert brugernavn eller password eller rettighed");
-
-
-                
+                    ModelState.AddModelError("", "Forkert brugernavn eller password eller rettighed");               
                     }
                 return View(bruger);
                 }
