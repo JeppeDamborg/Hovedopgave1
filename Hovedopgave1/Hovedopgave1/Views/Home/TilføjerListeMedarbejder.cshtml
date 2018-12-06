@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Hovedopgave1.Models.Tilføjer>
 @{
     Layout = null;
 }
@@ -8,10 +8,72 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>TilføjerListeMedarbejder</title>
+    <title>TilflytterListe</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <style>
+        .divider {
+            width: 5px;
+            height: auto;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
-    <div> 
-    </div>
+    @using (Html.BeginForm("TilføjerListe", "Home"))
+    {
+        <div>
+            <input type="text" placeholder="Søg på Navn" name="Navn" />
+            <input type="text" placeholder="Søg på Primær uddannelse" name="Uddannelse" />
+            <input type="text" placeholder="Søg på Sekundær Uddannelse" name="SekundærUddannelse" />
+            <input type="text" placeholder="Søg på Job Ønske" name="JobØnske" />
+            <input type="text" placeholder="Søg på Faglige Kompetencer" name="Kompetence" />
+            <input type="text" placeholder="Søg på 1 for tilflyttere" name="Flytning" />
+            <input type="submit" value="Søg" />
+            <input type="reset" value="Ryd Felter" />
+            <input type="button" class="button" value="Vis hele listen" onclick="location.href='@Url.Action("TilføjerListeBruger", "Home")'" />
+            <input type="button" class="button" value="Tilbage til forside" onclick="location.href='@Url.Action("BrugerForside", "Home")'" />
+        </div>
+    }
+    <table class="table">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Navn)</th>
+            <th>@Html.DisplayNameFor(model => model.Vej)</th>
+            <th>@Html.DisplayNameFor(model => model.By)</th>
+            <th>@Html.DisplayNameFor(model => model.Telefon)</th>
+            <th>@Html.DisplayNameFor(model => model.Mail)</th>
+            <th>@Html.DisplayNameFor(model => model.PrimærUddannelse)</th>
+            <th>@Html.DisplayNameFor(model => model.SekundærUddannelse)</th>
+            <th>@Html.DisplayNameFor(model => model.Erhvervserfaring)</th>
+            <th>@Html.DisplayNameFor(model => model.JobØnske)</th>
+            <th>@Html.DisplayNameFor(model => model.FagligeKompetencer)</th>
+            <th>@Html.DisplayNameFor(model => model.PersonligeKompetencer)</th>
+            <th>@Html.DisplayNameFor(model => model.GenereltInfo)</th>
+            <th>@Html.DisplayNameFor(model => model.ØnskerAtFlytte)</th>
+            <th>@Html.DisplayNameFor(model => model.DatoForOprettelse)</th>
+            <th>@Html.DisplayNameFor(model => model.CV)</th>
+        </tr>
+        @foreach (var s in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(models => s.Navn)</td>
+                <td>@Html.DisplayFor(models => s.Vej)</td>
+                <td>@Html.DisplayFor(models => s.By)</td>
+                <td>@Html.DisplayFor(models => s.Telefon)</td>
+                <td>@Html.DisplayFor(models => s.Mail)</td>
+                <td>@Html.DisplayFor(models => s.PrimærUddannelse)</td>
+                <td>@Html.DisplayFor(models => s.SekundærUddannelse)</td>
+                <td>@Html.DisplayFor(models => s.Erhvervserfaring)</td>
+                <td>@Html.DisplayFor(models => s.JobØnske)</td>
+                <td>@Html.DisplayFor(models => s.FagligeKompetencer)</td>
+                <td>@Html.DisplayFor(models => s.PersonligeKompetencer)</td>
+                <td>@Html.DisplayFor(models => s.GenereltInfo)</td>
+                <td>@Html.DisplayFor(models => s.ØnskerAtFlytte)</td>
+                <td>@Html.DisplayFor(models => s.DatoForOprettelse)</td>
+                <td>@Html.ActionLink("Hent CV", "DownloadTilføjerCV", "Home", new { id = s.Id, cvtitel = s.CVTitel }, new { @target = "_blank", @class = "btn btn-primary" })</td>
+
+            </tr>
+
+        }
+    </table>
 </body>
 </html>

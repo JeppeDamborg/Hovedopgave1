@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Hovedopgave1.Models.Virksomhed>
 @{
     Layout = null;
 }
@@ -8,10 +8,67 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>VirksomhedListeMedarbejder</title>
+    <title>VirksomhedListe</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <style>
+        .divider {
+            width: 5px;
+            height: auto;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
-    <div> 
+
+    <div>
+        @using (Html.BeginForm("VirksomhedListe", "Home"))
+        {
+            <input type="text" placeholder="Søg på Navn" name="Navn" />
+            <input type="text" placeholder="Søg på Opgavetype" name="Opgave" />
+            <input type="text" placeholder="Søg på Profiler" name="Profiler" />
+            <input type="text" placeholder="Søg på Styrkeposition" name="Position" />
+            <input type="submit" value="Søg" />
+            <input type="reset" value="Ryd Felter" />
+            <input type="button" class="button" value="Vis hele listen" onclick="location.href='@Url.Action("VirksomhedListe", "Home")'" />
+            <input type="button" class="button" value="Tilbage til forside" onclick="location.href='@Url.Action("Forside", "Home")'" />
+        }
     </div>
+
+    <table class="table">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Navn)</th>
+            <th>@Html.DisplayNameFor(model => model.KontaktPerson)</th>
+            <th>@Html.DisplayNameFor(model => model.Telefon)</th>
+            <th>@Html.DisplayNameFor(model => model.Mail)</th>
+            <th>@Html.DisplayNameFor(model => model.VirksomhedsInfo)</th>
+            <th>@Html.DisplayNameFor(model => model.MuligeOpgaver)</th>
+            <th>@Html.DisplayNameFor(model => model.Profiler)</th>
+            <th>@Html.DisplayNameFor(model => model.OpgaveLøsning)</th>
+            <th>@Html.DisplayNameFor(model => model.Styrkeposition)</th>
+            <th>@Html.DisplayNameFor(model => model.Aflønning)</th>
+        </tr>
+        @foreach (var s in Model)
+        {
+
+
+            <tr>
+                <td>@Html.DisplayFor(models => s.Navn)</td>
+                <td>@Html.DisplayFor(models => s.KontaktPerson)</td>
+                <td>@Html.DisplayFor(models => s.Telefon)</td>
+                <td>@Html.DisplayFor(models => s.Mail)</td>
+                <td>@Html.DisplayFor(models => s.VirksomhedsInfo)</td>
+                <td>@Html.DisplayFor(models => s.MuligeOpgaver)</td>
+                <td>@Html.DisplayFor(models => s.Profiler)</td>
+                <td>@Html.DisplayFor(models => s.OpgaveLøsning)</td>
+                <td>@Html.DisplayFor(models => s.Styrkeposition)</td>
+                <td>@Html.DisplayFor(models => s.Aflønning)</td>
+
+
+
+            </tr>
+        }
+
+
+    </table>
 </body>
 </html>
