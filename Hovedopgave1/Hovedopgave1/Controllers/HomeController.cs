@@ -113,6 +113,15 @@ namespace Hovedopgave1.Controllers
                 {
                     studentlist = srepository.SøgPåStudentUddannelse(uddannelse);
                 }
+                if (semester != "")
+                {
+                    studentlist = srepository.SøgPåStudentSemester(semester);
+                }
+                if (emne != "")
+                {
+                    studentlist = srepository.SøgPåStudentSPHOP(emne);
+                }
+
                 if (navn != "" && uddannelse != "")
                 {
                     studentlist = srepository.SøgStudentPåNavnOgUdannelse(navn, uddannelse);
@@ -125,16 +134,9 @@ namespace Hovedopgave1.Controllers
                 if (uddannelse != "" && semester != "")
                 {
                     studentlist = srepository.SøgStudentPåUddannelseOgSemester(uddannelse, semester);
+                    
                 }
-
-                if (semester != "")
-                {
-                    studentlist = srepository.SøgPåStudentSemester(semester);
-                }
-                if (emne != "")
-                {
-                    studentlist = srepository.SøgPåStudentSPHOP(emne);
-                }
+               
                 if (navn != "" && emne != "")
                 {
                     studentlist = srepository.SøgStudentPåNavnOgSPHOP(navn, emne);
