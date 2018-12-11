@@ -180,7 +180,17 @@ namespace Hovedopgave1.Controllers
                 if(uddannelse != "") {
                     studentlist = srepository.SøgPåStudentUddannelse(uddannelse);
                 }
-                if(navn != "" && uddannelse != "")
+                if (semester != "")
+                {
+                    studentlist = srepository.SøgPåStudentSemester(semester);
+                }
+
+                if (emne != "")
+                {
+                    studentlist = srepository.SøgPåStudentSPHOP(emne);
+                }
+
+                if (navn != "" && uddannelse != "")
                 {
                     studentlist = srepository.SøgStudentPåNavnOgUdannelse(navn, uddannelse);
                 }
@@ -193,15 +203,7 @@ namespace Hovedopgave1.Controllers
                 {
                     studentlist = srepository.SøgStudentPåUddannelseOgSemester(uddannelse, semester);
                 }
-
-                if(semester != "")
-                {
-                    studentlist = srepository.SøgPåStudentSemester(semester);
-                }
-                if(emne != "")
-                {
-                    studentlist = srepository.SøgPåStudentSPHOP(emne);
-                }
+               
                 if(navn != "" && emne != "")
                 {
                     studentlist = srepository.SøgStudentPåNavnOgSPHOP(navn, emne);
@@ -477,10 +479,7 @@ namespace Hovedopgave1.Controllers
                 {
                     tilføjerlist = trepository.SøgTilføjerPåSekundærUddannelseOgJobØnske(sekundærUddannelse, jobØnske);
                 }
-                if (navn != "" && uddannelse != "" && sekundærUddannelse != "" && jobØnske != "" && kompetence != "" && flytning == 1)
-                {
-                    tilføjerlist = trepository.SøgTilføjerPåAlt(navn, uddannelse, sekundærUddannelse, jobØnske, kompetence, flytning);
-                }
+               
                 if (sekundærUddannelse != "" && flytning == 1)
                 {
                     tilføjerlist = trepository.SøgTilføjerPåSekundærUddannelseOgFlytning(sekundærUddannelse, flytning);
@@ -569,6 +568,10 @@ namespace Hovedopgave1.Controllers
                 if (kompetence != "" && uddannelse != "" && jobØnske != "" && sekundærUddannelse != "" && flytning == 1)
                 {
                     tilføjerlist = trepository.SøgTilføjerPåKompetenceOgUddannelseOgJobØnskeOgSekundærUddannelseOgFlytning(kompetence, uddannelse, jobØnske, sekundærUddannelse, flytning);
+                }
+                if (navn != "" && uddannelse != "" && sekundærUddannelse != "" && jobØnske != "" && kompetence != "" && flytning == 1)
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåAlt(navn, uddannelse, sekundærUddannelse, jobØnske, kompetence, flytning);
                 }
 
 
@@ -630,10 +633,6 @@ namespace Hovedopgave1.Controllers
                 {
                     tilføjerlist = trepository.SøgTilføjerPåSekundærUddannelseOgJobØnske(sekundærUddannelse, jobØnske);
                 }
-                if (navn != "" && uddannelse != "" && sekundærUddannelse != "" && jobØnske != "" && kompetence != "" && flytning == 1)
-                {
-                    tilføjerlist = trepository.SøgTilføjerPåAlt(navn, uddannelse, sekundærUddannelse, jobØnske, kompetence, flytning);
-                }
                 if (sekundærUddannelse != "" && flytning == 1)
                 {
                     tilføjerlist = trepository.SøgTilføjerPåSekundærUddannelseOgFlytning(sekundærUddannelse, flytning);
@@ -723,6 +722,11 @@ namespace Hovedopgave1.Controllers
                 {
                     tilføjerlist = trepository.SøgTilføjerPåKompetenceOgUddannelseOgJobØnskeOgSekundærUddannelseOgFlytning(kompetence, uddannelse, jobØnske, sekundærUddannelse, flytning);
                 }
+                if (navn != "" && uddannelse != "" && sekundærUddannelse != "" && jobØnske != "" && kompetence != "" && flytning == 1)
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåAlt(navn, uddannelse, sekundærUddannelse, jobØnske, kompetence, flytning);
+                }
+
 
 
 
@@ -777,10 +781,7 @@ namespace Hovedopgave1.Controllers
                 {
                     tilføjerlist = trepository.SøgTilføjerPåSekundærUddannelseOgJobØnske(sekundærUddannelse, jobØnske);
                 }
-                if(navn != "" && uddannelse != "" && sekundærUddannelse != "" && jobØnske != "" && kompetence != "" && flytning == 1)
-                {
-                    tilføjerlist = trepository.SøgTilføjerPåAlt(navn, uddannelse, sekundærUddannelse, jobØnske, kompetence, flytning);
-                }
+                
                 if(sekundærUddannelse !="" && flytning == 1)
                 {
                     tilføjerlist = trepository.SøgTilføjerPåSekundærUddannelseOgFlytning(sekundærUddannelse, flytning);
@@ -869,8 +870,11 @@ namespace Hovedopgave1.Controllers
                 {
                     tilføjerlist = trepository.SøgTilføjerPåKompetenceOgUddannelseOgJobØnskeOgSekundærUddannelseOgFlytning(kompetence, uddannelse, jobØnske, sekundærUddannelse, flytning);
                 }
+                if (navn != "" && uddannelse != "" && sekundærUddannelse != "" && jobØnske != "" && kompetence != "" && flytning == 1)
+                {
+                    tilføjerlist = trepository.SøgTilføjerPåAlt(navn, uddannelse, sekundærUddannelse, jobØnske, kompetence, flytning);
+                }
 
-               
 
                 return View(tilføjerlist);
             }
