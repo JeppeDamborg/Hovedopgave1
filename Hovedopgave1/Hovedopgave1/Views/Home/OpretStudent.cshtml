@@ -60,7 +60,7 @@
                 @Html.TextBoxFor(m => m.Uddannelse, new { @id = "Uddannelse", @placeholder = "Uddannelse" })*
                 @Html.ValidationMessageFor(model => model.Uddannelse, "", new { @class = "text-danger" })
 
-                @Html.TextBoxFor(m => m.Periode, new { @id = "Periode", @placeholder = "Start/SlutDato" })*
+                @Html.TextBoxFor(m => m.Periode, new { @id = "Periode", @placeholder = "Start/Slut:mm-yy/mm-yy" })*
                 @Html.ValidationMessageFor(model => model.Periode, "", new { @class = "text-danger" })
 
                 @Html.TextBoxFor(m => m.Semester, new { @id = "Semester", @placeholder = "Nuværende Semester" })*
@@ -77,21 +77,21 @@
             </div>
             <br />
             <div>
-                @Html.TextBoxFor(m => m.Overbygning, new { @id = "Overbygning", @placeholder = "Overbygning" })
+                @Html.TextBoxFor(m => m.Overbygning, new { @id = "Overbygning", @placeholder = "Tidligere Uddannelse" })
             </div>
             <br />
             <div>
-                <pre>Skriv hvis du ønsker et Semester Projekt, Praktikplads eller HovedOpgave. Udfyld de relevante felter med emne og tidsperiode</pre>
+                <pre>Vælg om du ønsker et Semester Projekt, Praktikplads eller HovedOpgave. Udfyld de relevante felter med en tidsperiode(eks: Fra: mm-yyyy Til mm-yyyy) og feltet under med et emne</pre>
             </div>
             <div>
-                @Html.TextAreaFor(m => m.SemesterProjekt, new { @id = "SemesterProjekt", @placeholder = "Skriv dit Semester Projekt, hvis du har et" })
-                @Html.TextAreaFor(m => m.Praktik, new { @id = "Praktik", @placeholder = "Skriv din Praktik Projekt/Opgave, hvis du har et " })
-                @Html.TextAreaFor(m => m.Hovedopgave, new { @id = "Hovedopgave", @placeholder = "Skriv din Hovedopgave, hvis du har et " })
+                @Html.TextAreaFor(m => m.SemesterProjekt, new { @id = "SemesterProjekt", @placeholder = "Semester Projekt:              Tidsperiode:" })
+                @Html.TextAreaFor(m => m.Praktik, new { @id = "Praktik", @placeholder = "Praktik:              Tidsperiode:" })
+                @Html.TextAreaFor(m => m.Hovedopgave, new { @id = "Hovedopgave", @placeholder = "Hovedopgave:           Tidsperiode:" })
             </div>
 
             <br />
             <div>
-                @Html.TextBoxFor(m => m.OpgaveType, new { @id = "OpgaveType", @placeholder = "OpgaveType" })
+                @Html.TextBoxFor(m => m.OpgaveType, new { @id = "OpgaveType", @placeholder = "Emne" })
 
             </div>
             <br />
