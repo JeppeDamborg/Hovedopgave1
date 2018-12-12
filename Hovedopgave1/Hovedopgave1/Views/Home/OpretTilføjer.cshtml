@@ -48,10 +48,10 @@
             </div>
             <br />
             <div>
-                @Html.TextBoxFor(m => m.PrimærUddannelse, new { @id = "PrimærUddannelse", @placeholder = "PrimærUddannelse" })*
+                @Html.TextBoxFor(m => m.PrimærUddannelse, new { @id = "PrimærUddannelse", @placeholder = "Højeste Uddannelse" })*
                 @Html.ValidationMessageFor(model => model.PrimærUddannelse, "", new { @class = "text-danger" })
 
-                @Html.TextBoxFor(m => m.SekundærUddannelse, new { @id = "SekundærUddannelse", @placeholder = "SekundærUddannelse" })
+                @Html.TextBoxFor(m => m.SekundærUddannelse, new { @id = "SekundærUddannelse", @placeholder = "Supplerende Uddannelse" })
                 @Html.ValidationMessageFor(model => model.SekundærUddannelse, "", new { @class = "text-danger" })
                 <br />
                 <br />
@@ -69,7 +69,7 @@
                 </div>
                 <br />
                 <div>
-                    <pre>FagligeKompetencer*          PersonligeKompetencer*</pre>
+                    <pre>FagligeKompetencer(Maks 5)*  PersonligeKompetencer(Maks 5)*</pre>
                 </div>
                 <div>
 
