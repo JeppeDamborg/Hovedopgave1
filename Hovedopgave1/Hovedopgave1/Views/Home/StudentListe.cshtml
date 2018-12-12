@@ -45,6 +45,7 @@
             <th>@Html.DisplayNameFor(model => model.Telefon)</th>
             <th>@Html.DisplayNameFor(model => model.Mail)</th>
             <th>@Html.DisplayNameFor(model => model.Uddannelse)</th>
+            <th>@Html.DisplayNameFor(model => model.UddannelsesSted)</th>
             <th>@Html.DisplayNameFor(model => model.Periode)</th>
             <th>@Html.DisplayNameFor(model => model.Semester)</th>
             <th>@Html.DisplayNameFor(model => model.Specialisering)</th>
@@ -54,6 +55,7 @@
             <th>@Html.DisplayNameFor(model => model.Hovedopgave)</th>
             <th>@Html.DisplayNameFor(model => model.OpgaveType)</th>
             <th>@Html.DisplayNameFor(model => model.StudieJob)</th>
+            <th>@Html.DisplayNameFor(model => model.SupplerendeInfo)</th>
             <th>@Html.DisplayNameFor(model => model.Transport)</th>
             <th>@Html.DisplayNameFor(model => model.DatoForOprettelse)</th>
             <th>@Html.DisplayNameFor(model => model.CV)</th>
@@ -73,6 +75,7 @@
             <td>@Html.DisplayFor(modelItem => item.Telefon)</td>
             <td>@Html.DisplayFor(modelItem => item.Mail)</td>
             <td>@Html.DisplayFor(modelItem => item.Uddannelse)</td>
+            <td>@Html.DisplayFor(modelItem => item.UddannelsesSted)</td>
             <td>@Html.DisplayFor(modelItem => item.Periode)</td>
             <td>@Html.DisplayFor(modelItem => item.Semester)</td>
             <td>@Html.DisplayFor(modelItem => item.Specialisering)</td>
@@ -82,6 +85,7 @@
             <td>@Html.DisplayFor(modelItem => item.Hovedopgave)</td>
             <td>@Html.DisplayFor(modelItem => item.OpgaveType)</td>
             <td>@Html.DisplayFor(modelItem => item.StudieJob)</td>
+            <td>@Html.DisplayFor(modelItem => item.SupplerendeInfo)</td>
             <td>@Html.DisplayFor(modelItem => item.Transport)</td>
             <td>@Html.DisplayFor(modelItem => item.DatoForOprettelse)</td>
             <td>@Html.ActionLink("Hent CV", "DownloadStudentCV", "Home", new { id = item.Id, cvtitel = item.CVTitel }, new { @target = "_blank", @class = "btn btn-primary" })</td>

@@ -42,6 +42,7 @@ namespace Hovedopgave1.Concrete
                 dbstudent.Telefon = students.Telefon;
                 dbstudent.Mail = students.Mail;
                 dbstudent.Uddannelse = students.Uddannelse;
+                dbstudent.UddannelsesSted = students.UddannelsesSted;
                 dbstudent.Periode = students.Periode;
                 dbstudent.Semester = students.Semester;
                 dbstudent.Overbygning = students.Overbygning;
@@ -49,6 +50,7 @@ namespace Hovedopgave1.Concrete
                 dbstudent.Praktik = students.Praktik;
                 dbstudent.Hovedopgave = students.Hovedopgave;
                 dbstudent.OpgaveType = students.OpgaveType;
+                dbstudent.SupplerendeInfo = students.SupplerendeInfo;
                 dbstudent.StudieJob = students.StudieJob;
                 dbstudent.Transport = students.Transport;
             }

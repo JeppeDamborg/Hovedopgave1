@@ -15,6 +15,9 @@
             position: relative;
             right: -25px;
         }
+        #RødTekst{
+            color:red;
+        }
 
     </style>
 </head>
@@ -60,6 +63,11 @@
                 @Html.TextBoxFor(m => m.Uddannelse, new { @id = "Uddannelse", @placeholder = "Uddannelse" })*
                 @Html.ValidationMessageFor(model => model.Uddannelse, "", new { @class = "text-danger" })
 
+                @Html.TextBoxFor(m => m.UddannelsesSted, new { @id = "UddannelsesSted", @placeholder = "UddannelsesSted" })*
+                @Html.ValidationMessageFor(model => model.UddannelsesSted, "", new { @class = "text-danger" })
+            </div>
+            <br />
+            <div>
                 @Html.TextBoxFor(m => m.Periode, new { @id = "Periode", @placeholder = "Start/Slut:mm-yy/mm-yy" })*
                 @Html.ValidationMessageFor(model => model.Periode, "", new { @class = "text-danger" })
 
@@ -81,7 +89,8 @@
             </div>
             <br />
             <div>
-                <pre>Vælg om du ønsker et Semester Projekt, Praktikplads eller HovedOpgave. Udfyld de relevante felter med en tidsperiode(eks: Fra: mm-yyyy Til mm-yyyy) og feltet under med et emne</pre>
+                <pre>Vælg om du ønsker et Semester Projekt, Praktikplads eller HovedOpgave.</pre>
+                <pre>Udfyld de relevante felter med en tidsperiode(eks: Fra: mm-yyyy Til mm-yyyy) og feltet under med et emne</pre>
             </div>
             <div>
                 @Html.TextAreaFor(m => m.SemesterProjekt, new { @id = "SemesterProjekt", @placeholder = "Semester Projekt:              Tidsperiode:" })
@@ -96,7 +105,12 @@
             </div>
             <br />
             <div>
-                @Html.TextBoxFor(m => m.StudieJob, new { @id = "StudieJob", @placeholder = "StudieJob" })
+                Leder du efter studiejob?*
+                @Html.EditorFor(x => x.StudieJob) Klik på checkboxen hvis ja
+            </div>
+            <br />
+            <div>
+                @Html.TextBoxFor(m => m.SupplerendeInfo, new { @id = "SupplerendeInfo", @placeholder = "SupplerendeInfo" })
             </div>
             <br />
             <div>
@@ -105,6 +119,7 @@
 
             </div>
             <br />
+
             <div>
                 Indsæt CV (PDF ONLY)*
                 <input type="file" name="CV" accept="application/pdf" />
@@ -116,6 +131,8 @@
             <div style="display: none;">
                 <input type="text" id="DatoForOprettelse" name="DatoForOprettelse" placeholder="DatoForOprettelse" />*
             </div>
+            <br />
+            <div id="RødTekst">CHECK EFTER ALLE FELTER OM DIN INFORMATION OG CV ER KORREKT!</div>
             <br />
             <div>
                 <input type="submit" id="OpretStudent" value="Opret" />

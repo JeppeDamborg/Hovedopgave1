@@ -29,7 +29,9 @@ namespace Hovedopgave1.Models
         public string Mail { get; set; }
         [Required(ErrorMessage = "Du skal skrive din uddannelse")]
         public string Uddannelse { get; set; }
-        [Required(ErrorMessage = "Du skal skrive Indtaste din periode")]
+        [Required(ErrorMessage = "Du skal skrive hvor du uddanner dig")]
+        public string UddannelsesSted { get; set; }
+        [Required(ErrorMessage = "Du skal skrive Indtaste din periode")]        
         public string Periode { get; set; }
         [Required(ErrorMessage = "Du skal skrive din nuværende semester")]
         public string Semester { get; set; }
@@ -40,8 +42,8 @@ namespace Hovedopgave1.Models
         public string Praktik { get; set; }
         public string Hovedopgave { get; set; }
         public string OpgaveType { get; set; }
-        public string StudieJob { get; set; }
-
+        public bool StudieJob { get; set; }
+        public string SupplerendeInfo { get; set; }
 
         public bool Transport { get; set; }
 
