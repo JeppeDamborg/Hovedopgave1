@@ -219,6 +219,7 @@
     <Content Include="Images\FoodNetwoork_jpeg.jpg" />
     <Content Include="Images\ForsideBilledeConnieMedAlleLogoNr.2.png" />
     <Content Include="Images\PA_logo_stor.jpg" />
+    <Content Include="Images\RedigeretConnieSide.PNG" />
     <Content Include="Images\RedigeretForside.PNG" />
     <Content Include="Images\Vifu.jpg" />
     <Content Include="Models\Student.Context.tt">
