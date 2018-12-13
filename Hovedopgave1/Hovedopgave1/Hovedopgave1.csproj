@@ -217,6 +217,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\FoodNetwoork_jpeg.jpg" />
+    <Content Include="Images\ForsideBilledeConnieMedAlleLogoNr.2.png" />
     <Content Include="Images\PA_logo_stor.jpg" />
     <Content Include="Images\RedigeretForside.PNG" />
     <Content Include="Images\Vifu.jpg" />
