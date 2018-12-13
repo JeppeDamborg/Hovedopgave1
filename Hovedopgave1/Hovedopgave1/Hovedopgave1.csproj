@@ -217,6 +217,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\EndeligeConnieForside.jpg" />
+    <Content Include="Images\EndeligeConnieForside2.jpg" />
     <Content Include="Images\FoodNetwoork_jpeg.jpg" />
     <Content Include="Images\PA_logo_stor.jpg" />
     <Content Include="Images\RedigeretForside.PNG" />
